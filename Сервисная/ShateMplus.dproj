@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{4a311382-9db0-4cb5-a971-2b484f2ce79f}</ProjectGuid>
+    <MainSource>ShateMPlus.dpr</MainSource>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>_out\ShateMPlus.exe</DCC_DependencyCheckOutputName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_Define>RELEASE;LOCAL</DCC_Define>
+    <DCC_ExeOutput>_out</DCC_ExeOutput>
+    <DCC_AssertionsAtRuntime>False</DCC_AssertionsAtRuntime>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_UnitSearchPath>_ScheduledTasks\;_BallonToolTip\</DCC_UnitSearchPath>
+    <DCC_ResourcePath>_ScheduledTasks\;_BallonToolTip\</DCC_ResourcePath>
+    <DCC_ObjPath>_ScheduledTasks\;_BallonToolTip\</DCC_ObjPath>
+    <DCC_IncludePath>_ScheduledTasks\;_BallonToolTip\</DCC_IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_Define>DEBUG</DCC_Define>
+    <DCC_ExeOutput>_out</DCC_ExeOutput>
+    <DCC_UnitSearchPath>c:\Program Files (x86)\CodeGear\COMPON~1\DLib\jcl\lib\d11\debug;c:\Program Files (x86)\CodeGear\Components\DLib\Dbisam\d2007\code\source;E:\CodeGear\Components\DLib\Dbisam\d2007\code\source;E:\CodeGear\COMPON~1\DLib\jcl\lib\d11\debug;D:\CodeGear\COMPON~1\DLib\jcl\lib\d11\debug;$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(BDS)\RaveReports\Lib;_ScheduledTasks\;_BallonToolTip\;_Common\</DCC_UnitSearchPath>
+    <DCC_ResourcePath>c:\Program Files (x86)\CodeGear\COMPON~1\DLib\jcl\lib\d11\debug;c:\Program Files (x86)\CodeGear\Components\DLib\Dbisam\d2007\code\source;E:\CodeGear\Components\DLib\Dbisam\d2007\code\source;E:\CodeGear\COMPON~1\DLib\jcl\lib\d11\debug;D:\CodeGear\COMPON~1\DLib\jcl\lib\d11\debug;$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(BDS)\RaveReports\Lib;_ScheduledTasks\;_BallonToolTip\;_Common\</DCC_ResourcePath>
+    <DCC_ObjPath>c:\Program Files (x86)\CodeGear\COMPON~1\DLib\jcl\lib\d11\debug;c:\Program Files (x86)\CodeGear\Components\DLib\Dbisam\d2007\code\source;E:\CodeGear\Components\DLib\Dbisam\d2007\code\source;E:\CodeGear\COMPON~1\DLib\jcl\lib\d11\debug;D:\CodeGear\COMPON~1\DLib\jcl\lib\d11\debug;$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(BDS)\RaveReports\Lib;_ScheduledTasks\;_BallonToolTip\;_Common\</DCC_ObjPath>
+    <DCC_IncludePath>c:\Program Files (x86)\CodeGear\COMPON~1\DLib\jcl\lib\d11\debug;c:\Program Files (x86)\CodeGear\Components\DLib\Dbisam\d2007\code\source;E:\CodeGear\Components\DLib\Dbisam\d2007\code\source;E:\CodeGear\COMPON~1\DLib\jcl\lib\d11\debug;D:\CodeGear\COMPON~1\DLib\jcl\lib\d11\debug;$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(BDS)\RaveReports\Lib;_ScheduledTasks\;_BallonToolTip\;_Common\</DCC_IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseSklad|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_AssertionsAtRuntime>False</DCC_AssertionsAtRuntime>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_ExeOutput>_out</DCC_ExeOutput>
+    <DCC_Define>RELEASE;SKLAD</DCC_Define>
+    <DCC_UnitSearchPath>_ScheduledTasks\;_BallonToolTip\</DCC_UnitSearchPath>
+    <DCC_ResourcePath>_ScheduledTasks\;_BallonToolTip\</DCC_ResourcePath>
+    <DCC_ObjPath>_ScheduledTasks\;_BallonToolTip\</DCC_ObjPath>
+    <DCC_IncludePath>_ScheduledTasks\;_BallonToolTip\</DCC_IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseTest|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_AssertionsAtRuntime>False</DCC_AssertionsAtRuntime>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_ExeOutput>_out</DCC_ExeOutput>
+    <DCC_Define>RELEASE;TEST</DCC_Define>
+    <DCC_UnitSearchPath>_ScheduledTasks\;_BallonToolTip\</DCC_UnitSearchPath>
+    <DCC_ResourcePath>_ScheduledTasks\;_BallonToolTip\</DCC_ResourcePath>
+    <DCC_ObjPath>_ScheduledTasks\;_BallonToolTip\</DCC_ObjPath>
+    <DCC_IncludePath>_ScheduledTasks\;_BallonToolTip\</DCC_IncludePath>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType>VCLApplication</Borland.ProjectType>
+    <BorlandProject>
+<BorlandProject><Delphi.Personality><Parameters><Parameters Name="UseLauncher">False</Parameters><Parameters Name="LoadAllSymbols">True</Parameters><Parameters Name="LoadUnspecifiedSymbols">False</Parameters></Parameters><VersionInfo><VersionInfo Name="IncludeVerInfo">True</VersionInfo><VersionInfo Name="AutoIncBuild">False</VersionInfo><VersionInfo Name="MajorVer">14</VersionInfo><VersionInfo Name="MinorVer">11</VersionInfo><VersionInfo Name="Release">3</VersionInfo><VersionInfo Name="Build">1</VersionInfo><VersionInfo Name="Debug">False</VersionInfo><VersionInfo Name="PreRelease">False</VersionInfo><VersionInfo Name="Special">False</VersionInfo><VersionInfo Name="Private">False</VersionInfo><VersionInfo Name="DLL">False</VersionInfo><VersionInfo Name="Locale">1049</VersionInfo><VersionInfo Name="CodePage">1251</VersionInfo></VersionInfo><VersionInfoKeys><VersionInfoKeys Name="CompanyName">ШАТЕ-М плюс</VersionInfoKeys><VersionInfoKeys Name="FileDescription">Каталог ШАТЕ-М плюс</VersionInfoKeys><VersionInfoKeys Name="FileVersion">14.11.3.1</VersionInfoKeys><VersionInfoKeys Name="InternalName"></VersionInfoKeys><VersionInfoKeys Name="LegalCopyright">Частное предприятие "ШАТЕ-М плюс"</VersionInfoKeys><VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys><VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys><VersionInfoKeys Name="ProductName">Каталог ШАТЕ-М плюс</VersionInfoKeys><VersionInfoKeys Name="ProductVersion">141103.1</VersionInfoKeys><VersionInfoKeys Name="Comments">Prim;Optic;V;FIX;TD;Mirror;Kit;OO;Ext</VersionInfoKeys><VersionInfoKeys Name="OleSelfRegister">1</VersionInfoKeys><VersionInfoKeys Name="SpecialBuild"></VersionInfoKeys></VersionInfoKeys><Source><Source Name="MainSource">ShateMPlus.dpr</Source></Source><TypeLibOptions><TypeLibOptions Name="AutoRegisterTLB">False</TypeLibOptions><TypeLibOptions Name="AutoGenImportAssembly">False</TypeLibOptions></TypeLibOptions><Excluded_Packages>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <Excluded_Packages Name="$(BDS)\bin\dbisam425d2007r.bpl">DBISAM Run-Time Package</Excluded_Packages>
+      <Excluded_Packages Name="$(BDS)\bin\VirtualTreesD11.bpl">Virtual Treeview runtime package</Excluded_Packages>
+      <Excluded_Packages Name="$(BDS)\bin\Jcl110.bpl">JEDI Code Library RTL package</Excluded_Packages>
+      <Excluded_Packages Name="$(BDS)\bin\dcloffice2k100.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+      <Excluded_Packages Name="$(BDS)\bin\dclofficexp100.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+      <Excluded_Packages Name="$(BDS)\bin\dclbcbsmp100.bpl">Borland Sample Controls Design Time Package</Excluded_Packages>
+      <Excluded_Packages Name="$(BDS)\bin\bcboffice2k100.bpl">File c:\program files (x86)\codegear\rad studio\5.0\bin\bcboffice2k100.bpl not found</Excluded_Packages>
+      <Excluded_Packages Name="$(BDS)\bin\bcbofficexp100.bpl">File c:\program files (x86)\codegear\rad studio\5.0\bin\bcbofficexp100.bpl not found</Excluded_Packages>
+      <Excluded_Packages Name="c:\Users\Public\Documents\RAD Studio\5.0\Bpl\JvPluginD11D.bpl">JVCL Plugin Components</Excluded_Packages>
+      <Excluded_Packages Name="c:\Users\Public\Documents\RAD Studio\5.0\Bpl\db424b2007d.bpl">DBISAM Design-Time Package</Excluded_Packages>
+    </Excluded_Packages></Delphi.Personality><ModelSupport>False</ModelSupport></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+  <ItemGroup>
+    <DelphiCompile Include="ShateMPlus.dpr">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="BSDlgFrm.pas">
+      <Form>DialogForm</Form>
+    </DCCReference>
+    <DCCReference Include="BSForm.pas">
+      <Form>BaseForm</Form>
+    </DCCReference>
+    <DCCReference Include="BSList.pas">
+      <Form>BaseList</Form>
+    </DCCReference>
+    <DCCReference Include="MD5.pas" />
+    <DCCReference Include="MSMAPI_TLB.pas" />
+    <DCCReference Include="OneInstance32.pas" />
+    <DCCReference Include="RegExpr.pas" />
+    <DCCReference Include="URepairForm.pas">
+      <Form>RepairForm</Form>
+    </DCCReference>
+    <DCCReference Include="_Auto.pas">
+      <Form>Auto</Form>
+    </DCCReference>
+    <DCCReference Include="_AutoInf.pas">
+      <Form>AutoInfo</Form>
+    </DCCReference>
+    <DCCReference Include="_BallonToolTip\UBallonSupport.pas" />
+    <DCCReference Include="_BigPict.pas">
+      <Form>BigPicture</Form>
+    </DCCReference>
+    <DCCReference Include="_BrandAdd.pas">
+      <Form>AddBrand</Form>
+    </DCCReference>
+    <DCCReference Include="_BrandMap.pas">
+      <Form>BrandMap</Form>
+    </DCCReference>
+    <DCCReference Include="_BrDsSet.pas">
+      <Form>BrandDiscSetup</Form>
+    </DCCReference>
+    <DCCReference Include="_BrndSet.pas">
+      <Form>TDBrandsSetup</Form>
+    </DCCReference>
+    <DCCReference Include="_ChangesInBase.pas">
+      <Form>ChangesInBase</Form>
+    </DCCReference>
+    <DCCReference Include="_ClIDEd.pas">
+      <Form>ClientIDEdit</Form>
+    </DCCReference>
+    <DCCReference Include="_ClIDs.pas">
+      <Form>ClientIDs</Form>
+    </DCCReference>
+    <DCCReference Include="_ColumnView.pas">
+      <Form>CulumnView</Form>
+    </DCCReference>
+    <DCCReference Include="_Common\RssTools.pas" />
+    <DCCReference Include="_Common\_CommonTypes.pas" />
+    <DCCReference Include="_Common\_LocalVersionFuncts.pas" />
+    <DCCReference Include="_ConfigDiffProfitForm.pas">
+      <Form>ConfigDiffProfitForm</Form>
+    </DCCReference>
+    <DCCReference Include="_ConfigRoundingForm.pas">
+      <Form>ConfigRoundingForm</Form>
+    </DCCReference>
+    <DCCReference Include="_Contracts.pas">
+      <Form>ContractsForm</Form>
+    </DCCReference>
+    <DCCReference Include="_CSVReader.pas" />
+    <DCCReference Include="_Data.pas">
+      <Form>Data</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="_Downloader.pas" />
+    <DCCReference Include="_ErrReport.pas">
+      <Form>ErrReportForm</Form>
+    </DCCReference>
+    <DCCReference Include="_FlatSpr.pas">
+      <Form>FlatSpr</Form>
+    </DCCReference>
+    <DCCReference Include="_grsetup.pas">
+      <Form>MyGroupSetup</Form>
+    </DCCReference>
+    <DCCReference Include="_Info.pas">
+      <Form>Info</Form>
+    </DCCReference>
+    <DCCReference Include="_LoadMess.pas">
+      <Form>LoadingMess</Form>
+    </DCCReference>
+    <DCCReference Include="_Main.pas">
+      <Form>Main</Form>
+    </DCCReference>
+    <DCCReference Include="_MainPar.pas">
+      <Form>MainParam</Form>
+    </DCCReference>
+    <DCCReference Include="_MessUpdate.pas">
+      <Form>MessUpdate</Form>
+    </DCCReference>
+    <DCCReference Include="_MfaSet.pas">
+      <Form>ManufacturersSetup</Form>
+    </DCCReference>
+    <DCCReference Include="_MyBrand.pas">
+      <Form>MyBrandsSetup</Form>
+    </DCCReference>
+    <DCCReference Include="_NotifyLog.pas">
+      <Form>NotifyLogForm</Form>
+    </DCCReference>
+    <DCCReference Include="_OrderAnswer.pas">
+      <Form>OrderAnswer</Form>
+    </DCCReference>
+    <DCCReference Include="_OrderEd.pas">
+      <Form>OrderEdit</Form>
+    </DCCReference>
+    <DCCReference Include="_OrderedInfo.pas">
+      <Form>FormOrderedInfo</Form>
+    </DCCReference>
+    <DCCReference Include="_OrderOnlyInfoForm.pas">
+      <Form>OrderOnlyInfoForm</Form>
+    </DCCReference>
+    <DCCReference Include="_OrderRp.pas">
+      <Form>OrderReport</Form>
+    </DCCReference>
+    <DCCReference Include="_Orders.pas">
+      <Form>Orders</Form>
+    </DCCReference>
+    <DCCReference Include="_Param.pas">
+      <Form>Param</Form>
+    </DCCReference>
+    <DCCReference Include="_Passw.pas">
+      <Form>Password</Form>
+    </DCCReference>
+    <DCCReference Include="_PrgInfo.pas">
+      <Form>ProgInfo</Form>
+    </DCCReference>
+    <DCCReference Include="_PrintCOParams.pas">
+      <Form>PrintCOParamsForm</Form>
+    </DCCReference>
+    <DCCReference Include="_QMovEd.pas">
+      <Form>QuantityMoveEdit</Form>
+    </DCCReference>
+    <DCCReference Include="_QTxAttr.pas">
+      <Form>QuantTextAttr</Form>
+    </DCCReference>
+    <DCCReference Include="_QuantEd.pas">
+      <Form>QuantityEdit</Form>
+    </DCCReference>
+    <DCCReference Include="_QuestionToShate.pas">
+      <Form>QuestionToShate</Form>
+    </DCCReference>
+    <DCCReference Include="_RetDocAnswer.pas">
+      <Form>RetDocAnswer</Form>
+    </DCCReference>
+    <DCCReference Include="_ReturnDocED.pas">
+      <Form>ReturnDocED</Form>
+    </DCCReference>
+    <DCCReference Include="_ReturnDocPos.pas">
+      <Form>ReturnDocPos</Form>
+    </DCCReference>
+    <DCCReference Include="_ScheduledTasks\_ScheduledTask.pas" />
+    <DCCReference Include="_ScheduledTasks\_TaskScheduler.pas" />
+    <DCCReference Include="_ScheduledTasks\_Task_F7.pas" />
+    <DCCReference Include="_ScheduledTasks\_Task_GetDirectory.pas" />
+    <DCCReference Include="_ScheduledTasks\_Task_GetDiscounts.pas" />
+    <DCCReference Include="_ScheduledTasks\_Task_GetOrders.pas" />
+    <DCCReference Include="_ScheduledTasks\_Task_GetOrdersStatus.pas" />
+    <DCCReference Include="_ScheduledTasks\_Task_GetRates.pas" />
+    <DCCReference Include="_ScheduledTasks\_Task_Rss.pas" />
+    <DCCReference Include="_SelectDelivery.pas">
+      <Form>SelectDelivery</Form>
+    </DCCReference>
+    <DCCReference Include="_SelectDetail.pas">
+      <Form>SelectDetail</Form>
+    </DCCReference>
+    <DCCReference Include="_SelTDLoad.pas">
+      <Form>SelectTDLoad</Form>
+    </DCCReference>
+    <DCCReference Include="_ServSetup.pas">
+      <Form>ServSetup</Form>
+    </DCCReference>
+    <DCCReference Include="_ServSpl.pas">
+      <Form>ServerSplash</Form>
+    </DCCReference>
+    <DCCReference Include="_Splash.pas">
+      <Form>Splash</Form>
+    </DCCReference>
+    <DCCReference Include="_SQLQry.pas">
+      <Form>SQLQuery</Form>
+    </DCCReference>
+    <DCCReference Include="_SrchGrd.pas">
+      <Form>SearchGrid</Form>
+    </DCCReference>
+    <DCCReference Include="_TblView.pas">
+      <Form>TableView</Form>
+    </DCCReference>
+    <DCCReference Include="_TestForQuants.pas">
+      <Form>TestForQuants</Form>
+    </DCCReference>
+    <DCCReference Include="_TireCalcForm.pas">
+      <Form>TireCalcForm</Form>
+    </DCCReference>
+    <DCCReference Include="_TxtAttr.pas">
+      <Form>TextAttr</Form>
+    </DCCReference>
+    <DCCReference Include="_UpdateClientsParams.pas">
+      <Form>UpdateClientsParamsForm</Form>
+    </DCCReference>
+    <DCCReference Include="_Updater.pas" />
+    <DCCReference Include="_UpdateReport.pas">
+      <Form>FormUpdateReport</Form>
+    </DCCReference>
+    <DCCReference Include="_UpdatesWindows.pas">
+      <Form>UpdatesWindows</Form>
+    </DCCReference>
+    <DCCReference Include="_VerInfo.pas">
+      <Form>VersionInfo</Form>
+    </DCCReference>
+  </ItemGroup>
+</Project>
