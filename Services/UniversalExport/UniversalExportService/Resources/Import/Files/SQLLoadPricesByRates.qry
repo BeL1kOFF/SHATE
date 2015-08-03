@@ -1,0 +1,35 @@
+DECLARE @BYR as FLOAT
+DECLARE @RUR as FLOAT
+DECLARE @USD as FLOAT
+
+SET @BYR=1/##RATEBYR##
+SET @RUR=1/##RATERUR##
+SET @USD=1/##RATEUSD##
+
+
+ 
+select ITEM_ID, ##ID_WH## as ID_WH, ##PRGRPID## as ID_PriceGroup, MINQ, SALE, CY, PRICE, TERMLESS 		
+  from
+(SELECT
+  ROW_NUMBER() OVER(PARTITION BY sp.[Item No_] ORDER BY CASE sp.[Currency Code] WHEN '' THEN 1 WHEN 'RUR' THEN @RUR WHEN 'USD' THEN @USD WHEN 'BYR' THEN @BYR END*sp.[Unit Price] ASC) AS alt,
+  [Item No_] AS ITEM_ID,
+  CAST([Minimum Quantity] AS int) AS MINQ,
+  1 -[Allow Line Disc_] AS SALE,
+  CASE [Currency Code]
+    WHEN '' THEN 'EUR'
+	WHEN 'RUB' THEN 'RUR'
+    ELSE [Currency Code]
+  END AS CY,
+  [Unit Price] AS PRICE,  
+  CASE WHEN "Ending Date" < "Starting Date" THEN 1 ELSE 0 END as TERMLESS
+FROM
+  [##Firm##$Sales Price] sp
+WHERE  
+  "Unit Price" >0 AND
+  "Sales Code" = '##PRICEGROUP##' AND
+ "Starting Date" <= GETDATE() 
+  AND
+  ("Ending Date" >= GETDATE() OR
+   "Ending Date" < "Starting Date")) prc
+WHERE prc.alt = 1
+

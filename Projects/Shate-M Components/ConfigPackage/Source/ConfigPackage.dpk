@@ -1,0 +1,45 @@
+package ConfigPackage;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$DEFINE Platform32bit}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Библиотека работы с файлами конфигурации через RTTI'}
+{$RUNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl;
+
+contains
+  ConfigPackage.Logic.TCustomConfiguration in 'Logic\Classes\ConfigPackage.Logic.TCustomConfiguration.pas',
+  ConfigPackage.Logic.TCustomSection in 'Logic\Classes\ConfigPackage.Logic.TCustomSection.pas',
+  ConfigPackage.Logic.TCustomSectionClass in 'Logic\Classes\ConfigPackage.Logic.TCustomSectionClass.pas',
+  ConfigPackage.Logic.TDefaultValueAttribute in 'Logic\Classes\ConfigPackage.Logic.TDefaultValueAttribute.pas',
+  ConfigPackage.Logic.TSectionAttribute in 'Logic\Classes\ConfigPackage.Logic.TSectionAttribute.pas';
+
+end.
+
+

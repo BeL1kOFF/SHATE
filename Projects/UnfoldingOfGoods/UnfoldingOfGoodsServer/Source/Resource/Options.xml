@@ -1,0 +1,19 @@
+<Options>
+  <Logging>
+    <IsLog>1</IsLog>
+    <IsLogMethod>0</IsLogMethod>
+    <ToFile>1</ToFile>
+    <ToCodeSite>1</ToCodeSite>
+  </Logging>
+  <Server>
+    <Port>2085</Port>
+    <SessionExpired>600</SessionExpired>
+    <WebService>
+      <URL>http://svbyprisd011:7047/DynamicsNAV/WS/Shate-M/Codeunit/WmsRoutingWebServices</URL>
+      <ConnectTimeout>10000</ConnectTimeout>
+      <SendTimeout>30000</SendTimeout>
+      <ReceiveTimeout>30000</ReceiveTimeout>
+    </WebService>
+    <ClientVersion>1000.1000.1000.1000</ClientVersion>
+  </Server>
+</Options>

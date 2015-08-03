@@ -1,0 +1,50 @@
+package ERP.Package.Components;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Shate-M ERP Components'}
+{$RUNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  FireDAC,
+  cxGridRS20,
+  ERP.Package.CustomInterface,
+  ERP.Package.CustomGlobalFunctions,
+  dxBarRS20,
+  ShateM.Components.FireDACTempTable,
+  vclie;
+
+contains
+  ERP.Package.Components.TCatalogExportExcel in 'Source\ERP.Package.Components.TCatalogExportExcel.pas',
+  ERP.Package.Components.UI.TExportForm in 'Source\ERP.Package.Components.UI.TExportForm.pas' {ExportForm},
+  ERP.Package.Components.TCatalogImportExcel in 'Source\ERP.Package.Components.TCatalogImportExcel.pas',
+  ERP.Package.Components.UI.TImportForm in 'Source\ERP.Package.Components.UI.TImportForm.pas' {ImportForm},
+  ERP.Package.Components.TERPWebBrowser in 'Source\ERP.Package.Components.TERPWebBrowser.pas',
+  ERP.Package.Components.TERPWebBrowserCollections in 'Source\ERP.Package.Components.TERPWebBrowserCollections.pas',
+  ERP.Package.Components.TERPWebBrowserOptions in 'Source\ERP.Package.Components.TERPWebBrowserOptions.pas';
+
+end.

@@ -1,0 +1,201 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{95202867-43F6-49FB-ACC0-9FDE552E7B2F}</ProjectGuid>
+        <ProjectVersion>15.4</ProjectVersion>
+        <FrameworkType>VCL</FrameworkType>
+        <MainSource>AnalogCodeCC.dpr</MainSource>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Release</Config>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1</TargetedPlatforms>
+        <AppType>Application</AppType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <SanitizedProjectName>AnalogCodeCC</SanitizedProjectName>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
+        <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
+        <DCC_UsePackage>AnyDAC_PhysADS_D16;AnyDAC_Comp_D16;DBXInterBaseDriver;DataSnapServer;DataSnapCommon;DbxCommonDriver;dbxcds;CustomIPTransport;dsnap;AnyDAC_PhysSQLITE_D16;IndyCore;IPIndyImpl;bindcompfmx;dbrtl;bindcomp;inetdb;xmlrtl;ibxpress;bindengine;soaprtl;DBXInformixDriver;DBXFirebirdDriver;inet;AnyDAC_PhysMSAcc_D16;DBXSybaseASADriver;AnyDAC_GUIxForms_D16;dbexpress;AnyDAC_PhysPg_D16;AnyDAC_PhysDb2_D16;IndySystem;AnyDAC_Phys_D16;DataSnapClient;AnyDAC_PhysMSSQL_D16;DataSnapProviderClient;DBXOracleDriver;AnyDAC_PhysOracle_D16;AnyDAC_PhysMySQL_D16;inetdbxpress;AnyDAC_PhysODBC_D16;rtl;DbxClientDriver;AnyDAC_PhysASA_D16;IndyProtocols;DBXMySQLDriver;AnyDAC_ComI_D16;AnyDAC_PhysIB_D16;DataSnapIndy10ServerTransport;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
+        <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
+        <DCC_UsePackage>fsADO16;cxPageControlD16;dxComnD16;dxPSCoreD16;frxBDE16;dclfs16;dcldxSkinsCoreD16;cxSpreadSheetD16;dxSkinLiquidSkyD16;dxSkinSilverD16;dxSkinHighContrastD16;fsIBX16;dclfsBDE16;vclimg;dclfsADO16;dclfsIBX16;dxSkinOffice2010SilverD16;dxSkinOffice2010BlackD16;vcldb;cxPivotGridChartD16;dxRibbonD16;cxVerticalGridD16;dxSkinLilianD16;dxThemeD16;dxSkinBlueD16;cxSchedulerGridD16;cxTreeListdxBarPopupMenuD16;dxSkinOffice2010BlueD16;dxGDIPlusD16;CloudService;dxPSdxDBTVLnkD16;dxSkinTheAsphaltWorldD16;dclfsDB16;dxSkinSevenD16;cxTreeListD16;cxLibraryD16;dxPSdxDBOCLnkD16;dxPScxSchedulerLnkD16;dxSkinPumpkinD16;dxBarExtItemsD16;dclfrx16;dxLayoutControlD16;dxDockingD16;vcldbx;dxSkinXmas2008BlueD16;dxSkinMcSkinD16;cxPivotGridD16;cxEditorsD16;dxPScxCommonD16;DBXOdbcDriver;dxPSLnksD16;dxBarExtDBItemsD16;dxSkinsCoreD16;dxmdsD16;fsBDE16;frxDB16;fs16;vclactnband;bindcompvcl;dxSkinSummer2008D16;dxTabbedMDID16;vclie;dxPSdxLCLnkD16;dxSkinSharpPlusD16;dxSkinBlackD16;dsnapcon;vclx;dxSkinsdxBarPainterD16;dxPScxTLLnkD16;cxSchedulerD16;frxIBX16;dxSkinValentineD16;dxSkinWhiteprintD16;cxPageControldxBarPopupMenuD16;dxSkinOffice2007SilverD16;dxPSdxFCLnkD16;cxBarEditItemD16;dxNavBarD16;dxSkinSpringTimeD16;inetdbbde;vclib;dxSkinOffice2007BlueD16;dxSkinsdxNavBarPainterD16;cxPivotGridOLAPD16;dxdbtrD16;DBXSybaseASEDriver;dxBarDBNavD16;dxSpellCheckerD16;dxSkinGlassOceansD16;dxSkinStardustD16;dxCoreD16;dxorgcD16;vcldsnap;dxSkinDarkSideD16;dxSkinscxPCPainterD16;dxPScxExtCommonD16;DBXDb2Driver;frxADO16;vclribbon;frxe16;dxdborD16;dxSkinscxSchedulerPainterD16;vcl;dxPSdxOCLnkD16;dxPScxSSLnkD16;DBXMSSQLDriver;dxSkinCoffeeD16;dclfrxDB16;dxSkinDarkRoomD16;dxPScxVGridLnkD16;dxPScxPivotGridLnkD16;webdsnap;dxBarD16;dxtrmdD16;dxPScxPCProdD16;dxSkiniMaginaryD16;dxSkinDevExpressStyleD16;dxSkinOffice2007BlackD16;adortl;dxPScxGridLnkD16;dxSkinLondonLiquidSkyD16;frxDBX16;frx16;dxPsPrVwAdvD16;dxSkinOffice2007GreenD16;dxSkinSharpD16;dxSkinSevenClassicD16;svnui;dxSkinsdxDLPainterD16;dxPSPrVwRibbonD16;dxSkinBlueprintD16;dxSkinMoneyTwinsD16;dxSkinDevExpressDarkStyleD16;dxSkinCaramelD16;vcltouch;websnap;dxSkinFoggyD16;VclSmp;fsDB16;dxFlowChartD16;dxSkinsdxRibbonPainterD16;DataSnapConnectors;dxSkinVS2010D16;cxGridD16;dxSkinOffice2007PinkD16;svn;bdertl;$(DCC_UsePackage)</DCC_UsePackage>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <DCC_UsePackage>cxPageControlD16;dxComnD16;dxPSCoreD16;dcldxSkinsCoreD16;cxSpreadSheetD16;dxSkinLiquidSkyD16;dxSkinSilverD16;dxSkinHighContrastD16;vclimg;dxSkinOffice2010SilverD16;dxSkinOffice2010BlackD16;vcldb;dxRibbonD16;cxVerticalGridD16;dxSkinLilianD16;dxThemeD16;dxSkinBlueD16;cxTreeListdxBarPopupMenuD16;dxSkinOffice2010BlueD16;dxGDIPlusD16;dxPSdxDBTVLnkD16;dxSkinTheAsphaltWorldD16;dxSkinSevenD16;cxTreeListD16;cxLibraryD16;dxPSdxDBOCLnkD16;dxPScxSchedulerLnkD16;dxSkinPumpkinD16;dxBarExtItemsD16;dxLayoutControlD16;dxDockingD16;dxSkinXmas2008BlueD16;dxSkinMcSkinD16;cxPivotGridD16;cxEditorsD16;dxPScxCommonD16;DBXOdbcDriver;dxPSLnksD16;dxBarExtDBItemsD16;dxSkinsCoreD16;dxmdsD16;vclactnband;bindcompvcl;dxSkinSummer2008D16;dxTabbedMDID16;vclie;dxPSdxLCLnkD16;dxSkinSharpPlusD16;dxSkinBlackD16;dsnapcon;vclx;dxSkinsdxBarPainterD16;dxPScxTLLnkD16;cxSchedulerD16;dxSkinValentineD16;dxSkinWhiteprintD16;cxPageControldxBarPopupMenuD16;dxSkinOffice2007SilverD16;dxPSdxFCLnkD16;cxBarEditItemD16;dxNavBarD16;dxSkinSpringTimeD16;dxSkinOffice2007BlueD16;dxSkinsdxNavBarPainterD16;cxPivotGridOLAPD16;dxdbtrD16;DBXSybaseASEDriver;dxBarDBNavD16;dxSkinGlassOceansD16;dxSkinStardustD16;dxCoreD16;dxorgcD16;vcldsnap;dxSkinDarkSideD16;dxSkinscxPCPainterD16;dxPScxExtCommonD16;DBXDb2Driver;dxdborD16;dxSkinscxSchedulerPainterD16;vcl;dxPSdxOCLnkD16;dxPScxSSLnkD16;DBXMSSQLDriver;dxSkinCoffeeD16;dxSkinDarkRoomD16;dxPScxVGridLnkD16;dxPScxPivotGridLnkD16;webdsnap;dxBarD16;dxPScxPCProdD16;dxSkiniMaginaryD16;dxSkinDevExpressStyleD16;dxSkinOffice2007BlackD16;adortl;dxPScxGridLnkD16;dxSkinLondonLiquidSkyD16;dxPsPrVwAdvD16;dxSkinOffice2007GreenD16;dxSkinSharpD16;dxSkinSevenClassicD16;dxSkinsdxDLPainterD16;dxPSPrVwRibbonD16;dxSkinBlueprintD16;dxSkinMoneyTwinsD16;dxSkinDevExpressDarkStyleD16;dxSkinCaramelD16;vcltouch;websnap;dxSkinFoggyD16;VclSmp;dxFlowChartD16;dxSkinsdxRibbonPainterD16;dxSkinVS2010D16;cxGridD16;dxSkinOffice2007PinkD16;$(DCC_UsePackage)</DCC_UsePackage>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1049</VerInfo_Locale>
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+        <DCC_RemoteDebug>true</DCC_RemoteDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
+        <VerInfo_Build>4</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.4;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <DCC_ExeOutput>.\Bin\$(Platform)\</DCC_ExeOutput>
+        <DCC_DcuOutput>.\Bin\$(Platform)\DCU\</DCC_DcuOutput>
+        <PostBuildEvent><![CDATA[COPY /Y "$(PROJECTDIR)\Source\Resource\Options.xml" "$(OUTPUTDIR)Options.xml"
+COPY /Y "$(PROJECTDIR)\Source\Resource\*.sql" "$(OUTPUTDIR)SQL\*.sql"
+$(PostBuildEvent)]]></PostBuildEvent>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_RemoteDebug>false</DCC_RemoteDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1049</VerInfo_Locale>
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
+        <VerInfo_Build>9</VerInfo_Build>
+        <Icon_MainIcon>Source\Img\arrow_cross_up.ico</Icon_MainIcon>
+        <DCC_ExeOutput>.\Bin\$(Platform)\</DCC_ExeOutput>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=Shate-M;FileDescription=;FileVersion=1.0.0.9;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=AnalogCodeC&amp;C;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <PostBuildEvent><![CDATA[COPY /Y "$(PROJECTDIR)\Source\Resource\Options.xml" "$(OUTPUTDIR)Options.xml"
+COPY /Y "$(PROJECTDIR)\Source\Resource\*.sql" "$(OUTPUTDIR)SQL\*.sql"
+$(PostBuildEvent)]]></PostBuildEvent>
+        <DCC_DcuOutput>.\Bin\$(Platform)\DCU\</DCC_DcuOutput>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="Source\Core\UI\AnalogCodeCC.UI.Main.pas">
+            <Form>frmMain</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Source\Core\Logic\AnalogCodeCC.Logic.OptionsXML.pas"/>
+        <DCCReference Include="Source\Core\Logic\AnalogCodeCC.Logic.ISQLCursor.pas"/>
+        <DCCReference Include="Source\Core\Logic\AnalogCodeCC.Logic.HelpFunc.pas"/>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Delphi.Personality>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+                    <VersionInfo Name="MajorVer">1</VersionInfo>
+                    <VersionInfo Name="MinorVer">0</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">0</VersionInfo>
+                    <VersionInfo Name="Debug">False</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">False</VersionInfo>
+                    <VersionInfo Name="Locale">1049</VersionInfo>
+                    <VersionInfo Name="CodePage">1251</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName"/>
+                    <VersionInfoKeys Name="FileDescription"/>
+                    <VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName"/>
+                    <VersionInfoKeys Name="LegalCopyright"/>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename"/>
+                    <VersionInfoKeys Name="ProductName"/>
+                    <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                </VersionInfoKeys>
+                <Source>
+                    <Source Name="MainSource">AnalogCodeCC.dpr</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k200.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp200.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <Deployment/>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+    <Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+    <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='Win32'">
+        <PreBuildEvent/>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent>COPY /Y &quot;$(PROJECTDIR)\Source\Resource\Options.xml&quot; &quot;$(OUTPUTDIR)Options.xml&quot;&amp;&amp;COPY /Y &quot;$(PROJECTDIR)\Source\Resource\*.sql&quot; &quot;$(OUTPUTDIR)SQL\*.sql&quot;</PostBuildEvent>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='Win32'">
+        <PreBuildEvent/>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent>COPY /Y &quot;$(PROJECTDIR)\Source\Resource\Options.xml&quot; &quot;$(OUTPUTDIR)Options.xml&quot;&amp;&amp;COPY /Y &quot;$(PROJECTDIR)\Source\Resource\*.sql&quot; &quot;$(OUTPUTDIR)SQL\*.sql&quot;</PostBuildEvent>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+</Project>

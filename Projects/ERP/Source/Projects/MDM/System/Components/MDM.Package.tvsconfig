@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<TgConfig Version="3" SubLevelDisabled="False">
+  <Option Name="namespaceFolder.MDM" Type="System.String" Value="MDM" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.MDM.Package.Components.CatalogTableViewClean" Type="System.String" Value="MDM\Package\Components\CatalogTableViewClean" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.MDM.Package.Components.CustomCatalogTableView" Type="System.String" Value="MDM\Package\Components\CustomCatalogTableView" Category="General" IsBrowsable="False" />
+  <Option Name="Gendoc.Images" Type="System.Boolean" Value="True" Category="General" IsBrowsable="False" />
+  <Option Name="Gendoc.NavigationTree" Type="System.Boolean" Value="True" Category="General" IsBrowsable="False" />
+  <Option Name="Gendoc.LaunchBrowser" Type="System.Boolean" Value="True" Category="General" IsBrowsable="False" />
+  <Option Name="Gendoc.OutputFolder" Type="System.String" Value="D:\Работа\SVN\branches\Matusevich\MDM3\System\Components\out\doc" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.MDM.Package.Components.CatalogTableViewCleanOptionsMDM" Type="System.String" Value="MDM\Package\Components\CatalogTableViewCleanOptionsMDM" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.MDM.Package.Components.CleanOptionsMDMAction" Type="System.String" Value="MDM\Package\Components\CleanOptionsMDMAction" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.MDM.Package.Components" Type="System.String" Value="MDM\Package\Components" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.MDM.Package" Type="System.String" Value="MDM\Package" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.MDM.Package.Components.CustomOptionsMDMAction" Type="System.String" Value="MDM\Package\Components\CustomOptionsMDMAction" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.MDM.Package.Components.Types" Type="System.String" Value="MDM\Package\Components\Types" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.MDM.Package.Components.CustomCatalogTableViewOptionsMDM" Type="System.String" Value="MDM\Package\Components\CustomCatalogTableViewOptionsMDM" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.MDM.Package.Components.DraftOptionsMDMAction" Type="System.String" Value="MDM\Package\Components\DraftOptionsMDMAction" Category="General" IsBrowsable="False" />
+</TgConfig>

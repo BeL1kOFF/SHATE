@@ -1,0 +1,7 @@
+UPDATE Exports 
+SET Emailflag = 1,  email = '##Email##'
+    ,blocked = 0, Interval = 1440, NEXT_Export = DATEADD(hh, 12, GetDate())
+    , CY = '##CY##'
+ WHERE web=1
+     AND ID_Client =##ClientID##
+     AND ID_WH = ##WHID##

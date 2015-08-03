@@ -1,0 +1,23 @@
+SELECT  
+		##IDD## AS IDD,
+		CASE ig0.[Item Group Type Code] 
+			WHEN '“Œ¬À»Õ»ﬂ' THEN 1 
+			WHEN '“Ã' THEN 2 
+			ELSE 0 
+		END AS IDGroupType,
+		
+		ig0.nodeid AS node0
+
+        ,ig0.Code AS g0		
+		,ig0.[level] AS level0
+        
+        ,ig1.Code AS g1
+		,ig1.[level] AS level1        
+        
+        ,ig2.Code AS g2
+		,ig2.[level] AS level2       
+         
+FROM [##Firm##$Item Group] as ig0
+ left join [##Firm##$Item Group] as ig1 on ig1.[parentid] = ig0.[nodeid]
+ left join [##Firm##$Item Group] as ig2 on ig2.[parentid] = ig1.[nodeid]
+WHERE ig0.[Item Group Type Code] IN ('“Ã','“Œ¬À»Õ»ﬂ')

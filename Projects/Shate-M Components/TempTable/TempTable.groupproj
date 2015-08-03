@@ -1,0 +1,84 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{C4AADEE0-51F1-4986-B241-CFF9A41F9240}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="CustomTempTable\ShateM.Components.CustomTempTable.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ADOTempTable\ShateM.Components.ADOTempTable.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ADOTempTable\ShateM.Components.ADOTempTableDesign.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FireDACTempTable\ShateM.Components.FireDACTempTable.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FireDACTempTable\ShateM.Components.FireDACTempTableDesign.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ShateM_Components_CustomTempTable">
+        <MSBuild Projects="CustomTempTable\ShateM.Components.CustomTempTable.dproj"/>
+    </Target>
+    <Target Name="ShateM_Components_CustomTempTable:Clean">
+        <MSBuild Projects="CustomTempTable\ShateM.Components.CustomTempTable.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ShateM_Components_CustomTempTable:Make">
+        <MSBuild Projects="CustomTempTable\ShateM.Components.CustomTempTable.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ShateM_Components_ADOTempTable">
+        <MSBuild Projects="ADOTempTable\ShateM.Components.ADOTempTable.dproj"/>
+    </Target>
+    <Target Name="ShateM_Components_ADOTempTable:Clean">
+        <MSBuild Projects="ADOTempTable\ShateM.Components.ADOTempTable.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ShateM_Components_ADOTempTable:Make">
+        <MSBuild Projects="ADOTempTable\ShateM.Components.ADOTempTable.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ShateM_Components_ADOTempTableDesign">
+        <MSBuild Projects="ADOTempTable\ShateM.Components.ADOTempTableDesign.dproj"/>
+    </Target>
+    <Target Name="ShateM_Components_ADOTempTableDesign:Clean">
+        <MSBuild Projects="ADOTempTable\ShateM.Components.ADOTempTableDesign.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ShateM_Components_ADOTempTableDesign:Make">
+        <MSBuild Projects="ADOTempTable\ShateM.Components.ADOTempTableDesign.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ShateM_Components_FireDACTempTable">
+        <MSBuild Projects="FireDACTempTable\ShateM.Components.FireDACTempTable.dproj"/>
+    </Target>
+    <Target Name="ShateM_Components_FireDACTempTable:Clean">
+        <MSBuild Projects="FireDACTempTable\ShateM.Components.FireDACTempTable.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ShateM_Components_FireDACTempTable:Make">
+        <MSBuild Projects="FireDACTempTable\ShateM.Components.FireDACTempTable.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ShateM_Components_FireDACTempTableDesign">
+        <MSBuild Projects="FireDACTempTable\ShateM.Components.FireDACTempTableDesign.dproj"/>
+    </Target>
+    <Target Name="ShateM_Components_FireDACTempTableDesign:Clean">
+        <MSBuild Projects="FireDACTempTable\ShateM.Components.FireDACTempTableDesign.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ShateM_Components_FireDACTempTableDesign:Make">
+        <MSBuild Projects="FireDACTempTable\ShateM.Components.FireDACTempTableDesign.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ShateM_Components_CustomTempTable;ShateM_Components_ADOTempTable;ShateM_Components_ADOTempTableDesign;ShateM_Components_FireDACTempTable;ShateM_Components_FireDACTempTableDesign"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ShateM_Components_CustomTempTable:Clean;ShateM_Components_ADOTempTable:Clean;ShateM_Components_ADOTempTableDesign:Clean;ShateM_Components_FireDACTempTable:Clean;ShateM_Components_FireDACTempTableDesign:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ShateM_Components_CustomTempTable:Make;ShateM_Components_ADOTempTable:Make;ShateM_Components_ADOTempTableDesign:Make;ShateM_Components_FireDACTempTable:Make;ShateM_Components_FireDACTempTableDesign:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

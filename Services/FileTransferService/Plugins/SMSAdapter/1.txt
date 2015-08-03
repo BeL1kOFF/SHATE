@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<Document Type="DELIVERY_SMS">
+  <PhoneNumber>375298513630</PhoneNumber>
+  <SmsText>вҐбв</SmsText>
+</Document>

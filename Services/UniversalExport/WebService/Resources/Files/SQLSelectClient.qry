@@ -1,0 +1,3 @@
+SELECT TOP 1 * FROM Clients 
+WHERE ID_WH = ##WHID## AND NAV_Client = '##ClientNAV##' 
+ ORDER BY ID DESC

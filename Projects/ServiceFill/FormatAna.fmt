@@ -1,0 +1,9 @@
+11.0
+7
+1	SQLCHAR	0	50	";"	1	cat_br_descr	RAW
+2	SQLCHAR	0	50	";"	2	cat_code	RAW
+3	SQLCHAR	0	50	";"	3	an_br_descr	RAW
+4	SQLCHAR	0	50	";"	4	an_code	RAW
+5	SQLCHAR	0	50	";"	5	short_cat_code	RAW
+6	SQLCHAR	0	50	";"	6	short_an_code	RAW
+7	SQLCHAR	0	50	"\r\n"	7	locked	RAW

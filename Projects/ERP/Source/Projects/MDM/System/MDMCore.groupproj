@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{E68F004B-09DA-4BD2-9EC8-1E965EBA1DA3}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Components\MDM.Package.Components.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Components\MDM.Package.ComponentsDesign.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CustomForm\MDM.Package.CustomForm.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Classes\MDM.Package.Classes.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="MDM_Package_Components">
+        <MSBuild Projects="Components\MDM.Package.Components.dproj"/>
+    </Target>
+    <Target Name="MDM_Package_Components:Clean">
+        <MSBuild Projects="Components\MDM.Package.Components.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MDM_Package_Components:Make">
+        <MSBuild Projects="Components\MDM.Package.Components.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MDM_Package_ComponentsDesign">
+        <MSBuild Projects="Components\MDM.Package.ComponentsDesign.dproj"/>
+    </Target>
+    <Target Name="MDM_Package_ComponentsDesign:Clean">
+        <MSBuild Projects="Components\MDM.Package.ComponentsDesign.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MDM_Package_ComponentsDesign:Make">
+        <MSBuild Projects="Components\MDM.Package.ComponentsDesign.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MDM_Package_CustomForm">
+        <MSBuild Projects="CustomForm\MDM.Package.CustomForm.dproj"/>
+    </Target>
+    <Target Name="MDM_Package_CustomForm:Clean">
+        <MSBuild Projects="CustomForm\MDM.Package.CustomForm.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MDM_Package_CustomForm:Make">
+        <MSBuild Projects="CustomForm\MDM.Package.CustomForm.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MDM_Package_Classes">
+        <MSBuild Projects="Classes\MDM.Package.Classes.dproj"/>
+    </Target>
+    <Target Name="MDM_Package_Classes:Clean">
+        <MSBuild Projects="Classes\MDM.Package.Classes.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MDM_Package_Classes:Make">
+        <MSBuild Projects="Classes\MDM.Package.Classes.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="MDM_Package_Components;MDM_Package_ComponentsDesign;MDM_Package_CustomForm;MDM_Package_Classes"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="MDM_Package_Components:Clean;MDM_Package_ComponentsDesign:Clean;MDM_Package_CustomForm:Clean;MDM_Package_Classes:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="MDM_Package_Components:Make;MDM_Package_ComponentsDesign:Make;MDM_Package_CustomForm:Make;MDM_Package_Classes:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

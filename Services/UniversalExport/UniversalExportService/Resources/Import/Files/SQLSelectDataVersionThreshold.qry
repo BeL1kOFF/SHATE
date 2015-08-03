@@ -1,0 +1,6 @@
+SELECT Threshold 
+FROM DataVersions
+WHERE Tag = '##Tag##'
+	/*##InfoCondition##*/
+	AND DomainNo = ##DomainID##
+		

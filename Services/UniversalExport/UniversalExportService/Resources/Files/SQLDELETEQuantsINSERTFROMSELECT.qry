@@ -1,0 +1,77 @@
+DECLARE @PRICELISTCY as char(3)
+		SET @PRICELISTCY = '##CYCODE##'
+
+DECLARE @IDWH as INT
+		SET @IDWH = ##IDWH##
+
+DECLARE @PRICEGROUP as INT
+		SET @PRICEGROUP = ##PRCGRP##
+
+DECLARE @DOMAIN as INT
+		SET @DOMAIN = ##DOMAIN##		
+		
+--DECLARE @PRCGRP	as INT	
+--		SET @PRCGRP = @IDWH*SIGN(ABS(@IDWH-@PRICEGROUP))
+SET NOCOUNT ON;
+SET XACT_ABORT ON;
+DELETE FROM QUANTS WHERE  [ID_WH]=@IDWH AND [PriceGroupDomain]=@PRICEGROUP  AND [CY]=@PRICELISTCY AND [ADDS] = 0
+		
+INSERT INTO [Quants]
+           ([ID_WH]
+           ,[PriceGroupDomain]
+           ,[ID_Item]
+           ,[QNTY0]
+		   ,[QNTY]
+		   ,[NQN0]
+		   ,[NQNT]
+           ,[Price]
+		   ,[Cost]
+           ,[Item_Name]
+           ,[Brand]
+           ,[Line]
+           ,[Adds]
+           ,[Code]
+           ,[Item_Brand]
+           ,[Shipment]
+           ,[Unit]
+           ,[length]
+           ,[height]
+           ,[width]
+           ,[weight]
+           ,[sale]
+           ,[Appl]
+           ,[minimum]
+           ,[cy]
+           ,[Code_Brand])
+     SELECT
+           @IDWH--<ID_WH, int,>
+           ,@PRICEGROUP--<PriceGroupDomain, int,>
+           ,ITs.[ID_Item]--<ID_Item, char(20),>
+           ,[stock] AS 'QNTY0'		   
+		   ,[_stock] AS 'QNTY'--	<QNT, int,>
+		   ,[qnt]  AS 'NQN0'
+		   ,[_qnt] AS 'NQNT'
+           ,Round([price]*(select [rate] from Currencies where [cy]=@PRICELISTCY)/(select [rate] from Currencies where [cy]=Prs.cy),2) AS 'Price'--<Price, money,>
+		   ,Round([cost]*(select [rate] from Currencies where [cy]=@PRICELISTCY),2) AS 'Cost'
+           ,RTrim([Item_Description]) +' '+ [Item_Appl] AS 'Item_Name'--<Item_Name, nchar(255),>
+           ,Brand--NULL--<, nchar(20),>
+           ,Line --NULL<, char(20),>
+           ,0--<Adds, int,>
+           ,[Item_Code]--<Code, char(255),>
+           ,[Item_Brand]--<Item_Brand, char(20),>
+           ,[Shipment] --,<Shipment, int,>
+           ,ITs.[Unit]--<Unit, char(10),>
+           ,[length]--<length, float,>
+           ,[height]--<height, float,>
+           ,[width]--<width, float,>
+           ,[weight]--<weight, float,>
+           ,[sale]--<sale, int,>
+           ,[Item_Appl] AS 'appl'--<Appl, nchar(255),>
+           ,[MinQ] AS 'minimum'--<minimum, int,>
+           ,@PRICELISTCY AS 'cy'--<cy, char(3),>
+           ,RTrim([Item_Code])+'_'+[Item_Brand] AS 'code_brand'--<Code_Brand, char(255),>
+    FROM [Items] ITs
+		INNER JOIN [Stocks] STs ON ITs.ID_Item=Sts.ID_Item AND Sts.ID_WH=@IDWH AND Sts._stock>0 
+		LEFT JOIN [Prices] Prs ON ITs.ID_Item=Prs.ID_Item AND Prs.DomainNo=ITs.DomainNo AND (ITs.Unit=Prs.Unit OR Prs.Unit = '') AND Prs.Price>0
+		LEFT JOIN [Costs] Cs ON Cs.ID_Item = Prs.ID_Item AND Cs.DomainNo = Prs.DomainNo
+	WHERE /*ITs.assortment>0 AND*/ Prs.price>0 AND PRs.ID_PriceGroup=@PRICEGROUP*SIGN(ABS(@DOMAIN-@PRICEGROUP)) AND Its.DomainNo=@DOMAIN 

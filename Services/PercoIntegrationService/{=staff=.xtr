@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="Windows-1251" standalone="yes"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+ <xsl:output encoding="windows-1251" method="xml" version="1.0"/>
+<xsl:template match="/">
+<Root>
+<append><staff>
+      <xsl:for-each select="Root/append/staff/staffnode"> 
+        <staffnode>             
+			
+			<xsl:attribute name="last_name"> 
+				<xsl:value-of select="@last_name"/>
+			</xsl:attribute>	
+			
+			<xsl:attribute name="first_name"> 
+				<xsl:value-of select="@first_name"/>
+			</xsl:attribute>	
+			
+			<xsl:attribute name="middle_name"> 
+				<xsl:value-of select="@middle_name"/>
+			</xsl:attribute>	
+			
+			<xsl:attribute name="tabel_id">
+				<xsl:value-of select="@tabel_id"/>
+			</xsl:attribute>			
+			
+			<xsl:attribute name="id_external">
+				<xsl:value-of select="@id_external"/>
+			</xsl:attribute>
+			<xsl:attribute name="id_internal"/>
+				
+
+			<xsl:attribute name="subdiv_id_external">
+				<xsl:value-of select="@subdiv_id_external"/>
+			</xsl:attribute>
+			<xsl:attribute name="appoint_id_external">
+				<xsl:value-of select="@appoint_id_external"/>
+			</xsl:attribute>
+			<xsl:attribute name="graph_id_external">
+				<xsl:value-of select="@graph_id_external"/>
+			</xsl:attribute>
+
+			<xsl:attribute name="subdiv_id_internal"/>
+				
+			<xsl:attribute name="appoint_id_internal"/>
+			
+			<xsl:attribute name="graph_id_internal"/>
+			
+			<xsl:attribute name="date_begin">
+				<xsl:value-of select="@date_begin"/>
+			</xsl:attribute>
+			<xsl:attribute name="photo"/>						
+        </staffnode>      
+      </xsl:for-each>
+</staff></append>
+<update><staff>
+      <xsl:for-each select="Root/update/staff/staffnode"> 
+        <staffnode>             
+			
+			<xsl:attribute name="last_name"> 
+				<xsl:value-of select="@last_name"/>
+			</xsl:attribute>	
+			
+			<xsl:attribute name="first_name"> 
+				<xsl:value-of select="@first_name"/>
+			</xsl:attribute>	
+			
+			<xsl:attribute name="middle_name"> 
+				<xsl:value-of select="@middle_name"/>
+			</xsl:attribute>	
+			
+			<xsl:attribute name="tabel_id">
+				<xsl:value-of select="@tabel_id"/>
+			</xsl:attribute>			
+			
+			<xsl:attribute name="id_external">
+				<xsl:value-of select="@id_external"/>
+			</xsl:attribute>
+			<xsl:attribute name="id_internal"/>
+				
+
+			<xsl:attribute name="subdiv_id_external">
+				<xsl:value-of select="@subdiv_id_external"/>
+			</xsl:attribute>
+			<xsl:attribute name="appoint_id_external">
+				<xsl:value-of select="@appoint_id_external"/>
+			</xsl:attribute>
+			<xsl:attribute name="graph_id_external">
+                                <xsl:if test="@graph_id_external=''">666</xsl:if>                                
+				<xsl:value-of select="@graph_id_external"/>
+			</xsl:attribute>
+
+			<xsl:attribute name="subdiv_id_internal"/>
+				
+			<xsl:attribute name="appoint_id_internal"/>
+			
+			<xsl:attribute name="graph_id_internal"/>
+			
+			<xsl:attribute name="date_begin">
+				<xsl:value-of select="@date_begin"/>
+			</xsl:attribute>
+			<xsl:attribute name="photo">
+				<xsl:value-of select="@photo"/>
+			</xsl:attribute>			
+        </staffnode>      
+      </xsl:for-each>
+</staff></update>
+<dismiss><staff>
+      <xsl:for-each select="Root/delete/staff/staffnode"> 
+        <staffnode>             
+			
+			<xsl:attribute name="last_name"> 
+				<xsl:value-of select="@last_name"/>
+			</xsl:attribute>	
+			
+			<xsl:attribute name="first_name"> 
+				<xsl:value-of select="@first_name"/>
+			</xsl:attribute>	
+			
+			<xsl:attribute name="middle_name"> 
+				<xsl:value-of select="@middle_name"/>
+			</xsl:attribute>	
+			
+			<xsl:attribute name="tabel_id">
+				<xsl:value-of select="@tabel_id"/>
+			</xsl:attribute>			
+			
+			<xsl:attribute name="id_external">
+				<xsl:value-of select="@id_external"/>
+			</xsl:attribute>
+			<xsl:attribute name="id_internal"/>
+				
+
+			<xsl:attribute name="subdiv_id_external">
+				<xsl:value-of select="@subdiv_id_external"/>
+			</xsl:attribute>
+			<xsl:attribute name="appoint_id_external">
+				<xsl:value-of select="@appoint_id_external"/>
+			</xsl:attribute>
+			<xsl:attribute name="graph_id_external">
+				<xsl:value-of select="@graph_id_external"/>
+			</xsl:attribute>
+
+			<xsl:attribute name="subdiv_id_internal"/>
+				
+			<xsl:attribute name="appoint_id_internal"/>
+			
+			<xsl:attribute name="graph_id_internal"/>
+			
+			<xsl:attribute name="date_begin">
+				<xsl:value-of select="@date_begin"/>
+			</xsl:attribute>
+			<xsl:attribute name="photo">
+				<xsl:value-of select="@photo"/>
+			</xsl:attribute>			
+        </staffnode>      
+      </xsl:for-each>
+</staff></dismiss>
+
+</Root>
+</xsl:template>
+</xsl:stylesheet>

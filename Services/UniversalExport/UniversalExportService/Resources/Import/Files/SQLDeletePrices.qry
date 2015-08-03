@@ -1,0 +1,20 @@
+DECLARE @DomainNo as int
+		Set @DomainNo = ##DOMAIN##
+DECLARE @PriceGroup as int
+		Set @PriceGroup = ##PRGRPID##		
+DECLARE @THRESHOLD as int
+		Set @THRESHOLD = ##THRSHLD##		
+DELETE FROM PRICES WHERE ID_PriceGroup = ##PRGRPID## AND DomainNo = @DomainNo AND
+						(
+							(ID<=##THRSHLD## AND (TERMLESS=0 OR ID_Item IN
+										(
+											SELECT ID_Item
+											FROM [Prices]
+											WHERE DomainNo = @DomainNo AND ID_PriceGroup = @PriceGroup
+											GROUP BY ID_Item, DomainNo, ID_PriceGroup
+											HAVING count(ID)>1 
+										) 		)
+						
+						)
+						) 
+						 

@@ -1,0 +1,15 @@
+SQLMAGICWORD TEXT Files\SQLMAGICWORD.qry
+SQLSELECT_client_discounts TEXT Files\SQLSELECT_client_discounts.QRY
+SQLInsertDiscountsValues TEXT Files\SQLInsertDiscountsValues.qry
+SQLQueryMarkZero TEXT Files\SQLQueryMarkZero.qry
+SQLQueryMarkTime TEXT Files\SQLQueryMarkTime.qry
+SQLSELECTEXPORTCLIENTS TEXT Files\SQLSELECTEXPORTCLIENTS.qry
+SQLQuerySelectByZero TEXT Files\SQLQuerySelectByZero.qry
+QuantsUpDate TEXT Files\QuantsUpDate.QRY
+EmailsUpDate TEXT Files\EmailsUpDate.qry
+SQLPriceRequest TEXT Files\SQLPriceRequest.QRY
+SQLSELECTItemLinks TEXT Files\SQLSELECTItemLinks.qry
+SQLSETblocking TEXT Files\SQLSETblocking.qry
+SQLRESETblocking TEXT Files\SQLRESETblocking.qry
+
+ 

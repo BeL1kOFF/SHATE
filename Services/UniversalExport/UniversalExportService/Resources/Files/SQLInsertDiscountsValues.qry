@@ -1,0 +1,6 @@
+INSERT INTO [DISCOUNTS] ([ID_CLIENT], [ID_TYPE], [ItemsGroupCode], [VAL], [Force], [Customer No.], [Cust. Price Group Code],[Type], [Code], [Currency Code], [Starting Date] 
+,[Minimum Quantity],[Ending Date],[Unit of Measure Code],[Variant Code],[Item No. 2] ,[Item Search Description] ,[Item Group Code]
+ ,[Unit Price] ,[Calc. Date],[Location Code] ,[Agreement No.],[Special Terms] ,[Allow Line Disc.] , [Allow Invoice Disc.])
+     VALUES (:ID_CLIENT, :ID_TYPE,:ItemsGroupCode, :VAL, :Force, :CustomerNo, :CustPriceGroupCode,:Type, :Code, :CurrencyCode, :StartingDate 
+,:MinimumQuantity,:EndingDate,:UnitofMeasureCode,:VariantCode,:ItemNo2 ,:ItemSearchDescription ,:ItemGroupCode
+ ,:UnitPrice,:CalcDate,:LocationCode,:AgreementNo,:SpecialTerms,:AllowLineDisc, :AllowInvoiceDisc)

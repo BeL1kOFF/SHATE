@@ -1,0 +1,18 @@
+;WITH OQ AS(
+SELECT distinct      
+      RSQ.[Queue No_] as TAG,
+      SH.No_, 
+      CASE WHEN DPT.[Source No_] IS NULL THEN 0 ELSE 1 END as COMPLETE
+      ,ZSW.[Prefix Of The Package] AS Location
+FROM   
+  [Shate-M$Sales Header] SH
+  JOIN [Shate-M$Retail Sales QUEUE]  RSQ ON RSQ.[Order No_]=Sh.No_ 
+  JOIN  [Shate-M$Warehouse Shipment Line SW] LL ON LL.[Source No_] = SH.[No_]
+  Left JOIN [dbo].[Shate-M$Document Posting Task] DPT ON LL.No_ = DPT.[Source No_]
+  
+  Left JOIN [dbo].[Shate-M$Registered Whse_ Activity Line] WHAL ON WHAL.[Source No_]=LL.[Source No_] AND WHAL.[Activity Type]=2 
+  LEFT JOIN [dbo].[Shate-M$Zone SW] ZSW ON ZSW.Code=WHAL.[Zone Code]
+)
+SELECT OQ.TAG, MIN(COMPLETE) AS COMPLETE, CASE WHEN MAX(OQ.Location)>'a' THEN 0 ELSE 1 END AS LOCALIZATION
+ FROM OQ
+GROUP BY OQ.TAG,OQ.No_

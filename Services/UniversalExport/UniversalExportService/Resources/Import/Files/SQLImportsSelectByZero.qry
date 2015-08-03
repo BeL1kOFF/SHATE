@@ -1,0 +1,3 @@
+SELECT CASE [Last_Import] WHEN 0 THEN 'True' ELSE 'False' END 
+FROM Imports
+WHERE Tablename = '##TABLE##' AND Domain=##DOMAIN## 

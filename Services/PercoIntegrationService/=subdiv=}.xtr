@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="Windows-1251" standalone="yes"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+ <xsl:output encoding="windows-1251" method="xml" version="1.0"/>
+<xsl:template match="/">
+<documentrequest type="subdiv"><subdiv>
+      <xsl:for-each select="documentrequest/subdiv//subdivnode"> 
+        <subdivnode>             
+			
+			<xsl:attribute name="displayname"> 
+				<xsl:value-of select="@displayname"/>
+			</xsl:attribute>	
+			
+			<xsl:attribute name="id_internal">
+				<xsl:value-of select="@id_internal"/>
+			</xsl:attribute>
+			
+			<xsl:attribute name="id_parent">
+				<xsl:value-of select="@id_parent"/>
+			</xsl:attribute>
+			
+			<xsl:attribute name="id_parent_external">
+				<xsl:value-of select="@id_parent_external"/>
+			</xsl:attribute>
+			
+			<xsl:attribute name="n_left">
+				<xsl:value-of select="@n_left"/>
+			</xsl:attribute>
+			
+			<xsl:attribute name="n_right">
+				<xsl:value-of select="@n_right"/>
+			</xsl:attribute>
+			
+			<xsl:attribute name="description">
+				<xsl:value-of select="@description"/>
+			</xsl:attribute>
+			
+			<xsl:attribute name="level">
+				<xsl:value-of select="@level"/>
+			</xsl:attribute>
+			
+			<xsl:attribute name="id_external">
+				<xsl:value-of select="@id_external"/>
+			</xsl:attribute>
+			
+			<xsl:attribute name="visible">
+				<xsl:value-of select="@visible"/>
+			</xsl:attribute>
+			
+        </subdivnode>      
+      </xsl:for-each>
+</subdiv></documentrequest>
+</xsl:template>
+</xsl:stylesheet>

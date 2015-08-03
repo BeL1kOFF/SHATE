@@ -1,0 +1,11 @@
+SELECT  [No_] 
+		,[Name]
+		,[E-Mail]
+        ,CASE [Customer Price Group] 
+		WHEN 'нор' THEN NULL 
+		WHEN 'нор па' THEN 1 
+		WHEN 'нор пт' THEN 2 
+		ELSE NULL 
+		END as PrGr
+FROM [##Firm##$Customer] 
+WHERE  [No_] =

@@ -1,0 +1,25 @@
+INSERT INTO [Mails]
+           ([ExpID]
+           ,[priority]
+           ,[AddingTimestamp]
+           --,[status]
+           --,[ProcessingTimestamp]
+           ,[email]
+           ,[bcc]
+           ,[Subject]
+           ,[Body]
+           ,[attouch]
+           ,[arch])
+     VALUES
+           (##ExpID##-- int
+           ,(Select [Priority] From [Exports] Where ID = ##ExpID##)--(##priority##)--, int,
+           ,GetDate()--(##AddingTimestamp##)--, datetime,
+           --,(##status##), bit,
+           --,(##ProcessingTimestamp##), datetime,
+           ,'##email##'--, char(255),
+           ,##bcc##--, bit,
+           ,'##Subject##'--, nvarchar(max),
+           ,'##Body##'--, text,
+           ,'##attouch##'--, nvarchar(max),
+           ,##arch##--, bit,
+		   )

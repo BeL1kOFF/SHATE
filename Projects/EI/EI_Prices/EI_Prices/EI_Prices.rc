@@ -1,0 +1,389 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\EI_Prices.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\EI_Prices.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_EMAILS DIALOGEX 0, 0, 256, 234
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "E-mail ы для рассылки"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LISTBOX         IDC_LIST_EMAILS,7,7,163,220,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Добавить",IDC_BUTTON_ADD_EMAIL,173,7,76,17
+    PUSHBUTTON      "Редактивать",IDC_BUTTON_EDIT,173,26,76,17
+    PUSHBUTTON      "Удалить",IDC_BUTTON_DEL,173,46,76,17
+END
+
+IDD_DIALOG_EMAIL DIALOGEX 0, 0, 224, 50
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Введите Email"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,109,29,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,167,29,50,14
+    EDITTEXT        IDC_EDIT_EMAIL,7,7,210,15,ES_AUTOHSCROLL
+END
+
+IDD_DIALOG_BRANDS DIALOGEX 0, 0, 325, 186
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Переименование брендов"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_LIST_BRANDS,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,232,172
+    PUSHBUTTON      "Добавить",IDC_BUTTON_NEW_BRAND,246,7,72,17
+    PUSHBUTTON      "Редактировать",IDC_BUTTON_EDIT_BRAND,246,27,72,17
+    PUSHBUTTON      "Удалить",IDC_BUTTON_DEL,245,48,73,18
+END
+
+IDD_DIALOG_BRAND DIALOGEX 0, 0, 250, 74
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Бренды"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,137,50,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,193,50,50,14
+    LTEXT           "Бренд Шате",IDC_STATIC,7,9,44,12
+    EDITTEXT        IDC_EDIT_BRAND_SHATE,57,7,186,14,ES_AUTOHSCROLL
+    LTEXT           "Бренд",IDC_STATIC,7,27,36,13
+    EDITTEXT        IDC_EDIT_BRAND,57,26,186,15,ES_AUTOHSCROLL
+END
+
+IDD_DIALOG_NEW_PROJECT DIALOGEX 0, 0, 177, 49
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Введите название нового проекта"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,28,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,120,28,50,14
+    EDITTEXT        IDC_EDIT_NEW_PROJECT_NAME,7,7,163,14,ES_AUTOHSCROLL
+END
+
+IDD_EI_PRICES_DIALOG DIALOGEX 0, 0, 427, 408
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Загрузка-выгрузка"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_COMBO_CLIENTS,6,6,144,126,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Название",IDC_STATIC,6,27,38,11
+    GROUPBOX        "Данные о клиенте для экспорта",IDC_STATIC,6,49,414,119
+    EDITTEXT        IDC_EDIT_NAME,45,26,113,12,ES_AUTOHSCROLL
+    LTEXT           "От кого письма",IDC_STATIC,15,63,58,10
+    EDITTEXT        IDC_EDIT2,81,60,113,12,ES_AUTOHSCROLL
+    LTEXT           "Тема письма",IDC_STATIC,15,78,49,10
+    EDITTEXT        IDC_EDIT_SUBJECT,81,74,114,14,ES_AUTOHSCROLL
+    LTEXT           "Ошибки",IDC_STATIC,268,27,30,11
+    EDITTEXT        IDC_EDIT_ERROR_MAIL,306,26,114,13,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_FORMATS,307,59,113,12,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Формат файла экспорта",IDC_STATIC,222,62,83,11
+    LTEXT           "Тип выгрузки файла экспорта",IDC_STATIC,202,75,103,11
+    COMBOBOX        IDC_COMBO_TYPE_EXPORT,307,73,113,12,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Данные оклиенте для импорта",IDC_STATIC,6,185,414,177
+    LTEXT           "Формат файла импорта",IDC_STATIC,224,202,81,10
+    LTEXT           "Код клиента в сервисной программе",IDC_STATIC,14,202,68,17
+    EDITTEXT        IDC_EDIT_ED_CODEPEOGRAMM,83,202,114,12,ES_AUTOHSCROLL
+    LTEXT           "Тип заказа",IDC_STATIC,37,221,41,11
+    COMBOBOX        IDC_COMBO_TYPE_ORDER,83,217,114,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_CURRENCY,84,232,114,12,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Валюта",IDC_STATIC,47,234,27,8
+    COMBOBOX        IDC_COMBO_DELIVERY,84,247,114,12,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Тип доставки",IDC_STATIC,29,248,49,12
+    EDITTEXT        IDC_EDIT6,84,262,114,13,ES_AUTOHSCROLL
+    LTEXT           "Дата",IDC_STATIC,57,263,18,11
+    COMBOBOX        IDC_COMBO_TYPE_FILE_IMPORT,308,201,112,12,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Первая строка",IDC_STATIC,247,217,54,11
+    LTEXT           "Столбец бренд",IDC_STATIC,248,232,55,8
+    LTEXT           "Столбец номер",IDC_STATIC,248,246,58,8
+    LTEXT           "Столбец кол-во",IDC_STATIC,246,261,58,10
+    EDITTEXT        IDC_EDIT_FIRST_STRING,308,215,112,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_COLUMN_BRAND,308,230,112,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_COLUMN_NUMBER,308,244,112,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_COLUMN_QUANT,308,259,112,13,ES_AUTOHSCROLL
+    LTEXT           "Получатель",IDC_STATIC,257,311,41,9
+    EDITTEXT        IDC_EDIT_ORDER_TO,308,308,112,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Загрузить",IDC_BUTTON_LOAD_FILE,347,342,73,13
+    LTEXT           "Адресаты",IDC_STATIC,17,127,40,12
+    EDITTEXT        IDC_EDIT_MAILS,82,128,224,30,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    PUSHBUTTON      "Новый",IDC_BUTTON_NEW_CLIENT,158,6,65,15
+    GROUPBOX        "Подмены",IDC_STATIC_PODMENU,6,368,414,33
+    PUSHBUTTON      "Бренды",IDC_BUTTON_BRANDS,20,378,85,16
+    PUSHBUTTON      "Аналоги(выгрузить)",IDC_BUTTON_ANALOGS,140,378,85,16
+    PUSHBUTTON      "Аналоги(все заменить)",IDC_BUTTON_REPLACE,233,378,81,16
+    PUSHBUTTON      "Аналоги(дописать)",IDC_BUTTON_ADD_ANALOGS,324,378,82,16
+    EDITTEXT        IDC_EDIT_FROM_EXPORT,83,276,115,13,ES_AUTOHSCROLL
+    LTEXT           "Куда ответ",IDC_STATIC,34,277,42,11
+    LTEXT           "Договор",IDC_STATIC,42,293,38,9
+    EDITTEXT        IDC_EDIT_DOG,83,292,115,14,ES_AUTOHSCROLL
+    LTEXT           "Код адреса доставки",IDC_STATIC,30,306,42,16
+    EDITTEXT        IDC_EDIT_DEL_CODE,83,308,116,14,ES_AUTOHSCROLL
+    LTEXT           "Название файла выгрузки",IDC_STATIC,16,92,57,17
+    EDITTEXT        IDC_EDIT_FILE_IMPORT,81,89,114,13,ES_AUTOHSCROLL
+    CONTROL         "Архивировать",IDC_CHECK_ZIP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,202,106,65,13
+    LTEXT           "Название файла вложения",IDC_STATIC,16,110,55,17
+    EDITTEXT        IDC_EDIT_ATTACH,82,105,114,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_TYPE_NAV,308,322,112,71,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Итоговый файл",IDC_STATIC,245,326,54,8
+    PUSHBUTTON      "Просмотр",IDC_BUTTON_VIEW,209,342,51,13
+    LTEXT           "Столбец цена навижн",IDC_STATIC,225,295,77,10
+    EDITTEXT        IDC_EDIT_COLUMN_QUANT2,308,293,112,13,ES_AUTOHSCROLL
+    LTEXT           "Столбец цена клиента",IDC_STATIC,223,278,80,10
+    EDITTEXT        IDC_EDIT_COLUMN_QUANT3,308,277,112,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Ручная загрузка",IDC_BUTTON_MANUAL_LOADFILE,269,342,70,13
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG_EMAILS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 249
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 227
+    END
+
+    IDD_DIALOG_EMAIL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 217
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 43
+    END
+
+    IDD_DIALOG_BRANDS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 318
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 179
+    END
+
+    IDD_DIALOG_BRAND, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 64
+    END
+
+    IDD_DIALOG_NEW_PROJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 170
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 42
+    END
+
+    IDD_EI_PRICES_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 420
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 401
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 170, 62
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About EI_Prices"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,14,14,21,20
+    LTEXT           "EI_Prices, Version 1.0",IDC_STATIC,42,14,114,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2012",IDC_STATIC,42,26,114,8
+    DEFPUSHBUTTON   "OK",IDOK,113,41,50,14,WS_GROUP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,2,3
+ PRODUCTVERSION 1,0,2,3
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "TODO: <Company name>"
+            VALUE "FileDescription", "TODO: <File description>"
+            VALUE "FileVersion", "1.0.2.3"
+            VALUE "InternalName", "EI_Prices.exe"
+            VALUE "LegalCopyright", "TODO: (c) <Company name>.  All rights reserved."
+            VALUE "OriginalFilename", "EI_Prices.exe"
+            VALUE "ProductName", "TODO: <Product name>"
+            VALUE "ProductVersion", "1.0.2.3"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About EI_Prices..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "res\EI_Prices.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

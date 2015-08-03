@@ -1,0 +1,28 @@
+SELECT  
+ It.[No_] as ID_Item
+,##DOMAIN## as DomainNo
+, tm.[Trade Mark Name] as Item_Brand
+, it.[No_ 2] as Item_Code
+
+,ITM."Item Group Code" as Brand
+,ITL."Item Group Code" as Line
+
+ , it.[Description] as Description            
+ ,it.[Item Comment] as Item_appl
+, it.[Sales Order Multiple] as Shipment 
+, UM.[CODE]  as 'UNIT'
+, UM.LENGTH as 'length'
+, UM.HEIGHT AS 'HEIGHT'
+, UM.WIDTH AS 'WIDTH'
+, UM.WEIGHT AS 'WEIGHT'  
+
+,CASE ITA.[Item Group Code] WHEN 'ÄÀ' THEN 1 ELSE 0 END AS 'assortment' 
+
+ FROM  [##Firm##$Item]  It
+left join [tm] as tm on it.[TM Code] = tm.[Trade Mark Code]
+inner join [##Firm##$Item Item Group] as ITA on ITA."Item No_" = it.[No_] and ITA."Item Group Type Code" = 'ÀÑÑÎÐÒ' /*AND ITA.[Item Group Code] = 'ÄÀ'*/ 
+left join [##Firm##$Item Item Group] as ITM on ITM."Item No_" = it.[No_] and ITM."Item Group Type Code" = 'ÒÌ'
+left join [##Firm##$Item Item Group] as ITL on ITL."Item No_" = it.[No_] and ITL."Item Group Type Code" = 'ÒÎÂËÈÍÈß'
+LEFT JOIN [##Firm##$Item Unit of Measure] as UM on UM."Item No_"=it.[No_] and UM.[CODE]=COALESCE([Sales Unit of Measure],it.[Base Unit of Measure])
+WHERE (CAST(it.[timestamp] as BIGINT)> ##THRSHLDItem##) OR (CAST(UM.[timestamp] as BIGINT)> ##THRSHLDUnitOfMeasure##) 
+         OR ((CAST(ITM.[timestamp] as BIGINT)> ##THRSHLDItemGroup##) OR (CAST(ITL.[timestamp] as BIGINT)> ##THRSHLDItemGroup##) OR (CAST(ITA.[timestamp] as BIGINT)> ##THRSHLDItemGroup##) )

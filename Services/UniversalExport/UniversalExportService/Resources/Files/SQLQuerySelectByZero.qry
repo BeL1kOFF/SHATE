@@ -1,0 +1,20 @@
+SELECT Exp.[ID]
+      ,Exp.[ID_Client]
+      ,Exp.[ID_WH]
+      ,Exp.[CY]
+      ,Exp.[NAV_Client]
+      ,Exp.[INTERVAL]
+      ,Exp.[LAST_EXPORT]
+      ,Exp.[FILE_NAME]
+      ,Exp.[ID_TEMPL]
+      ,Exp.[EMAILFLAG]
+      ,Exp.[EMAIL]
+      ,Exp.[EMAILSUBJ]
+      ,Exp.[EMAILBODY]	
+	  
+	,COALESCE(Cl.[pricegroup],Cl.[DOM])
+ 	,Exp.[EMAILZIP]
+/*,DATEDIFF(mi,[LAST_EXPORT],GETDATE()) as midiff*/
+  FROM [Clients] Cl LEFT JOIN [Exports] Exp   ON Exp.[ID_Client]=Cl.[ID] 
+WHERE [LAST_EXPORT]=0 AND ISNULL([blocked],0)<>1
+ORDER BY COALESCE(priority, Exp.ID) ASC

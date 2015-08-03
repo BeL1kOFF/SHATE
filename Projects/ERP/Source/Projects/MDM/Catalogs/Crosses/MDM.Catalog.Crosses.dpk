@@ -1,0 +1,44 @@
+package MDM.Catalog.Crosses;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  ERP.Package.GlobalData,
+  ERP.Package.CustomForm,
+  MDM.Package.Classes,
+  cxBarEditItemRS20;
+
+contains
+  MDM.Catalog.Crosses.UI.Main in 'Source\MDM.Catalog.Crosses.UI.Main.pas' {frmMDMCrosses},
+  MDM.Catalog.Crosses.Logic.TCrossesDraft in 'Source\MDM.Catalog.Crosses.Logic.TCrossesDraft.pas',
+  MDM.Catalog.Crosses.Logic.TCrossesClean in 'Source\MDM.Catalog.Crosses.Logic.TCrossesClean.pas',
+  MDM.Catalog.Crosses.UI.Details in 'Source\MDM.Catalog.Crosses.UI.Details.pas' {frmMDMCrossesDetail},
+  MDM.Catalog.Crosses.Logic.TCrossDraftItem in 'Source\MDM.Catalog.Crosses.Logic.TCrossDraftItem.pas';
+
+end.

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xdb="http://www.borland.com/schemas/delphi/10.0/XMLDataBinding">
+  <element xmlns="http://www.w3.org/2001/XMLSchema" name="Options" type="OptionsType"/>
+  <complexType xmlns="http://www.w3.org/2001/XMLSchema" name="OptionsType"><annotation>
+      <appinfo xdb:docElement="Options"/>
+    </annotation>
+    <sequence>
+      <element name="Socket" type="SocketType"/>
+      <element name="Packages" type="PackagesType"/>
+    </sequence>
+  </complexType>
+  <complexType xmlns="http://www.w3.org/2001/XMLSchema" name="SocketType">
+    <sequence>
+      <element name="Server" type="xs:decimal"/>
+      <element name="Port" type="xs:integer"/>
+    </sequence>
+  </complexType>
+  <complexType xmlns="http://www.w3.org/2001/XMLSchema" name="PackagesType">
+    <sequence>
+      <element name="Path" type="xs:string" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+</xs:schema>

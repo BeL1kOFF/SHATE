@@ -1,0 +1,4 @@
+INSERT INTO Exports ([ID_Client],[ID_WH],[CY],[blocked],[PRICE],[NAV_Client],[INTERVAL],[NEXT_EXPORT]
+           ,[FILE_NAME],[ID_TEMPL],[emailflag],[email],[emailsubj],[web])
+      VALUES (##ClientID##,##WHID##,'##CY##', 0 , NULL , NULL , 1440 , DATEADD(hh,+12,GETDATE()) 
+			,'##FILENAME##' , 6 , 1, '##EMAIL##','##SUBJECT##',1 ) 

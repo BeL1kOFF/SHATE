@@ -1,0 +1,6 @@
+SQLSelectClentByLogin TEXT Files\SQLSelectClentByLogin.qry
+SQLSelectCustomer TEXT Files\SQLSelectCustomer.qry
+SQLSelectWebExports TEXT Files\SQLSelectWebExports.qry 
+SQLInsertWebExport TEXT Files\SQLInsertWebExport.qry
+SQLUpdateWebExports TEXT Files\SQLUpdateWebExports.qry
+SQLSelectClient TEXT Files\SQLSelectClient.qry

@@ -1,0 +1,50 @@
+package ERP.Package.ServerClasses;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  ERP.Package.CustomClasses,
+  ERP.Package.Classes,
+  xmlrtl;
+
+contains
+  ERP.Package.ServerClasses.TAuthDBConnection in 'Source\ERP.Package.ServerClasses.TAuthDBConnection.pas',
+  ERP.Package.ServerClasses.ERPAuthOptions in 'Source\ERP.Package.ServerClasses.ERPAuthOptions.pas',
+  ERP.Package.ServerClasses.IServerClientManager in 'Source\ERP.Package.ServerClasses.IServerClientManager.pas',
+  ERP.Package.ServerClasses.IServerServiceManager in 'Source\ERP.Package.ServerClasses.IServerServiceManager.pas',
+  ERP.Package.ServerClasses.IServerCustomManager in 'Source\ERP.Package.ServerClasses.IServerCustomManager.pas',
+  ERP.Package.ServerClasses.IServerManager in 'Source\ERP.Package.ServerClasses.IServerManager.pas',
+  ERP.Package.ServerClasses.TServerClientManager in 'Source\ERP.Package.ServerClasses.TServerClientManager.pas',
+  ERP.Package.ServerClasses.TServerServiceManager in 'Source\ERP.Package.ServerClasses.TServerServiceManager.pas',
+  ERP.Package.ServerClasses.TServerCustomManager in 'Source\ERP.Package.ServerClasses.TServerCustomManager.pas',
+  ERP.Package.ServerClasses.TServerSocketCustomThread in 'Source\ERP.Package.ServerClasses.TServerSocketCustomThread.pas',
+  ERP.Package.ServerClasses.TServerManager in 'Source\ERP.Package.ServerClasses.TServerManager.pas',
+  ERP.Package.ServerClasses.ServerTypes in 'Source\ERP.Package.ServerClasses.ServerTypes.pas';
+
+end.

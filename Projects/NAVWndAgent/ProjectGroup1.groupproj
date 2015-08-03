@@ -1,0 +1,44 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{da065e73-b726-45c4-bf2b-844accb69709}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Projects Include="Project1dllHook.dproj" />
+    <Projects Include="Project1WindowAgent.dproj" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+  <BorlandProject xmlns=""> <Default.Personality> </Default.Personality> </BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="Project1dllHook">
+    <MSBuild Projects="Project1dllHook.dproj" Targets="" />
+  </Target>
+  <Target Name="Project1dllHook:Clean">
+    <MSBuild Projects="Project1dllHook.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="Project1dllHook:Make">
+    <MSBuild Projects="Project1dllHook.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Project1WindowAgent">
+    <MSBuild Projects="Project1WindowAgent.dproj" Targets="" />
+  </Target>
+  <Target Name="Project1WindowAgent:Clean">
+    <MSBuild Projects="Project1WindowAgent.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="Project1WindowAgent:Make">
+    <MSBuild Projects="Project1WindowAgent.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="Project1dllHook;Project1WindowAgent" />
+  </Target>
+  <Target Name="Clean">
+    <CallTarget Targets="Project1dllHook:Clean;Project1WindowAgent:Clean" />
+  </Target>
+  <Target Name="Make">
+    <CallTarget Targets="Project1dllHook:Make;Project1WindowAgent:Make" />
+  </Target>
+  <Import Condition="Exists('$(MSBuildBinPath)\Borland.Group.Targets')" Project="$(MSBuildBinPath)\Borland.Group.Targets" />
+</Project>

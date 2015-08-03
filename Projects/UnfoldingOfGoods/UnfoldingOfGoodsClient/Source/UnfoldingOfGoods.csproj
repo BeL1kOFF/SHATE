@@ -1,0 +1,235 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{590308FB-0578-4A5D-B309-7DE6C8157BA6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UnfoldingOfGoods</RootNamespace>
+    <AssemblyName>UnfoldingOfGoods</AssemblyName>
+    <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PlatformFamilyName>WindowsCE</PlatformFamilyName>
+    <PlatformID>E2BECB1F-8C8C-41ba-B736-9BE7D946A398</PlatformID>
+    <OSVersion>5.0</OSVersion>
+    <DeployDirSuffix>UnfoldingOfGoods</DeployDirSuffix>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <NativePlatformName>Windows CE</NativePlatformName>
+    <FormFactorID>
+    </FormFactorID>
+    <StartupObject>
+    </StartupObject>
+    <ApplicationIcon>001_sitemap.ico</ApplicationIcon>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Datalogic.API">
+      <HintPath>Resources\Datalogic.API.dll</HintPath>
+    </Reference>
+    <Reference Include="datalogic.device2005, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\datalogic.device2005.dll</HintPath>
+    </Reference>
+    <Reference Include="datalogic.pdc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=68fcc4f691cd53e0">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\datalogic.pdc.dll</HintPath>
+    </Reference>
+    <Reference Include="datalogic.wireless2005, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\datalogic.wireless2005.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlClient, Version=3.0.3600.0, Culture=neutral, PublicKeyToken=3be235df1c8d2ad3, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.0.0, Culture=neutral, PublicKeyToken=3be235df1c8d2ad3, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetail.Designer.cs">
+      <DependentUpon>FormDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOptions.Designer.cs">
+      <DependentUpon>FormOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logic\ClassFactory.cs" />
+    <Compile Include="Logic\CursorWait.cs" />
+    <Compile Include="Logic\DataBindingSource.cs" />
+    <Compile Include="Logic\DataCommunication.cs" />
+    <Compile Include="Logic\DataCommunicationStrings.cs" />
+    <Compile Include="Logic\DataLogic.cs" />
+    <Compile Include="Logic\ExceptionMessage.cs" />
+    <Compile Include="Logic\ExceptionStrings.cs" />
+    <Compile Include="Logic\Pick\PickFactory.cs" />
+    <Compile Include="Logic\Pick\LocatePick.cs" />
+    <Compile Include="Logic\Pick\ProcessedPick.cs" />
+    <Compile Include="Logic\Pick\IPick.cs" />
+    <Compile Include="Logic\LogicClass.cs" />
+    <Compile Include="Logic\Objects\ObjectActivityLine.cs" />
+    <Compile Include="Logic\Objects\ObjectActivityLineList.cs" />
+    <Compile Include="Logic\Objects\ObjectEmployee.cs" />
+    <Compile Include="Logic\Objects\ObjectFactory.cs" />
+    <Compile Include="Logic\Objects\ObjectPlacementActivityHeader.cs" />
+    <Compile Include="Logic\Objects\ObjectPlacementActivityLine.cs" />
+    <Compile Include="Logic\Objects\ObjectPlacementActivityLineList.cs" />
+    <Compile Include="Logic\Objects\ObjectSession.cs" />
+    <Compile Include="Logic\Objects\ObjectWarehouseReceipt.cs" />
+    <Compile Include="Logic\Objects\ObjectWarehouseReceiptList.cs" />
+    <Compile Include="Logic\Requests\RequestFactory.cs" />
+    <Compile Include="Logic\Requests\RequestGetBinContent.cs" />
+    <Compile Include="Logic\Requests\RequestGetDocNumbers.cs" />
+    <Compile Include="Logic\Requests\IRequest.cs" />
+    <Compile Include="Logic\Requests\RequestGetDocPlacement.cs" />
+    <Compile Include="Logic\Requests\RequestGetExpiredData.cs" />
+    <Compile Include="Logic\Requests\RequestLoginUser.cs" />
+    <Compile Include="Logic\Requests\RequestLogoutUser.cs" />
+    <Compile Include="Logic\Requests\RequestRegisterPlacement.cs" />
+    <Compile Include="Logic\Xml\CustomXml.cs" />
+    <Compile Include="Logic\Xml\CustomXmlElement.cs" />
+    <Compile Include="Logic\Xml\Message\Custom\CustomXmlMessage.cs" />
+    <Compile Include="Logic\Xml\Message\Custom\CustomXmlMessageParams.cs" />
+    <Compile Include="Logic\Xml\Message\GetBinContent\XmlMessageGetBinContentParams.cs" />
+    <Compile Include="Logic\Xml\Message\GetDocPlacement\XmlMessageGetDocPlacementResult.cs" />
+    <Compile Include="Logic\Xml\Message\GetExpiredData\XmlMessageGetExpiredData.cs" />
+    <Compile Include="Logic\Xml\Message\GetExpiredData\XmlMessageGetExpiredDataParams.cs" />
+    <Compile Include="Logic\Xml\Message\LoginUser\XmlMessageLoginUserParams.cs" />
+    <Compile Include="Logic\Xml\Message\GetBinContent\XmlMessageGetBinContent.cs" />
+    <Compile Include="Logic\Xml\Message\GetDocNumbers\XmlMessageGetDocNumbers.cs" />
+    <Compile Include="Logic\Xml\Message\GetDocPlacement\XmlMessageGetDocPlacement.cs" />
+    <Compile Include="Logic\Xml\Message\LoginUser\XmlMessageLoginUser.cs" />
+    <Compile Include="Logic\Xml\Message\LogoutUser\XmlMessageLogoutUser.cs" />
+    <Compile Include="Logic\Xml\Message\LogoutUser\XmlMessageLogoutUserParams.cs" />
+    <Compile Include="Logic\Xml\Message\RegisterPlacement\XmlMessageRegisterPlacement.cs" />
+    <Compile Include="Logic\Xml\Message\RegisterPlacement\XmlMessageRegisterPlacementDocument.cs" />
+    <Compile Include="Logic\Xml\Message\RegisterPlacement\XmlMessageRegisterPlacementDocumentLine.cs" />
+    <Compile Include="Logic\Xml\Response\Custom\CustomXmlResponse.cs" />
+    <Compile Include="Logic\Xml\Response\Custom\CustomXmlResponseResult.cs" />
+    <Compile Include="Logic\Xml\Response\GetBinContent\XmlResponseGetBinContentResultBinContent.cs" />
+    <Compile Include="Logic\Xml\Response\GetBinContent\XmlResponseGetBinContentResultBinContentItem.cs" />
+    <Compile Include="Logic\Xml\Response\GetDocNumbers\XmlResponseGetDocNumbers.cs" />
+    <Compile Include="Logic\Xml\Response\GetDocNumbers\XmlResponseGetDocNumbersResult.cs" />
+    <Compile Include="Logic\Xml\Response\GetDocNumbers\XmlResponseGetDocNumbersResultDocuments.cs" />
+    <Compile Include="Logic\Xml\Response\GetDocNumbers\XmlResponseGetDocNumbersResultDocumentsDocument.cs" />
+    <Compile Include="Logic\Xml\Response\GetDocPlacement\XmlResponseGetDocPlacement.cs" />
+    <Compile Include="Logic\Xml\Response\GetDocPlacement\XmlResponseGetDocPlacementResult.cs" />
+    <Compile Include="Logic\Xml\Response\GetDocPlacement\XmlResponseGetDocPlacementResultDocument.cs" />
+    <Compile Include="Logic\Xml\Response\GetDocPlacement\XmlResponseGetDocPlacementResultDocumentLine.cs" />
+    <Compile Include="Logic\Xml\Response\GetExpiredData\XmlResponseGetExpiredData.cs" />
+    <Compile Include="Logic\Xml\Response\LoginUser\XmlResponseLoginUser.cs" />
+    <Compile Include="Logic\Xml\Response\LoginUser\XmlResponseLoginUserResult.cs" />
+    <Compile Include="Logic\Xml\Response\LogoutUser\XmlResponseLogoutUser.cs" />
+    <Compile Include="Logic\Xml\Response\Custom\XmlResponseError.cs" />
+    <Compile Include="Logic\Xml\Response\Custom\XmlResponseException.cs" />
+    <Compile Include="Logic\Xml\Response\XmlResponseFactory.cs" />
+    <Compile Include="Logic\Xml\Response\GetBinContent\XmlResponseGetBinContent.cs" />
+    <Compile Include="Logic\Xml\Response\RegisterPlacement\XmlResponseRegisterPlacement.cs" />
+    <Compile Include="Logic\Xml\Response\GetBinContent\XmlResponseGetBinContentResult.cs" />
+    <Compile Include="MyClass.cs" />
+    <Compile Include="NamedMutex.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormDetail.resx">
+      <DependentUpon>FormDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOptions.resx">
+      <DependentUpon>FormOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Logic\XmlOptions.cs" />
+    <Compile Include="Service\ScannerProxy.cs" />
+    <Compile Include="Service\ScannerAPIWinCE5.cs" />
+    <Compile Include="Service\ScannerAPIWinCE6.cs" />
+    <Compile Include="Service\IScannerAPI.cs" />
+    <Compile Include="WaitHandleCannotBeOpenedException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="001_sitemap.ico" />
+    <Content Include="Options.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UnfoldingOfGoods.sdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

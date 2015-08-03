@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Nav_ExportCustoms", "Nav_ExportCustoms\Nav_ExportCustoms.vcproj", "{F4CBED8E-EFF5-4CD2-8A20-6F227699A516}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4CBED8E-EFF5-4CD2-8A20-6F227699A516}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F4CBED8E-EFF5-4CD2-8A20-6F227699A516}.Debug|Win32.Build.0 = Debug|Win32
+		{F4CBED8E-EFF5-4CD2-8A20-6F227699A516}.Release|Win32.ActiveCfg = Release|Win32
+		{F4CBED8E-EFF5-4CD2-8A20-6F227699A516}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

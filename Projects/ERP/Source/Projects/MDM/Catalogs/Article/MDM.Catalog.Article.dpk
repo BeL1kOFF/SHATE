@@ -1,0 +1,45 @@
+package MDM.Catalog.Article;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  ERP.Package.GlobalData,
+  ERP.Package.CustomForm,
+  MDM.Package.Classes,
+  cxBarEditItemRS20;
+
+contains
+  MDM.Catalog.UI.Article in 'Source\MDM.Catalog.UI.Article.pas' {frmMDMArticle},
+  MDM.Catalog.Article.Logic.TArticleDraft in 'Source\MDM.Catalog.Article.Logic.TArticleDraft.pas',
+  MDM.Catalog.UI.ArticleDetail in 'Source\MDM.Catalog.UI.ArticleDetail.pas' {frmMDMArticleDetail},
+  MDM.Catalog.Article.Logic.Consts in 'Source\MDM.Catalog.Article.Logic.Consts.pas',
+  MDM.Catalog.Article.Logic.TArticleDraftItem in 'Source\MDM.Catalog.Article.Logic.TArticleDraftItem.pas',
+  MDM.Catalog.Article.Logic.TArticleClean in 'Source\MDM.Catalog.Article.Logic.TArticleClean.pas';
+
+end.

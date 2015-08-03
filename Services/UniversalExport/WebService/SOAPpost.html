@@ -1,0 +1,11 @@
+POST /Project1.WebApp HTTP/1.1
+SOAPAction: "urn:WebUniversalExportIntf-IWebUniversalExport#Multiply"
+Content-Type: text/xml; charset="utf-8"
+User-Agent: Borland SOAP 1.2
+Host: localhost:8081
+Content-Length: 533
+Connection: Keep-Alive
+Cache-Control: no-cache
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><NS1:Multiply xmlns:NS1="urn:WebUniversalExportIntf-IWebUniversalExport"><Num1 xsi:type="xsd:int">2</Num1><Num2 xsi:type="xsd:int">2</Num2></NS1:Multiply></SOAP-ENV:Body></SOAP-ENV:Envelope>

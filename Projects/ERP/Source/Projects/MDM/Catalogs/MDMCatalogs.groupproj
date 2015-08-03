@@ -1,0 +1,84 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{1B434762-B14C-4541-94E9-BB190A23C779}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\System\Classes\MDM.Package.Classes.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TradeMark\MDM.Catalog.TradeMark.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="SynonymTradeMark\MDM.Package.SynonymTradeMark.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Article\MDM.Catalog.Article.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Crosses\MDM.Catalog.Crosses.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="MDM_Package_Classes">
+        <MSBuild Projects="..\System\Classes\MDM.Package.Classes.dproj"/>
+    </Target>
+    <Target Name="MDM_Package_Classes:Clean">
+        <MSBuild Projects="..\System\Classes\MDM.Package.Classes.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MDM_Package_Classes:Make">
+        <MSBuild Projects="..\System\Classes\MDM.Package.Classes.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MDM_Catalog_TradeMark">
+        <MSBuild Projects="TradeMark\MDM.Catalog.TradeMark.dproj"/>
+    </Target>
+    <Target Name="MDM_Catalog_TradeMark:Clean">
+        <MSBuild Projects="TradeMark\MDM.Catalog.TradeMark.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MDM_Catalog_TradeMark:Make">
+        <MSBuild Projects="TradeMark\MDM.Catalog.TradeMark.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MDM_Package_SynonymTradeMark">
+        <MSBuild Projects="SynonymTradeMark\MDM.Package.SynonymTradeMark.dproj"/>
+    </Target>
+    <Target Name="MDM_Package_SynonymTradeMark:Clean">
+        <MSBuild Projects="SynonymTradeMark\MDM.Package.SynonymTradeMark.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MDM_Package_SynonymTradeMark:Make">
+        <MSBuild Projects="SynonymTradeMark\MDM.Package.SynonymTradeMark.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MDM_Catalog_Article">
+        <MSBuild Projects="Article\MDM.Catalog.Article.dproj"/>
+    </Target>
+    <Target Name="MDM_Catalog_Article:Clean">
+        <MSBuild Projects="Article\MDM.Catalog.Article.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MDM_Catalog_Article:Make">
+        <MSBuild Projects="Article\MDM.Catalog.Article.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MDM_Catalog_Crosses">
+        <MSBuild Projects="Crosses\MDM.Catalog.Crosses.dproj"/>
+    </Target>
+    <Target Name="MDM_Catalog_Crosses:Clean">
+        <MSBuild Projects="Crosses\MDM.Catalog.Crosses.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MDM_Catalog_Crosses:Make">
+        <MSBuild Projects="Crosses\MDM.Catalog.Crosses.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="MDM_Package_Classes;MDM_Catalog_TradeMark;MDM_Package_SynonymTradeMark;MDM_Catalog_Article;MDM_Catalog_Crosses"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="MDM_Package_Classes:Clean;MDM_Catalog_TradeMark:Clean;MDM_Package_SynonymTradeMark:Clean;MDM_Catalog_Article:Clean;MDM_Catalog_Crosses:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="MDM_Package_Classes:Make;MDM_Catalog_TradeMark:Make;MDM_Package_SynonymTradeMark:Make;MDM_Catalog_Article:Make;MDM_Catalog_Crosses:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

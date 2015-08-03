@@ -1,0 +1,12 @@
+<Options>
+  <Socket>
+    <Server>127.0.0.1</Server>
+    <Port>1985</Port>
+  </Socket>
+  <Packages>
+    <Path>Admin\</Path>
+    <Path>Modules\</Path>
+    <Path>Catalogs\</Path>
+    <Path>Reports\</Path>
+  </Packages>
+</Options>

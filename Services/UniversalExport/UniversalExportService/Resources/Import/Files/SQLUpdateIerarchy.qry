@@ -1,0 +1,15 @@
+DECLARE @Domain AS INT
+SET @Domain = ##Domain##
+
+ DELETE FROM Ierarchy WHERE ID <=##IDTHRSHLD##  AND Domain=@Domain 
+ Update Ierarchy 
+	Set [TradeGroup] = Case [level0] 
+							when 0 then g2 
+							when 1 then g1 
+							when 2 then g2 
+						End 
+       ,[Tag] =  Case [TradeGroup] 
+						when g0 then [Tag] 
+						else  g0 
+					End 
+       Where ID >##IDTHRSHLD## AND Domain = @Domain

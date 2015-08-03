@@ -1,0 +1,6 @@
+SELECT COALESCE(MIN(ts),0) FROM
+(
+	SELECT CAST(MIN(TIMESTAMP) AS BIGINT)-1	as ts FROM [##Firm##$Sales Price] WHERE "Starting Date">GETDATE()
+	UNION 
+	SELECT CAST(MAX(TIMESTAMP)as BIGINT) AS ts FROM [##Firm##$Sales Price]			
+) SalesPriceTimestamps

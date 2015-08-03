@@ -1,0 +1,54 @@
+package MDM.Catalog.TradeMark;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  vcl,
+  ERP.Package.CustomForm,
+  ERP.Package.GlobalData,
+  ERP.Package.CustomGlobalFunctions,
+  cxGridRS20,
+  ShateM.Components.GridColumnHide,
+  ShateM.Components.FireDACTempTable,
+  office2010rt,
+  ERP.Package.Components,
+  MDM.Package.CustomForm,
+  MDM.Package.Components,
+  MDM.Package.Classes;
+
+contains
+  MDM.Catalog.UI.TradeMark in 'Sources\MDM.Catalog.UI.TradeMark.pas' {frmMDMTradeMark},
+  MDM.Catalog.UI.TradeMarkDetail in 'Sources\MDM.Catalog.UI.TradeMarkDetail.pas' {frmMDMTradeMarkDetail},
+  MDM.Catalog.Logic.TTradeMarkClean in 'Sources\MDM.Catalog.Logic.TTradeMarkClean.pas',
+  MDM.Catalog.Logic.TTradeMarkDraft in 'Sources\MDM.Catalog.Logic.TTradeMarkDraft.pas',
+  MDM.Catalog.Logic.TTradeMarkDraftItem in 'Sources\MDM.Catalog.Logic.TTradeMarkDraftItem.pas',
+  MDM.Catalog.Logic.Consts in 'Sources\MDM.Catalog.Logic.Consts.pas';
+
+end.

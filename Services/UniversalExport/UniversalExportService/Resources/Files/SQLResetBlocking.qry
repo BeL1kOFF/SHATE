@@ -1,0 +1,4 @@
+UPDATE [Exports]
+   SET  
+      [blocked] = 1 - [blocked]      
+ WHERE [INTERVAL] >0 AND [blocked] = 1 AND [ID_WH] = 

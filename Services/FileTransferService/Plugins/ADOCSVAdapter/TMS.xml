@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xml>
+  <options>
+    <server>svbyminssq1</server>
+    <db>shate-m</db>
+    <lifetime>8</lifetime>
+  </options>
+  <account>
+    <code>003</code>
+    <login>admin</login>
+    <password>admin</password>
+  </account>
+  <account>
+    <code>65</code>
+    <login>SHATEM.EM586</login>
+    <password>Djlbntkm586</password>
+  </account>
+</xml>

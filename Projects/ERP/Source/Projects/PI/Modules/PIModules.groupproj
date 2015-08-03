@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{8F334412-3A54-4CFC-AA03-C8B3038388B8}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Task\PI.Modules.Task.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="SenderAdapter\PI.Modules.SenderAdapter.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ReceiverAdapter\PI.Modules.ReceiverAdapter.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="PI_Modules_Task">
+        <MSBuild Projects="Task\PI.Modules.Task.dproj"/>
+    </Target>
+    <Target Name="PI_Modules_Task:Clean">
+        <MSBuild Projects="Task\PI.Modules.Task.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PI_Modules_Task:Make">
+        <MSBuild Projects="Task\PI.Modules.Task.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PI_Modules_SenderAdapter">
+        <MSBuild Projects="SenderAdapter\PI.Modules.SenderAdapter.dproj"/>
+    </Target>
+    <Target Name="PI_Modules_SenderAdapter:Clean">
+        <MSBuild Projects="SenderAdapter\PI.Modules.SenderAdapter.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PI_Modules_SenderAdapter:Make">
+        <MSBuild Projects="SenderAdapter\PI.Modules.SenderAdapter.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PI_Modules_ReceiverAdapter">
+        <MSBuild Projects="ReceiverAdapter\PI.Modules.ReceiverAdapter.dproj"/>
+    </Target>
+    <Target Name="PI_Modules_ReceiverAdapter:Clean">
+        <MSBuild Projects="ReceiverAdapter\PI.Modules.ReceiverAdapter.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PI_Modules_ReceiverAdapter:Make">
+        <MSBuild Projects="ReceiverAdapter\PI.Modules.ReceiverAdapter.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="PI_Modules_Task;PI_Modules_SenderAdapter;PI_Modules_ReceiverAdapter"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="PI_Modules_Task:Clean;PI_Modules_SenderAdapter:Clean;PI_Modules_ReceiverAdapter:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="PI_Modules_Task:Make;PI_Modules_SenderAdapter:Make;PI_Modules_ReceiverAdapter:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

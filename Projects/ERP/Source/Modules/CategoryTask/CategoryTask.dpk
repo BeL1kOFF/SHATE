@@ -1,0 +1,57 @@
+package CategoryTask;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  vcl,
+  rtl,
+  ERP.Package.CustomForm,
+  vclimg,
+  cxLibraryRS20,
+  dxThemeRS20,
+  dxGDIPlusRS20,
+  dxCoreRS20,
+  dxBarRS20,
+  dxComnRS20,
+  cxEditorsRS20,
+  cxDataRS20,
+  dxRibbonRS20,
+  cxPageControlRS20,
+  cxGridRS20,
+  dxSkinsCoreRS20,
+  dxSkinscxPCPainterRS20,
+  dxSkinsdxBarPainterRS20,
+  dxSkinCaramelRS20,
+  ERP.Package.CustomInterface;
+
+contains
+  CategoryTaskForm in 'Source\CategoryTaskForm.pas' {frmCategoryTask},
+  CategoryTaskFormDetail in 'Source\CategoryTaskFormDetail.pas' {frmCategoryTaskDetail};
+
+end.

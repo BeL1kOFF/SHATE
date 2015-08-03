@@ -1,0 +1,62 @@
+DECLARE @RUR AS FLOAT
+DECLARE @USD AS FLOAT
+DECLARE @BYR AS FLOAT
+
+DECLARE @THRSHLD AS BIGINT
+SET @THRSHLD = ##THRSHLDPrices##
+
+SET @RUR = 1/##RATERUR##
+SET @USD = 1/##RATEUSD##
+SET @BYR = 1/##RATEBYR## 
+
+SELECT ITEM_ID, ##DOMAIN## as DomainNo, ##PRGRPID## as ID_PriceGroup, UNIT, MINQ, SALE, CY, PRICE, TERMLESS 		
+  FROM(
+	SELECT
+	  ROW_NUMBER() OVER(PARTITION BY sp.[Item No_] 
+						ORDER BY 
+						  CASE WHEN ("Ending Date" >= DATEADD(dd, -1,GETDATE()) OR "Ending Date" < "Starting Date") THEN 1 ELSE 0 END DESC,
+						  CASE sp.[Currency Code] 
+						   WHEN '' THEN 1 
+						   WHEN 'RUB' THEN  @RUR 
+						   WHEN 'USD' THEN  @USD 
+						   WHEN 'BYR' THEN  @BYR 
+						  END*sp.[Unit Price] ASC) AS alt,
+	  [Item No_] AS ITEM_ID,
+	  [Unit of Measure Code] AS UNIT,
+	  CAST([Minimum Quantity] AS int) AS MINQ,
+	  1 -[Allow Line Disc_] AS SALE,
+	  CASE [Currency Code]
+		WHEN '' THEN 'EUR'
+		WHEN 'RUB' THEN 'RUR'
+		ELSE [Currency Code]
+	  END AS CY,
+	  sp.[Unit Price]*CASE WHEN ("Ending Date" >= DATEADD(dd, -1,GETDATE()) OR "Ending Date" < "Starting Date") THEN 1 ELSE 0 END AS PRICE,  
+	  CASE WHEN "Ending Date" < "Starting Date" THEN 1 ELSE 0 END as TERMLESS   
+	FROM
+	  [##Firm##$Sales Price] sp join [##Firm##$Item] as it 
+		on it.[No_] = sp.[Item No_]
+		AND  sp.[Minimum Quantity] <= it.[Sales Order Multiple] 
+		and (sp.[Unit of Measure Code] = it.[Sales Unit of Measure]  or sp.[Unit of Measure Code] = '')
+	WHERE  
+	  sp."Unit Price" >0 AND
+	  "Sales Code" = '##PRICEGROUP##' AND
+	 "Starting Date" <= GETDATE() 
+	  AND
+	  ( SIGN(@THRSHLD) * CAST(sp.[timestamp] AS BIGINT)>@THRSHLD
+	   OR
+		"Ending Date" >= DATEADD(dd, -1,GETDATE()) OR "Ending Date" < "Starting Date")) prc
+WHERE prc.alt = 1 AND (prc.TERMLESS=0 OR EXISTS( 
+												SELECT  [Item No_], MIN("Currency Code"), MAX("Currency Code"), Count("Currency Code")
+												FROM
+												  [##Firm##$Sales Price] 
+												WHERE  prc.ITEM_ID =  [Item No_] AND
+												  "Unit Price" >0 AND
+												  "Sales Code" = '##PRICEGROUP##' AND
+												  (
+												  ("Starting Date" <= DATEADD(dd, -1,GETDATE()) AND ("Ending Date" >= DATEADD(dd, -1,GETDATE()) OR "Ending Date" < "Starting Date"))
+												  OR CAST([timestamp] as BIGINT)>@THRSHLD
+												  )
+												GROUP BY [Item No_]
+												HAVING MIN("Currency Code")<>MAX("Currency Code") OR CAST(MAX([timestamp])as BIGINT)>@THRSHLD
+												)
+						)	

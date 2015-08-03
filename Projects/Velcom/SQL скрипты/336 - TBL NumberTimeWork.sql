@@ -1,0 +1,9 @@
+CREATE TABLE [dbo].[NumberTimeWork](
+	[Number] [varchar](7) NOT NULL,
+	[BeginTime] [time](7) NOT NULL,
+	[EndTime] [time](7) NOT NULL,
+ CONSTRAINT [PK_NumberTimeWork] PRIMARY KEY CLUSTERED 
+(
+	[Number] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+)

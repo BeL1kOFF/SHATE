@@ -1,0 +1,10 @@
+<Options>
+  <Connection>
+    <Server>spbypriw0057</Server>
+    <DataBase>Admin</DataBase>
+  </Connection>
+  <Socket>
+    <PortClient>1985</PortClient>
+    <PortManager>1986</PortManager>
+  </Socket>
+</Options>

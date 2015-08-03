@@ -1,0 +1,6 @@
+<Options>
+  <Connection>
+    <Server>svbyprissq8</Server>
+    <DataBase>DBRevision</DataBase>
+  </Connection>
+</Options>

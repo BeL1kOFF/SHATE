@@ -1,0 +1,3 @@
+SELECT CAST(MAX(TIMESTAMP)as BIGINT) 
+FROM  [##Firm##$##Table##]
+/*##WHERE##*/

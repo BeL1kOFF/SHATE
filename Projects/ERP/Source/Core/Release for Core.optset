@@ -1,0 +1,24 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <DCC_IOChecking>false</DCC_IOChecking>
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_UnitSearchPath>\ERP\$(Platform)\$(Config)\DCP\;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_DcuOutput>\ERP\$(Platform)\$(Config)\DCU\</DCC_DcuOutput>
+        <DCC_AssertionsAtRuntime>false</DCC_AssertionsAtRuntime>
+        <DCC_ImportedDataReferences>false</DCC_ImportedDataReferences>
+        <DCC_DcpOutput>\ERP\$(Platform)\$(Config)\DCP\</DCC_DcpOutput>
+        <DCC_ExeOutput>\ERP\$(Platform)\$(Config)\</DCC_ExeOutput>
+        <DCC_BplOutput>\ERP\$(Platform)\$(Config)\System\</DCC_BplOutput>
+    </PropertyGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>OptionSet</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality/>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+</Project>

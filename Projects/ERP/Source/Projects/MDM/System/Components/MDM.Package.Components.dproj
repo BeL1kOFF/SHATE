@@ -1,0 +1,131 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{D61B3720-0752-48FB-B5BF-A82E4130A6F3}</ProjectGuid>
+        <MainSource>MDM.Package.Components.dpk</MainSource>
+        <ProjectVersion>15.4</ProjectVersion>
+        <FrameworkType>None</FrameworkType>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug ERP</Config>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1</TargetedPlatforms>
+        <AppType>Package</AppType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug ERP' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release ERP' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <GenPackage>true</GenPackage>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
+        <GenDll>true</GenDll>
+        <DCC_CBuilderOutput>All</DCC_CBuilderOutput>
+        <SanitizedProjectName>MDM_Package_Components</SanitizedProjectName>
+        <RuntimeOnlyPackage>true</RuntimeOnlyPackage>
+        <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
+        <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+    </PropertyGroup>
+    <Import Project="..\Debug for Core.optset" Condition="'$(Cfg_1)'!='' And Exists('..\Debug for Core.optset')"/>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <CfgDependentOn>..\Debug for Core.optset</CfgDependentOn>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <Debugger_HostApplication>D:\ERP\Win32\Debug ERP\ERP.exe</Debugger_HostApplication>
+    </PropertyGroup>
+    <Import Project="..\Release for Core.optset" Condition="'$(Cfg_2)'!='' And Exists('..\Release for Core.optset')"/>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <CfgDependentOn>..\Release for Core.optset</CfgDependentOn>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="cxGridRS20.dcp"/>
+        <DCCReference Include="ERP.Package.Components.dcp"/>
+        <DCCReference Include="Source\MDM.Package.Components.CatalogTableViewClean.pas"/>
+        <DCCReference Include="Source\MDM.Package.Components.CatalogTableViewCleanController.pas"/>
+        <DCCReference Include="Source\MDM.Package.Components.CustomCatalogTableViewController.pas"/>
+        <DCCReference Include="Source\MDM.Package.Interfaces.ICustomCatalogController.pas"/>
+        <DCCReference Include="Source\MDM.Package.Interfaces.ICatalogCleanController.pas"/>
+        <DCCReference Include="Source\MDM.Package.Components.CustomCatalogTableView.pas"/>
+        <DCCReference Include="Source\MDM.Package.Components.CustomCatalogTableViewOptionsMDM.pas"/>
+        <DCCReference Include="Source\MDM.Package.Components.CatalogTableViewCleanOptionsMDM.pas"/>
+        <DCCReference Include="Source\MDM.Package.Components.CustomOptionsMDMAction.pas"/>
+        <DCCReference Include="Source\MDM.Package.Components.CleanOptionsMDMAction.pas"/>
+        <DCCReference Include="Source\MDM.Package.Components.CatalogAction.pas"/>
+        <DCCReference Include="Source\MDM.Package.Components.CustomCatalogColumn.pas"/>
+        <DCCReference Include="Source\MDM.Package.Components.CustomCatalogColumnMetaOptions.pas"/>
+        <DCCReference Include="Source\MDM.Package.Components.CatalogCleanColumn.pas"/>
+        <DCCReference Include="Source\MDM.Package.Components.CatalogCleanColumnMetaOptions.pas"/>
+        <DCCReference Include="Source\MDM.Package.Components.CatalogActionOptions.pas"/>
+        <DCCReference Include="Source\MDM.Package.Components.Types.pas"/>
+        <DCCReference Include="Source\MDM.Package.Components.CatalogTableViewDraft.pas"/>
+        <DCCReference Include="Source\MDM.Package.Components.CatalogTableViewDraftOptionsMDM.pas"/>
+        <DCCReference Include="Source\MDM.Package.Components.DraftOptionsMDMAction.pas"/>
+        <DCCReference Include="Source\MDM.Package.Components.CatalogDraftColumnMetaOptions.pas"/>
+        <DCCReference Include="Source\MDM.Package.Components.CatalogDraftColumn.pas"/>
+        <DCCReference Include="Source\MDM.Package.Components.CatalogTableViewDraftController.pas"/>
+        <DCCReference Include="Source\MDM.Package.Interfaces.ICatalogDraftController.pas"/>
+        <BuildConfiguration Include="Release ERP">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+            <DependentOn>..\Release for Core.optset</DependentOn>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug ERP">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+            <DependentOn>..\Debug for Core.optset</DependentOn>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>Package</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k200.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp200.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+                <Source>
+                    <Source Name="MainSource">MDM.Package.Components.dpk</Source>
+                </Source>
+            </Delphi.Personality>
+            <Deployment/>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+</Project>

@@ -1,0 +1,156 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{4B3DD4C6-50F4-4140-9F5B-5BDB385E0FBE}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="AdminServer\ERP.Admin.Server.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="AdminTemplateDataBase\ERP.Admin.TemplateDataBase.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="AdminDataBase\ERP.Admin.DataBase.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="AdminModule\ERP.Admin.Module.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="AdminProfileGroup\ERP.Admin.ProfileGroup.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="AdminProfile\ERP.Admin.Profile.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="AdminUsersGroup\ERP.Admin.UsersGroup.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="AdminUser\ERP.Admin.User.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="AdminAccessTable\ERP.Admin.AccessTable.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="AdminAccessGroup\ERP.Admin.AccessGroup.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="AdminMenuDesigner\ERP.Admin.MenuDesigner.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ERP_Admin_Server">
+        <MSBuild Projects="AdminServer\ERP.Admin.Server.dproj"/>
+    </Target>
+    <Target Name="ERP_Admin_Server:Clean">
+        <MSBuild Projects="AdminServer\ERP.Admin.Server.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ERP_Admin_Server:Make">
+        <MSBuild Projects="AdminServer\ERP.Admin.Server.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ERP_Admin_TemplateDataBase">
+        <MSBuild Projects="AdminTemplateDataBase\ERP.Admin.TemplateDataBase.dproj"/>
+    </Target>
+    <Target Name="ERP_Admin_TemplateDataBase:Clean">
+        <MSBuild Projects="AdminTemplateDataBase\ERP.Admin.TemplateDataBase.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ERP_Admin_TemplateDataBase:Make">
+        <MSBuild Projects="AdminTemplateDataBase\ERP.Admin.TemplateDataBase.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ERP_Admin_DataBase">
+        <MSBuild Projects="AdminDataBase\ERP.Admin.DataBase.dproj"/>
+    </Target>
+    <Target Name="ERP_Admin_DataBase:Clean">
+        <MSBuild Projects="AdminDataBase\ERP.Admin.DataBase.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ERP_Admin_DataBase:Make">
+        <MSBuild Projects="AdminDataBase\ERP.Admin.DataBase.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ERP_Admin_Module">
+        <MSBuild Projects="AdminModule\ERP.Admin.Module.dproj"/>
+    </Target>
+    <Target Name="ERP_Admin_Module:Clean">
+        <MSBuild Projects="AdminModule\ERP.Admin.Module.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ERP_Admin_Module:Make">
+        <MSBuild Projects="AdminModule\ERP.Admin.Module.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ERP_Admin_ProfileGroup">
+        <MSBuild Projects="AdminProfileGroup\ERP.Admin.ProfileGroup.dproj"/>
+    </Target>
+    <Target Name="ERP_Admin_ProfileGroup:Clean">
+        <MSBuild Projects="AdminProfileGroup\ERP.Admin.ProfileGroup.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ERP_Admin_ProfileGroup:Make">
+        <MSBuild Projects="AdminProfileGroup\ERP.Admin.ProfileGroup.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ERP_Admin_Profile">
+        <MSBuild Projects="AdminProfile\ERP.Admin.Profile.dproj"/>
+    </Target>
+    <Target Name="ERP_Admin_Profile:Clean">
+        <MSBuild Projects="AdminProfile\ERP.Admin.Profile.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ERP_Admin_Profile:Make">
+        <MSBuild Projects="AdminProfile\ERP.Admin.Profile.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ERP_Admin_UsersGroup">
+        <MSBuild Projects="AdminUsersGroup\ERP.Admin.UsersGroup.dproj"/>
+    </Target>
+    <Target Name="ERP_Admin_UsersGroup:Clean">
+        <MSBuild Projects="AdminUsersGroup\ERP.Admin.UsersGroup.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ERP_Admin_UsersGroup:Make">
+        <MSBuild Projects="AdminUsersGroup\ERP.Admin.UsersGroup.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ERP_Admin_User">
+        <MSBuild Projects="AdminUser\ERP.Admin.User.dproj"/>
+    </Target>
+    <Target Name="ERP_Admin_User:Clean">
+        <MSBuild Projects="AdminUser\ERP.Admin.User.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ERP_Admin_User:Make">
+        <MSBuild Projects="AdminUser\ERP.Admin.User.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ERP_Admin_AccessTable">
+        <MSBuild Projects="AdminAccessTable\ERP.Admin.AccessTable.dproj"/>
+    </Target>
+    <Target Name="ERP_Admin_AccessTable:Clean">
+        <MSBuild Projects="AdminAccessTable\ERP.Admin.AccessTable.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ERP_Admin_AccessTable:Make">
+        <MSBuild Projects="AdminAccessTable\ERP.Admin.AccessTable.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ERP_Admin_AccessGroup">
+        <MSBuild Projects="AdminAccessGroup\ERP.Admin.AccessGroup.dproj"/>
+    </Target>
+    <Target Name="ERP_Admin_AccessGroup:Clean">
+        <MSBuild Projects="AdminAccessGroup\ERP.Admin.AccessGroup.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ERP_Admin_AccessGroup:Make">
+        <MSBuild Projects="AdminAccessGroup\ERP.Admin.AccessGroup.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ERP_Admin_MenuDesigner">
+        <MSBuild Projects="AdminMenuDesigner\ERP.Admin.MenuDesigner.dproj"/>
+    </Target>
+    <Target Name="ERP_Admin_MenuDesigner:Clean">
+        <MSBuild Projects="AdminMenuDesigner\ERP.Admin.MenuDesigner.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ERP_Admin_MenuDesigner:Make">
+        <MSBuild Projects="AdminMenuDesigner\ERP.Admin.MenuDesigner.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ERP_Admin_Server;ERP_Admin_TemplateDataBase;ERP_Admin_DataBase;ERP_Admin_Module;ERP_Admin_ProfileGroup;ERP_Admin_Profile;ERP_Admin_UsersGroup;ERP_Admin_User;ERP_Admin_AccessTable;ERP_Admin_AccessGroup;ERP_Admin_MenuDesigner"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ERP_Admin_Server:Clean;ERP_Admin_TemplateDataBase:Clean;ERP_Admin_DataBase:Clean;ERP_Admin_Module:Clean;ERP_Admin_ProfileGroup:Clean;ERP_Admin_Profile:Clean;ERP_Admin_UsersGroup:Clean;ERP_Admin_User:Clean;ERP_Admin_AccessTable:Clean;ERP_Admin_AccessGroup:Clean;ERP_Admin_MenuDesigner:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ERP_Admin_Server:Make;ERP_Admin_TemplateDataBase:Make;ERP_Admin_DataBase:Make;ERP_Admin_Module:Make;ERP_Admin_ProfileGroup:Make;ERP_Admin_Profile:Make;ERP_Admin_UsersGroup:Make;ERP_Admin_User:Make;ERP_Admin_AccessTable:Make;ERP_Admin_AccessGroup:Make;ERP_Admin_MenuDesigner:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

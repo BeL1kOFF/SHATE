@@ -1,0 +1,17 @@
+SELECT ##IDCLIENT##  as IDClient
+       ,CASE Code 
+			WHEN '“Œ¬À»Õ»ﬂ' THEN 1
+			WHEN '“Ã' THEN 2 
+			ELSE 0 
+        END * ISNULL(SIGN(LEN("Item Group Code")),0)  as IDTYPE
+        ,"Item Group Code" as ItemsGroupCode,  "Line Discount %" 
+		,  1-SQUARE(SIGN("Special Terms"-5)) as "Force", 
+		"Customer No_", "Cust_ Price Group Code","Type", "Code", "Currency Code", "Starting Date", 
+		/*,[Line Discount %],*/"Minimum Quantity","Ending Date","Unit of Measure Code","Variant Code","Item No_ 2" ,"Item Search Description" ,"Item Group Code"
+		,"Unit Price" ,"Calc_ Date","Location Code" ,"Agreement No_","Special Terms" ,"Allow Line Disc_" , "Allow Invoice Disc_"
+FROM "##DATABASE##"."dbo"."##FIRM##$Cust_ Price Group Discount" 
+WHERE  "Type" = 2  AND 
+       (
+       	[Starting Date]<GETDATE() AND (GETDATE()<[Ending Date] OR [Ending Date]<0)
+       ) AND ("Line Discount %" IS NOT NULL) AND "Customer No_"='##CLIENTNAV##'
+ORDER BY IDTYPE DESC

@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="urn:microsoft-dynamics-schemas/codeunit/ServiceProg" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/ServiceProg">
+<types>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/ServiceProg">
+<element name="ImportXML">
+<complexType>
+<sequence>
+<element minOccurs="1" maxOccurs="1" name="xMLText" type="string"/>
+</sequence>
+</complexType>
+</element>
+<element name="ImportXML_Result">
+<complexType>
+<sequence/>
+</complexType>
+</element>
+<element name="GetItemStock">
+<complexType>
+<sequence>
+<element minOccurs="1" maxOccurs="1" name="itemNo2_TM" type="string"/>
+</sequence>
+</complexType>
+</element>
+<element name="GetItemStock_Result">
+<complexType>
+<sequence>
+<element minOccurs="1" maxOccurs="1" name="return_value" type="string"/>
+</sequence>
+</complexType>
+</element>
+<element name="Warmup">
+<complexType>
+<sequence/>
+</complexType>
+</element>
+<element name="Warmup_Result">
+<complexType>
+<sequence/>
+</complexType>
+</element>
+<element name="GetItemPurchase">
+<complexType>
+<sequence>
+<element minOccurs="1" maxOccurs="1" name="itemNo2_TM" type="string"/>
+</sequence>
+</complexType>
+</element>
+<element name="GetItemPurchase_Result">
+<complexType>
+<sequence>
+<element minOccurs="1" maxOccurs="1" name="return_value" type="string"/>
+</sequence>
+</complexType>
+</element>
+<element name="ItemExport">
+<complexType>
+<sequence/>
+</complexType>
+</element>
+<element name="ItemExport_Result">
+<complexType>
+<sequence/>
+</complexType>
+</element>
+<element name="SubstituteExport">
+<complexType>
+<sequence/>
+</complexType>
+</element>
+<element name="SubstituteExport_Result">
+<complexType>
+<sequence/>
+</complexType>
+</element>
+<element name="OENumberExport">
+<complexType>
+<sequence/>
+</complexType>
+</element>
+<element name="OENumberExport_Result">
+<complexType>
+<sequence/>
+</complexType>
+</element>
+<element name="StockExport">
+<complexType>
+<sequence/>
+</complexType>
+</element>
+<element name="StockExport_Result">
+<complexType>
+<sequence/>
+</complexType>
+</element>
+<element name="PriceExport">
+<complexType>
+<sequence/>
+</complexType>
+</element>
+<element name="PriceExport_Result">
+<complexType>
+<sequence/>
+</complexType>
+</element>
+<element name="CurrencyExport">
+<complexType>
+<sequence/>
+</complexType>
+</element>
+<element name="CurrencyExport_Result">
+<complexType>
+<sequence/>
+</complexType>
+</element>
+<element name="CustPasswordExport">
+<complexType>
+<sequence/>
+</complexType>
+</element>
+<element name="CustPasswordExport_Result">
+<complexType>
+<sequence/>
+</complexType>
+</element>
+<element name="ShipAddressExport">
+<complexType>
+<sequence/>
+</complexType>
+</element>
+<element name="ShipAddressExport_Result">
+<complexType>
+<sequence/>
+</complexType>
+</element>
+<element name="CustDiscountExport">
+<complexType>
+<sequence/>
+</complexType>
+</element>
+<element name="CustDiscountExport_Result">
+<complexType>
+<sequence/>
+</complexType>
+</element>
+<element name="CustAgreementExport">
+<complexType>
+<sequence/>
+</complexType>
+</element>
+<element name="CustAgreementExport_Result">
+<complexType>
+<sequence/>
+</complexType>
+</element>
+<element name="ReturnCreditMemoExport">
+<complexType>
+<sequence/>
+</complexType>
+</element>
+<element name="ReturnCreditMemoExport_Result">
+<complexType>
+<sequence/>
+</complexType>
+</element>
+<element name="DeleteSalesReturnExport">
+<complexType>
+<sequence/>
+</complexType>
+</element>
+<element name="DeleteSalesReturnExport_Result">
+<complexType>
+<sequence/>
+</complexType>
+</element>
+<element name="ImportWaitingList">
+<complexType>
+<sequence>
+<element minOccurs="1" maxOccurs="1" name="customerId" type="string"/>
+<element minOccurs="1" maxOccurs="1" name="itemCode" type="string"/>
+<element minOccurs="1" maxOccurs="1" name="brand" type="string"/>
+<element minOccurs="1" maxOccurs="1" name="quantity" type="decimal"/>
+<element minOccurs="1" maxOccurs="1" name="documentDate" type="dateTime"/>
+</sequence>
+</complexType>
+</element>
+<element name="ImportWaitingList_Result">
+<complexType>
+<sequence/>
+</complexType>
+</element>
+</schema>
+</types>
+<message name="ImportXML">
+<part name="parameters" element="tns:ImportXML"/>
+</message>
+<message name="ImportXML_Result">
+<part name="parameters" element="tns:ImportXML_Result"/>
+</message>
+<message name="GetItemStock">
+<part name="parameters" element="tns:GetItemStock"/>
+</message>
+<message name="GetItemStock_Result">
+<part name="parameters" element="tns:GetItemStock_Result"/>
+</message>
+<message name="Warmup">
+<part name="parameters" element="tns:Warmup"/>
+</message>
+<message name="Warmup_Result">
+<part name="parameters" element="tns:Warmup_Result"/>
+</message>
+<message name="GetItemPurchase">
+<part name="parameters" element="tns:GetItemPurchase"/>
+</message>
+<message name="GetItemPurchase_Result">
+<part name="parameters" element="tns:GetItemPurchase_Result"/>
+</message>
+<message name="ItemExport">
+<part name="parameters" element="tns:ItemExport"/>
+</message>
+<message name="ItemExport_Result">
+<part name="parameters" element="tns:ItemExport_Result"/>
+</message>
+<message name="SubstituteExport">
+<part name="parameters" element="tns:SubstituteExport"/>
+</message>
+<message name="SubstituteExport_Result">
+<part name="parameters" element="tns:SubstituteExport_Result"/>
+</message>
+<message name="OENumberExport">
+<part name="parameters" element="tns:OENumberExport"/>
+</message>
+<message name="OENumberExport_Result">
+<part name="parameters" element="tns:OENumberExport_Result"/>
+</message>
+<message name="StockExport">
+<part name="parameters" element="tns:StockExport"/>
+</message>
+<message name="StockExport_Result">
+<part name="parameters" element="tns:StockExport_Result"/>
+</message>
+<message name="PriceExport">
+<part name="parameters" element="tns:PriceExport"/>
+</message>
+<message name="PriceExport_Result">
+<part name="parameters" element="tns:PriceExport_Result"/>
+</message>
+<message name="CurrencyExport">
+<part name="parameters" element="tns:CurrencyExport"/>
+</message>
+<message name="CurrencyExport_Result">
+<part name="parameters" element="tns:CurrencyExport_Result"/>
+</message>
+<message name="CustPasswordExport">
+<part name="parameters" element="tns:CustPasswordExport"/>
+</message>
+<message name="CustPasswordExport_Result">
+<part name="parameters" element="tns:CustPasswordExport_Result"/>
+</message>
+<message name="ShipAddressExport">
+<part name="parameters" element="tns:ShipAddressExport"/>
+</message>
+<message name="ShipAddressExport_Result">
+<part name="parameters" element="tns:ShipAddressExport_Result"/>
+</message>
+<message name="CustDiscountExport">
+<part name="parameters" element="tns:CustDiscountExport"/>
+</message>
+<message name="CustDiscountExport_Result">
+<part name="parameters" element="tns:CustDiscountExport_Result"/>
+</message>
+<message name="CustAgreementExport">
+<part name="parameters" element="tns:CustAgreementExport"/>
+</message>
+<message name="CustAgreementExport_Result">
+<part name="parameters" element="tns:CustAgreementExport_Result"/>
+</message>
+<message name="ReturnCreditMemoExport">
+<part name="parameters" element="tns:ReturnCreditMemoExport"/>
+</message>
+<message name="ReturnCreditMemoExport_Result">
+<part name="parameters" element="tns:ReturnCreditMemoExport_Result"/>
+</message>
+<message name="DeleteSalesReturnExport">
+<part name="parameters" element="tns:DeleteSalesReturnExport"/>
+</message>
+<message name="DeleteSalesReturnExport_Result">
+<part name="parameters" element="tns:DeleteSalesReturnExport_Result"/>
+</message>
+<message name="ImportWaitingList">
+<part name="parameters" element="tns:ImportWaitingList"/>
+</message>
+<message name="ImportWaitingList_Result">
+<part name="parameters" element="tns:ImportWaitingList_Result"/>
+</message>
+<portType name="ServiceProg_Port">
+<operation name="ImportXML">
+<input name="ImportXML" message="tns:ImportXML"/>
+<output name="ImportXML_Result" message="tns:ImportXML_Result"/>
+</operation>
+<operation name="GetItemStock">
+<input name="GetItemStock" message="tns:GetItemStock"/>
+<output name="GetItemStock_Result" message="tns:GetItemStock_Result"/>
+</operation>
+<operation name="Warmup">
+<input name="Warmup" message="tns:Warmup"/>
+<output name="Warmup_Result" message="tns:Warmup_Result"/>
+</operation>
+<operation name="GetItemPurchase">
+<input name="GetItemPurchase" message="tns:GetItemPurchase"/>
+<output name="GetItemPurchase_Result" message="tns:GetItemPurchase_Result"/>
+</operation>
+<operation name="ItemExport">
+<input name="ItemExport" message="tns:ItemExport"/>
+<output name="ItemExport_Result" message="tns:ItemExport_Result"/>
+</operation>
+<operation name="SubstituteExport">
+<input name="SubstituteExport" message="tns:SubstituteExport"/>
+<output name="SubstituteExport_Result" message="tns:SubstituteExport_Result"/>
+</operation>
+<operation name="OENumberExport">
+<input name="OENumberExport" message="tns:OENumberExport"/>
+<output name="OENumberExport_Result" message="tns:OENumberExport_Result"/>
+</operation>
+<operation name="StockExport">
+<input name="StockExport" message="tns:StockExport"/>
+<output name="StockExport_Result" message="tns:StockExport_Result"/>
+</operation>
+<operation name="PriceExport">
+<input name="PriceExport" message="tns:PriceExport"/>
+<output name="PriceExport_Result" message="tns:PriceExport_Result"/>
+</operation>
+<operation name="CurrencyExport">
+<input name="CurrencyExport" message="tns:CurrencyExport"/>
+<output name="CurrencyExport_Result" message="tns:CurrencyExport_Result"/>
+</operation>
+<operation name="CustPasswordExport">
+<input name="CustPasswordExport" message="tns:CustPasswordExport"/>
+<output name="CustPasswordExport_Result" message="tns:CustPasswordExport_Result"/>
+</operation>
+<operation name="ShipAddressExport">
+<input name="ShipAddressExport" message="tns:ShipAddressExport"/>
+<output name="ShipAddressExport_Result" message="tns:ShipAddressExport_Result"/>
+</operation>
+<operation name="CustDiscountExport">
+<input name="CustDiscountExport" message="tns:CustDiscountExport"/>
+<output name="CustDiscountExport_Result" message="tns:CustDiscountExport_Result"/>
+</operation>
+<operation name="CustAgreementExport">
+<input name="CustAgreementExport" message="tns:CustAgreementExport"/>
+<output name="CustAgreementExport_Result" message="tns:CustAgreementExport_Result"/>
+</operation>
+<operation name="ReturnCreditMemoExport">
+<input name="ReturnCreditMemoExport" message="tns:ReturnCreditMemoExport"/>
+<output name="ReturnCreditMemoExport_Result" message="tns:ReturnCreditMemoExport_Result"/>
+</operation>
+<operation name="DeleteSalesReturnExport">
+<input name="DeleteSalesReturnExport" message="tns:DeleteSalesReturnExport"/>
+<output name="DeleteSalesReturnExport_Result" message="tns:DeleteSalesReturnExport_Result"/>
+</operation>
+<operation name="ImportWaitingList">
+<input name="ImportWaitingList" message="tns:ImportWaitingList"/>
+<output name="ImportWaitingList_Result" message="tns:ImportWaitingList_Result"/>
+</operation>
+</portType>
+<binding name="ServiceProg_Binding" type="tns:ServiceProg_Port">
+<binding xmlns="http://schemas.xmlsoap.org/wsdl/soap/" transport="http://schemas.xmlsoap.org/soap/http"/>
+<operation name="ImportXML">
+<operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="urn:microsoft-dynamics-schemas/codeunit/ServiceProg:ImportXML" style="document"/>
+<input name="ImportXML">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</input>
+<output name="ImportXML_Result">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</output>
+</operation>
+<operation name="GetItemStock">
+<operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="urn:microsoft-dynamics-schemas/codeunit/ServiceProg:GetItemStock" style="document"/>
+<input name="GetItemStock">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</input>
+<output name="GetItemStock_Result">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</output>
+</operation>
+<operation name="Warmup">
+<operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="urn:microsoft-dynamics-schemas/codeunit/ServiceProg:Warmup" style="document"/>
+<input name="Warmup">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</input>
+<output name="Warmup_Result">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</output>
+</operation>
+<operation name="GetItemPurchase">
+<operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="urn:microsoft-dynamics-schemas/codeunit/ServiceProg:GetItemPurchase" style="document"/>
+<input name="GetItemPurchase">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</input>
+<output name="GetItemPurchase_Result">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</output>
+</operation>
+<operation name="ItemExport">
+<operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="urn:microsoft-dynamics-schemas/codeunit/ServiceProg:ItemExport" style="document"/>
+<input name="ItemExport">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</input>
+<output name="ItemExport_Result">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</output>
+</operation>
+<operation name="SubstituteExport">
+<operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="urn:microsoft-dynamics-schemas/codeunit/ServiceProg:SubstituteExport" style="document"/>
+<input name="SubstituteExport">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</input>
+<output name="SubstituteExport_Result">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</output>
+</operation>
+<operation name="OENumberExport">
+<operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="urn:microsoft-dynamics-schemas/codeunit/ServiceProg:OENumberExport" style="document"/>
+<input name="OENumberExport">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</input>
+<output name="OENumberExport_Result">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</output>
+</operation>
+<operation name="StockExport">
+<operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="urn:microsoft-dynamics-schemas/codeunit/ServiceProg:StockExport" style="document"/>
+<input name="StockExport">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</input>
+<output name="StockExport_Result">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</output>
+</operation>
+<operation name="PriceExport">
+<operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="urn:microsoft-dynamics-schemas/codeunit/ServiceProg:PriceExport" style="document"/>
+<input name="PriceExport">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</input>
+<output name="PriceExport_Result">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</output>
+</operation>
+<operation name="CurrencyExport">
+<operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="urn:microsoft-dynamics-schemas/codeunit/ServiceProg:CurrencyExport" style="document"/>
+<input name="CurrencyExport">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</input>
+<output name="CurrencyExport_Result">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</output>
+</operation>
+<operation name="CustPasswordExport">
+<operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="urn:microsoft-dynamics-schemas/codeunit/ServiceProg:CustPasswordExport" style="document"/>
+<input name="CustPasswordExport">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</input>
+<output name="CustPasswordExport_Result">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</output>
+</operation>
+<operation name="ShipAddressExport">
+<operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="urn:microsoft-dynamics-schemas/codeunit/ServiceProg:ShipAddressExport" style="document"/>
+<input name="ShipAddressExport">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</input>
+<output name="ShipAddressExport_Result">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</output>
+</operation>
+<operation name="CustDiscountExport">
+<operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="urn:microsoft-dynamics-schemas/codeunit/ServiceProg:CustDiscountExport" style="document"/>
+<input name="CustDiscountExport">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</input>
+<output name="CustDiscountExport_Result">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</output>
+</operation>
+<operation name="CustAgreementExport">
+<operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="urn:microsoft-dynamics-schemas/codeunit/ServiceProg:CustAgreementExport" style="document"/>
+<input name="CustAgreementExport">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</input>
+<output name="CustAgreementExport_Result">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</output>
+</operation>
+<operation name="ReturnCreditMemoExport">
+<operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="urn:microsoft-dynamics-schemas/codeunit/ServiceProg:ReturnCreditMemoExport" style="document"/>
+<input name="ReturnCreditMemoExport">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</input>
+<output name="ReturnCreditMemoExport_Result">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</output>
+</operation>
+<operation name="DeleteSalesReturnExport">
+<operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="urn:microsoft-dynamics-schemas/codeunit/ServiceProg:DeleteSalesReturnExport" style="document"/>
+<input name="DeleteSalesReturnExport">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</input>
+<output name="DeleteSalesReturnExport_Result">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</output>
+</operation>
+<operation name="ImportWaitingList">
+<operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="urn:microsoft-dynamics-schemas/codeunit/ServiceProg:ImportWaitingList" style="document"/>
+<input name="ImportWaitingList">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</input>
+<output name="ImportWaitingList_Result">
+<body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="literal"/>
+</output>
+</operation>
+</binding>
+<service name="ServiceProg">
+<port name="ServiceProg_Port" binding="tns:ServiceProg_Binding">
+<address xmlns="http://schemas.xmlsoap.org/wsdl/soap/" location="http://svbyprisa0012:7049/DynamicsNAV/WS/Shate-M/Codeunit/ServiceProg"/>
+</port>
+</service>
+</definitions>

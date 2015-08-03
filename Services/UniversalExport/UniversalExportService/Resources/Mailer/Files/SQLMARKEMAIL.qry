@@ -1,0 +1,6 @@
+DECLARE @ExpID as INT
+SET @ExpID = ##EXPID##
+UPDATE MAILS
+SET [status] = 0
+WHERE ID = (select max(ID) from MAILS 
+			where ExpID = @ExpID ProcessingTimestamp IS NULL and Status IS NULL) 

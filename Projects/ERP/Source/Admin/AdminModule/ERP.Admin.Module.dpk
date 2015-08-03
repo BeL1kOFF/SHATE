@@ -1,0 +1,46 @@
+package ERP.Admin.Module;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  ERP.Package.GlobalData,
+  ERP.Package.CustomForm,
+  ERP.Package.CustomGlobalFunctions,
+  cxGridRS20,
+  ShateM.Components.FireDACTempTable;
+
+contains
+  ERP.Admin.Module.UI.AdminModule in 'Source\ERP.Admin.Module.UI.AdminModule.pas' {frmAdminModule},
+  ERP.Admin.Module.UI.AdminModuleDetail in 'Source\ERP.Admin.Module.UI.AdminModuleDetail.pas' {frmAdminModuleDetail},
+  ERP.Admin.Module.UI.AdminModuleAccess in 'Source\ERP.Admin.Module.UI.AdminModuleAccess.pas' {frmAdminModuleAccess},
+  ERP.Admin.Module.UI.AdminModuleAutoRegister in 'Source\ERP.Admin.Module.UI.AdminModuleAutoRegister.pas' {frmAdminModuleAutoRegister},
+  ERP.Admin.Module.UI.AdminModuleReengineering in 'Source\ERP.Admin.Module.UI.AdminModuleReengineering.pas' {frmAdminModuleReengineering};
+
+end.

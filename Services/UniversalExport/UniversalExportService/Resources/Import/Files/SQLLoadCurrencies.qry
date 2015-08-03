@@ -1,0 +1,31 @@
+select  * from
+(
+select top 1 'EUR' as cy, /*[Exchange Rate Amount] */  1 as rate, -2 as typecode 
+from [##Firm##$Currency Exchange Rate]
+--where [Currency Code]= 'EUR' 
+--ORDER BY [Starting Date] DESC   
+) as EUR
+UNION
+select  * from
+(
+select top 1 'BYR' as Cy, [Exchange Rate Amount] as rate, 0 as typecode 
+from [##Firm##$Currency Exchange Rate]
+where [Currency Code]='BYR' 
+ORDER BY [Starting Date] DESC
+)  as BYR
+UNION
+select  * from
+(
+select top 1 'USD' as cy, [Exchange Rate Amount]  as rate, -2 as typecode
+from [##Firm##$Currency Exchange Rate]
+where [Currency Code]='USD' 
+ORDER BY [Starting Date] DESC 
+) as USD
+UNION
+select  * from
+(
+select top 1 'RUR' as cy, [Exchange Rate Amount] as rate, -2 as typecode 
+from [##Firm##$Currency Exchange Rate]
+where [Currency Code]='RUB' 
+ORDER BY [Starting Date] DESC   
+) as RUR

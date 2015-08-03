@@ -1,0 +1,275 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// русский resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\Nav_Scaner.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\Nav_Scaner.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_NAV_SCANER_DIALOG DIALOG  0, 0, 156, 129
+STYLE DS_SETFONT | WS_CAPTION | WS_SYSMENU
+CAPTION "Инвентаризация"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Пользователь",IDC_STATIC_USER,7,10,54,11
+    EDITTEXT        IDC_EDIT1,7,22,142,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Ок",IDC_BUTTON_OK,7,42,63,12,BS_CENTER
+    PUSHBUTTON      "Выход",IDC_BUTTON_CLOSE,83,41,66,13
+    PUSHBUTTON      "Настройка",IDC_BUTTON_SETTING,7,59,142,13
+    LTEXT           "IP",IDC_STATIC_IP,18,78,11,11
+    LTEXT           "Port",IDC_STATIC_PORT,15,96,16,13
+    PUSHBUTTON      "Тест",IDC_BUTTON_CONNECT,118,95,31,13
+    EDITTEXT        IDC_EDIT_IP,33,76,81,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PORT,37,94,81,15,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_LOCATION,7,22,142,100,CBS_DROPDOWNLIST | CBS_SORT | CBS_DISABLENOSCROLL | WS_TABSTOP,WS_EX_CLIENTEDGE
+    LTEXT           "Склад",IDC_STATIC_LOCATION,7,11,142,11
+    LTEXT           "Список открытых инвентаризаций",IDC_STATIC_LIST_INVENTORY,7,37,142,11
+    CONTROL         "",IDC_LIST1,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,89,142,33
+    COMBOBOX        IDC_COMBO_INV_DOC,7,49,142,57,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Начать",IDC_BUTTON_START,41,101,68,17
+    COMBOBOX        IDC_COMBO_ZONE,7,72,142,60,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Обратный порядок",IDC_CHECK_SORT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,90,142,10
+END
+
+IDD_DLG_TEST DIALOG  0, 0, 160, 170
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    LTEXT           "Номер",IDC_STATIC_ITEM_NO_TEXT,7,63,21,13
+    LTEXT           "",IDC_STATIC_ITEM_NO_,48,59,104,15,WS_BORDER
+    LTEXT           "Бренд",IDC_STATIC_BRAND_TEXT,7,81,22,11
+    LTEXT           "",IDC_STATIC_BRAND,48,78,104,15,WS_BORDER
+    LTEXT           "",IDC_STATIC_DESC,7,112,145,51,WS_BORDER
+    LTEXT           "Описание",IDC_STATIC_DESCR_TEXT,7,97,36,9
+    RTEXT           "",IDC_STATIC_COUNT_IN_BOX,122,7,30,17
+    EDITTEXT        IDC_EDIT_BARCODE,7,7,60,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_COUNT,39,36,62,13,ES_AUTOHSCROLL
+    LTEXT           "Кол-во",IDC_STATIC_COUNT,7,34,26,11
+    PUSHBUTTON      "Сохранить",IDC_BUTTON_SAVE,112,34,40,13
+    CONTROL         "Номер",IDC_CHECK_NUMBER,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,73,7,47,12
+    LTEXT           "Static",IDC_STATIC_ITEMS,7,7,145,14
+    CONTROL         "",IDC_LIST_ITEMS,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,21,145,142
+END
+
+IDD_DLG_TEST_TAST DIALOG  0, 0, 153, 173
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    LTEXT           "Static",IDC_STATIC_MESS,7,23,139,49
+    EDITTEXT        IDC_EDIT_BARCODE,7,7,64,14,ES_AUTOHSCROLL
+    LTEXT           "Тек.товар:",IDC_STATIC_CURRENT_LINE,7,25,38,10
+    LTEXT           "",IDC_STATIC_CURR_VALUE,51,29,95,12,WS_BORDER
+    LTEXT           "Кол-во",IDC_STATIC_COUNT_TEXT,7,42,25,14
+    EDITTEXT        IDC_EDIT_COUNT,51,38,61,14,ES_AUTOHSCROLL
+    LTEXT           "",IDC_STATIC_COUNT_IN_TARE,92,7,54,16,NOT WS_VISIBLE
+    LTEXT           "",IDC_STATIC_INFO,7,54,139,30
+END
+
+IDD_FIND_CELL DIALOG  0, 0, 142, 136
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Определить ячейку"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    PUSHBUTTON      "Выход",IDC_BUTTON_CLOSE,41,114,58,15
+    EDITTEXT        IDC_EDIT_CODE,7,7,73,13,ES_AUTOHSCROLL
+    CONTROL         "Код",IDC_CHECK_CODE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,86,8,29,10
+    CONTROL         "",IDC_LIST_INFO,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,27,128,84
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_NAV_SCANER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 149
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 122
+    END
+
+    IDD_DLG_TEST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 152
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 163
+    END
+
+    IDD_DLG_TEST_TAST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 146
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 166
+    END
+
+    IDD_FIND_CELL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 135
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 129
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 14,7,25,1
+ PRODUCTVERSION 14,7,25,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041904e4"
+        BEGIN
+            VALUE "CompanyName", "IT-AUTO"
+            VALUE "FileDescription", "Ревизия"
+            VALUE "FileVersion", "14.7.25.1"
+            VALUE "InternalName", "Nav_Scaner.exe"
+            VALUE "LegalCopyright", "IT-AUTO"
+            VALUE "OriginalFilename", "Nav_Scaner.exe"
+            VALUE "ProductName", "TCD ревизия"
+            VALUE "ProductVersion", "14.7.25.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x419, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP_ASK_TASK     BITMAP                  "res\\bitmap1.bmp"
+IDB_BITMAP_EXIT         BITMAP                  "res\\bitmap2.bmp"
+IDB_BITMAP_INFO         BITMAP                  "res\\bmp00001.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDC_GRID_FO_TEST        "Таблица для проверки"
+    IDC_BUTTON_ASC_TASK     "Close Task"
+    IDC_END_TASK            "Завершить проверку"
+    IDC_INFO                "Инфа"
+END
+
+#endif    // русский resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "res\Nav_Scaner.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

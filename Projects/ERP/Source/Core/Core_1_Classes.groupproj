@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{F901560E-58E6-481A-AD29-93FD76BE28C1}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="CustomInterface\ERP.Package.CustomInterface.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CustomClasses\ERP.Package.CustomClasses.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Classes\ERP.Package.Classes.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ERP_Package_CustomInterface">
+        <MSBuild Projects="CustomInterface\ERP.Package.CustomInterface.dproj"/>
+    </Target>
+    <Target Name="ERP_Package_CustomInterface:Clean">
+        <MSBuild Projects="CustomInterface\ERP.Package.CustomInterface.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ERP_Package_CustomInterface:Make">
+        <MSBuild Projects="CustomInterface\ERP.Package.CustomInterface.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ERP_Package_CustomClasses">
+        <MSBuild Projects="CustomClasses\ERP.Package.CustomClasses.dproj"/>
+    </Target>
+    <Target Name="ERP_Package_CustomClasses:Clean">
+        <MSBuild Projects="CustomClasses\ERP.Package.CustomClasses.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ERP_Package_CustomClasses:Make">
+        <MSBuild Projects="CustomClasses\ERP.Package.CustomClasses.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ERP_Package_Classes">
+        <MSBuild Projects="Classes\ERP.Package.Classes.dproj"/>
+    </Target>
+    <Target Name="ERP_Package_Classes:Clean">
+        <MSBuild Projects="Classes\ERP.Package.Classes.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ERP_Package_Classes:Make">
+        <MSBuild Projects="Classes\ERP.Package.Classes.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ERP_Package_CustomInterface;ERP_Package_CustomClasses;ERP_Package_Classes"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ERP_Package_CustomInterface:Clean;ERP_Package_CustomClasses:Clean;ERP_Package_Classes:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ERP_Package_CustomInterface:Make;ERP_Package_CustomClasses:Make;ERP_Package_Classes:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

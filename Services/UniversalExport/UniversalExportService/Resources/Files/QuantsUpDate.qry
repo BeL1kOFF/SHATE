@@ -1,0 +1,4 @@
+UPDATE [##DATABASENAME##].[dbo].[##TABLENAME##]
+   SET [ID_WH] = -[ID_WH]  
+		[Adds] = -##PIRCELISTNO##
+ WHERE [ID_WH] = -##WH_ID## 

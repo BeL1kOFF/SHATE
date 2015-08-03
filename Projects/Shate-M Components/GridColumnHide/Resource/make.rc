@@ -1,0 +1,3 @@
+TsmGridColumnHide BITMAP "..\Img\TsmGridColumnHide24.bmp"
+TsmGridColumnHide16 BITMAP "..\Img\TsmGridColumnHide16.bmp"
+TsmGridColumnHide32 BITMAP "..\Img\TsmGridColumnHide32.bmp"

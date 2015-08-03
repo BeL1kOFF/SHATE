@@ -1,0 +1,25 @@
+SELECT  we.[Item No_] as Item_No, ##IDWH## as ID_WH,  we.Entry as EntryWH, re.Entry as EntryRsrv, le.Entry as EntryLdgr  
+FROM 
+(select [Item No_],[LOCATION CODE], sum([Qty_ (Base)]) as Entry
+from [##Firm##$Warehouse Entry] --join [##Firm##$Bin Type] on [code] = [Bin Type Code] and (Ship = 1 or Pick =1)
+where [LOCATION CODE] = '##WHLOCATION##' AND [Bin Type Code] IN ('ÎÒÃÐÓÇ','ÏÎÄÁÎÐ','ÐÀÇÏÎÄ')
+group by [Item No_],[LOCATION CODE]
+)as we  
+left join 
+(select [Item No_],[LOCATION CODE], Sum([Quantity (Base)]) as Entry 
+ from [##Firm##$Reservation Entry]
+ where Positive = 1 and [LOCATION CODE] = '##WHLOCATION##' and  
+ [Source Subtype] = 0 and [Reservation Status] =0
+ group by [Item No_], [LOCATION CODE]
+) as re  
+on re.[Item No_] = we.[Item No_] and re.[Location Code] = we.[LOCATION CODE]
+left join 
+(
+SELECT [Item No_], [Location Code], Surplus 
+      ,CAST(sum([Remaining Quantity]) as INT)as Entry 
+  FROM [##Firm##$Item Ledger Entry]
+  where Positive = 1 and [Variant Code] = '' and Surplus = 1
+  group by [Item No_], [Location Code], Surplus
+) as le
+on le.[Item No_] = we.[Item No_] and le.[Location Code] = we.[LOCATION CODE]
+WHERE we.Entry>0

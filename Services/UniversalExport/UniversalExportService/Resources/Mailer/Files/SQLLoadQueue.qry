@@ -1,0 +1,10 @@
+SELECT * 
+FROM MAILS MM
+WHERE COALESCE(Status, 0) <> 1 AND ProcessingTimestamp IS NULL AND NOT EXISTS (
+	Select ID From MAILS m0 Where m0.ID>mm.ID AND m0.ExpID = mm.ExpID AND m0.email=mm.email	
+	)
+ORDER BY (CASE WHEN [priority] IS NULL THEN 0 ELSE 1 END) DESC, priority, [status], AddingTimeStamp		
+
+
+			
+			

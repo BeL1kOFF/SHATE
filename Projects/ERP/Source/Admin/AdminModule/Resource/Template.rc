@@ -1,0 +1,8 @@
+Template_DPK RCDATA "Template\TemplatePackage.dpk"
+Template_DPROJ RCDATA "Template\TemplatePackage.dproj"
+Template_RES RCDATA "Template\TemplatePackage.res"
+Template_IMG16 RCDATA "Template\Img\TemplatePackage16.ico"
+Template_IMG32 RCDATA "Template\Img\TemplatePackage32.ico"
+Template_RC RCDATA "Template\Resource\Icon.rc"
+Template_DFM RCDATA "Template\Sources\TemplateForm.dfm"
+Template_PAS RCDATA "Template\Sources\TemplateForm.pas"

@@ -1,0 +1,362 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// русский resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\Nav_Scaner_Interface.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\Nav_Scaner_Interface.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_NAV_SCANER_INTERFACE_DIALOG DIALOGEX 0, 0, 353, 209
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_OVERLAPPEDWINDOW | WS_EX_APPWINDOW
+CAPTION "Инвентаризация"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    LTEXT           "Склады:",IDC_STATIC_LOCATION,7,7,38,9
+    LISTBOX         IDC_LIST_DOCS,7,54,112,56,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_LOCATION,7,17,111,123,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Документы:",IDC_STATIC_DOCS,7,42,111,9
+    PUSHBUTTON      "Фильтр",IDC_BUTTON_FILTER,211,36,48,10
+    COMBOBOX        IDC_COMBO_FILTER,133,18,78,184,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_FILTER_OPERATION,215,18,46,12,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_FILTER_VALUE,133,35,74,13,ES_AUTOHSCROLL
+    CONTROL         "Только различия",IDC_CHECK_DISTIN,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,295,19,44,12
+    LTEXT           "Задания",IDC_STATIC_TASK,7,114,112,11
+    CONTROL         "",IDC_TREE_TASK,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | WS_BORDER | WS_HSCROLL | WS_TABSTOP,7,126,114,76
+    COMBOBOX        IDC_COMBO_GROUP,135,96,126,12,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Группы",IDC_STATIC_GROUP,136,84,125,9
+    PUSHBUTTON      "...",IDC_BUTTON_EDIT_GROUP,267,96,23,14
+END
+
+IDD_DIALOG_DATABASE DIALOGEX 0, 0, 352, 98
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Настройка подключения к базам данных"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "БД программы",IDC_STATIC_DB_PROG,7,8,163,82
+    LTEXT           "Сервер",IDC_STATIC_DB_PROG_SERVER_TEXT,19,25,31,10
+    EDITTEXT        IDC_EDIT_DB_PROG_SERVER_TEXT,56,22,88,12,ES_AUTOHSCROLL
+    LTEXT           "Имя БД",IDC_STATIC_DB_PROG_DBNAME,19,42,34,11
+    EDITTEXT        IDC_EDIT2,56,40,88,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Сохранить",IDC_BUTTON_SAVE_DB_PROG,18,58,55,14
+    PUSHBUTTON      "Отмена",IDC_BUTTON_DB_PROG_CANCEL,88,58,55,14
+    GROUPBOX        "NAV БД",IDC_STATIC_DB_NAV,183,7,162,83
+    LTEXT           "Сервер",IDC_STATIC_DB_NAV_SERVER_TEXT2,197,25,31,10
+    EDITTEXT        IDC_EDIT_DB_NAV_SERVER_TEXT2,229,20,88,12,ES_AUTOHSCROLL
+    LTEXT           "Имя БД",IDC_STATIC_DB_NAV_DBNAME2,199,42,26,11
+    EDITTEXT        IDC_EDIT3,230,39,88,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Сохранить",IDC_BUTTON_DB_NAV_SAVE,197,58,55,14
+    PUSHBUTTON      "Отмена",IDC_BUTTON_DB_NAV_CANCEL,262,57,55,14
+END
+
+IDD_DIALOG_NEW_DOC DIALOGEX 0, 0, 342, 198
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Создать документ"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Сохранить",IDOK,230,177,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,285,177,50,14
+    LTEXT           "Дата:",IDC_STATIC,7,7,27,11
+    EDITTEXT        IDC_EDIT1,47,7,68,12,ES_AUTOHSCROLL
+    LTEXT           "Описание:",IDC_STATIC,7,23,35,11
+    EDITTEXT        IDC_EDIT2,47,20,288,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_BRAND,47,34,159,13,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Бренд",IDC_STATIC,7,36,34,12
+    CONTROL         "",IDC_TREE_GROUP,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_CHECKBOXES | WS_BORDER | WS_HSCROLL | WS_TABSTOP,7,64,328,110
+    CONTROL         "Выделить все",IDC_CHECK_SELECT_ALL,"Button",BS_AUTO3STATE | WS_TABSTOP,7,50,62,11
+    CONTROL         "Без ячеек",IDC_CHECK_NOT_FILTER,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,181,131,10
+    LTEXT           "С",IDC_STATIC,85,51,16,10
+    COMBOBOX        IDC_COMBO_CELL_START,94,49,75,108,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "По",IDC_STATIC,173,51,11,8
+    COMBOBOX        IDC_COMBO_CELL_END,187,49,71,100,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DLG_TEST_ITEM DIALOGEX 0, 0, 162, 194
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Проверить"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,173,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,105,173,50,14
+    LTEXT           "Номер",IDC_STATIC_ITEM_NO_TEXT,7,25,21,13
+    LTEXT           "",IDC_STATIC_ITEM_NO_,51,25,104,15,WS_BORDER
+    LTEXT           "Бренд",IDC_STATIC_BRAND_TEXT,7,47,22,11
+    LTEXT           "",IDC_STATIC_BRAND,51,46,104,15,WS_BORDER
+    LTEXT           "",IDC_STATIC_DESC,7,108,145,62,WS_BORDER
+    LTEXT           "Описание",IDC_STATIC_DESCR_TEXT,7,94,36,9
+    EDITTEXT        IDC_EDIT_COUNT,84,66,71,13,ES_AUTOHSCROLL
+    LTEXT           "Кол-во",IDC_STATIC_COUNT,7,68,26,11
+    LTEXT           "Static",IDC_STATIC_COUNT_IN_TARE,84,89,71,13,WS_BORDER
+    EDITTEXT        IDC_EDIT_CELL,52,7,103,15,ES_AUTOHSCROLL
+    LTEXT           "Ячейка",IDC_STATIC,7,7,38,14
+END
+
+IDD_DLG_DOC DIALOGEX 0, 0, 202, 104
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Редактировать инвентаризацию"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "ОК",IDOK,89,83,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,144,83,50,14
+    LTEXT           "Дата",IDC_STATIC_DATA,7,7,135,11
+    LTEXT           "Описание",IDC_STATIC,9,26,34,8
+    EDITTEXT        IDC_EDIT_DESCR,47,23,147,14,ES_AUTOHSCROLL
+    LTEXT           "Группа",IDC_STATIC,7,44,34,8
+    COMBOBOX        IDC_COMBO_GROUP,48,41,124,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Статический",IDC_STATIC_LOCATION,7,62,187,13
+    PUSHBUTTON      "...",IDC_BUTTON_EDIT_GROUP,173,41,21,14
+END
+
+IDD_DLG_EDIT_GROUP DIALOGEX 0, 0, 232, 133
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LISTBOX         IDC_LIST1,7,7,102,119,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_DESCR,117,26,108,15,ES_AUTOHSCROLL
+    LTEXT           "Наименование",IDC_STATIC,119,14,59,10
+    PUSHBUTTON      "Добавить",IDC_BUTTON2,117,44,46,14
+    PUSHBUTTON      "Изменить",IDC_BUTTON_EDIT,170,44,55,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_NAV_SCANER_INTERFACE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 346
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 202
+    END
+
+    IDD_DIALOG_DATABASE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 345
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 91
+    END
+
+    IDD_DIALOG_NEW_DOC, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 335
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 191
+    END
+
+    IDD_DLG_TEST_ITEM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 155
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 187
+    END
+
+    IDD_DLG_DOC, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 194
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 97
+    END
+
+    IDD_DLG_EDIT_GROUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 225
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 126
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINMENU MENU 
+BEGIN
+    MENUITEM "База данных",                 ID_DATABASE
+    POPUP "Документы"
+    BEGIN
+        MENUITEM "Создать",                     ID_CREATE_DOC
+        MENUITEM "Выгрузить",                   32776
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP              BITMAP                  "res\\bitmap1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDC_GRID_POS            "Таблица позиций"
+    IDC_GRID_LOG            "Таблица логов"
+END
+
+#endif    // русский resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// английский (США) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "TODO: <Company name>"
+            VALUE "FileDescription", "TODO: <File description>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "Nav_Scaner_Interface.exe"
+            VALUE "LegalCopyright", "TODO: (c) <Company name>.  All rights reserved."
+            VALUE "OriginalFilename", "Nav_Scaner_Interface.exe"
+            VALUE "ProductName", "TODO: <Product name>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+#endif    // английский (США) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "res\Nav_Scaner_Interface.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,6 @@
+<Options>
+  <Socket>
+    <Server>127.0.0.1</Server>
+    <Port>1986</Port>
+  </Socket>
+</Options>

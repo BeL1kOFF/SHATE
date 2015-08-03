@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{6b193d7e-2b3e-4853-a297-511c2f26cb92}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>Velcom.exe</DCC_DependencyCheckOutputName>
+    <MainSource>Velcom.dpr</MainSource>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_Define>RELEASE</DCC_Define>
+    <DCC_UnitSearchPath>EXCEL</DCC_UnitSearchPath>
+    <DCC_ResourcePath>EXCEL</DCC_ResourcePath>
+    <DCC_ObjPath>EXCEL</DCC_ObjPath>
+    <DCC_IncludePath>EXCEL</DCC_IncludePath>
+    <DCC_SYMBOL_PLATFORM>False</DCC_SYMBOL_PLATFORM>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_Define>DEBUG</DCC_Define>
+    <DCC_IntegerOverflowCheck>True</DCC_IntegerOverflowCheck>
+    <DCC_RangeChecking>True</DCC_RangeChecking>
+    <DCC_SYMBOL_PLATFORM>False</DCC_SYMBOL_PLATFORM>
+    <DCC_Optimize>False</DCC_Optimize>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+<BorlandProject><Delphi.Personality><Parameters><Parameters Name="UseLauncher">False</Parameters><Parameters Name="LoadAllSymbols">True</Parameters><Parameters Name="LoadUnspecifiedSymbols">False</Parameters></Parameters><VersionInfo><VersionInfo Name="IncludeVerInfo">True</VersionInfo><VersionInfo Name="AutoIncBuild">True</VersionInfo><VersionInfo Name="MajorVer">2</VersionInfo><VersionInfo Name="MinorVer">1</VersionInfo><VersionInfo Name="Release">5</VersionInfo><VersionInfo Name="Build">84</VersionInfo><VersionInfo Name="Debug">False</VersionInfo><VersionInfo Name="PreRelease">False</VersionInfo><VersionInfo Name="Special">False</VersionInfo><VersionInfo Name="Private">False</VersionInfo><VersionInfo Name="DLL">False</VersionInfo><VersionInfo Name="Locale">1049</VersionInfo><VersionInfo Name="CodePage">1251</VersionInfo></VersionInfo><VersionInfoKeys><VersionInfoKeys Name="CompanyName"></VersionInfoKeys><VersionInfoKeys Name="FileDescription"></VersionInfoKeys><VersionInfoKeys Name="FileVersion">2.1.5.84</VersionInfoKeys><VersionInfoKeys Name="InternalName"></VersionInfoKeys><VersionInfoKeys Name="LegalCopyright"></VersionInfoKeys><VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys><VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys><VersionInfoKeys Name="ProductName"></VersionInfoKeys><VersionInfoKeys Name="ProductVersion">2.0.0.0</VersionInfoKeys><VersionInfoKeys Name="Comments"></VersionInfoKeys></VersionInfoKeys><Excluded_Packages>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <Excluded_Packages Name="$(BDS)\bin\dcloffice2k100.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+      <Excluded_Packages Name="$(BDS)\bin\dclofficexp100.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+    </Excluded_Packages><Source><Source Name="MainSource">Velcom.dpr</Source></Source></Delphi.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+  <ItemGroup>
+    <DelphiCompile Include="Velcom.dpr">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="adoDBUtils.pas" />
+    <DCCReference Include="uDataModule.pas">
+      <Form>DM</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="uLoginForm.pas">
+      <Form>LoginForm</Form>
+    </DCCReference>
+    <DCCReference Include="uMain.pas">
+      <Form>MainForm</Form>
+    </DCCReference>
+    <DCCReference Include="USysGlobal.pas" />
+    <DCCReference Include="Velcom.ISQLCursor.pas" />
+    <DCCReference Include="Velcom.MultiReportExcel.pas" />
+    <DCCReference Include="Velcom.SendMail.pas" />
+    <DCCReference Include="Velcom.UI.CallerDetail.pas">
+      <Form>frmCallerDetail</Form>
+    </DCCReference>
+    <DCCReference Include="Velcom.UI.CallerForm.pas">
+      <Form>frmCaller</Form>
+    </DCCReference>
+    <DCCReference Include="Velcom.UI.Costs.pas">
+      <Form>frmCost</Form>
+    </DCCReference>
+    <DCCReference Include="Velcom.UI.DepartmentDetailForm.pas">
+      <Form>frmDepartmentDetail</Form>
+    </DCCReference>
+    <DCCReference Include="Velcom.UI.DepartmentExternalCode.pas">
+      <Form>frmDepartmentExternalCodeForm</Form>
+    </DCCReference>
+    <DCCReference Include="Velcom.UI.DepartmentForm.pas">
+      <Form>frmDepartment</Form>
+    </DCCReference>
+    <DCCReference Include="Velcom.UI.EmployeeDetail.pas">
+      <Form>frmEmployeeDetail</Form>
+    </DCCReference>
+    <DCCReference Include="Velcom.UI.EmployeeExternalCode.pas">
+      <Form>frmEmployeeExternalCode</Form>
+    </DCCReference>
+    <DCCReference Include="Velcom.UI.EmployeeForm.pas">
+      <Form>frmEmployeeForm</Form>
+    </DCCReference>
+    <DCCReference Include="Velcom.UI.ImportExternal.pas">
+      <Form>frmImportExternal</Form>
+    </DCCReference>
+    <DCCReference Include="Velcom.UI.LoadDetail.pas">
+      <Form>frmLoadDetail</Form>
+    </DCCReference>
+    <DCCReference Include="Velcom.UI.RepDistCost.pas">
+      <Form>frmDistCost</Form>
+    </DCCReference>
+    <DCCReference Include="Velcom.UI.RepNumbers.pas">
+      <Form>frmRepNumbers</Form>
+    </DCCReference>
+    <DCCReference Include="Velcom.UI.ReportAll.pas">
+      <Form>frmReportAll</Form>
+    </DCCReference>
+    <DCCReference Include="Velcom.UI.ReportEmployee.pas">
+      <Form>frmReportEmployee</Form>
+    </DCCReference>
+    <DCCReference Include="Velcom.UI.ReportEmployeeDetail.pas">
+      <Form>frmReportEmployeeDetail</Form>
+    </DCCReference>
+    <DCCReference Include="Velcom.UI.ReportNumber.pas">
+      <Form>frmReportNumber</Form>
+    </DCCReference>
+    <DCCReference Include="Velcom.UI.ReportNumberCost.pas">
+      <Form>frmReportNumberCost</Form>
+    </DCCReference>
+    <DCCReference Include="Velcom.UI.ReportNumberCostDetail.pas">
+      <Form>frmReportNumberCostDetail</Form>
+    </DCCReference>
+    <DCCReference Include="Velcom.UI.ReportNumberDetail.pas">
+      <Form>frmReportNumberDetail</Form>
+    </DCCReference>
+    <DCCReference Include="Velcom.UI.TableSheet.pas">
+      <Form>frmTableSheet</Form>
+    </DCCReference>
+    <DCCReference Include="Velcom.UI.UserDepartment.pas">
+      <Form>frmUserDepartment</Form>
+    </DCCReference>
+    <DCCReference Include="Velcom.UI.Users.pas">
+      <Form>frmUsers</Form>
+    </DCCReference>
+  </ItemGroup>
+</Project>

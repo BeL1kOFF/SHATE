@@ -1,0 +1,60 @@
+package ERP.Package.ClientClasses;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  ERP.Package.CustomInterface,
+  ERP.Package.CustomClasses,
+  ERP.Package.Classes,
+  ERP.Package.ClientInterface,
+  xmlrtl,
+  dcldxRibbonRS20,
+  cxPageControlRS20,
+  dxSkinsdxNavBarPainterRS20;
+
+contains
+  ERP.Package.ClientClasses.ERPOptions in 'Source\ERP.Package.ClientClasses.ERPOptions.pas',
+  ERP.Package.ClientClasses.TClientManager in 'Source\ERP.Package.ClientClasses.TClientManager.pas',
+  ERP.Package.ClientClasses.TPluginManager in 'Source\ERP.Package.ClientClasses.TPluginManager.pas',
+  ERP.Package.ClientClasses.TWindowManager in 'Source\ERP.Package.ClientClasses.TWindowManager.pas',
+  ERP.Package.ClientClasses.TPackageModuleScan in 'Source\ERP.Package.ClientClasses.TPackageModuleScan.pas',
+  ERP.Package.ClientClasses.TPackageModuleOpen in 'Source\ERP.Package.ClientClasses.TPackageModuleOpen.pas',
+  ERP.Package.ClientClasses.Variable in 'Source\ERP.Package.ClientClasses.Variable.pas',
+  ERP.Package.ClientClasses.TERPSocketClient in 'Source\ERP.Package.ClientClasses.TERPSocketClient.pas',
+  ERP.Package.ClientClasses.IClientManager in 'Source\ERP.Package.ClientClasses.IClientManager.pas',
+  ERP.Package.ClientClasses.TERPApplication in 'Source\ERP.Package.ClientClasses.TERPApplication.pas',
+  ERP.Package.ClientClasses.TERPClientData in 'Source\ERP.Package.ClientClasses.TERPClientData.pas',
+  ERP.Package.ClientClasses.TDBConnectionEx in 'Source\ERP.Package.ClientClasses.TDBConnectionEx.pas',
+  ERP.Package.ClientClasses.TModuleInfo in 'Source\ERP.Package.ClientClasses.TModuleInfo.pas',
+  ERP.Package.ClientClasses.TModuleAccess in 'Source\ERP.Package.ClientClasses.TModuleAccess.pas',
+  ERP.Package.ClientClasses.TDBConnectionManagerEx in 'Source\ERP.Package.ClientClasses.TDBConnectionManagerEx.pas',
+  ERP.Package.ClientClasses.TMenuDesignManager in 'Source\ERP.Package.ClientClasses.TMenuDesignManager.pas',
+  ERP.Package.ClientClasses.Types in 'Source\ERP.Package.ClientClasses.Types.pas';
+
+end.

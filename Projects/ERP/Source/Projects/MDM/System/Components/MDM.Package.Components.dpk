@@ -1,0 +1,61 @@
+package MDM.Package.Components;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  cxGridRS20,
+  ERP.Package.Components;
+
+contains
+  MDM.Package.Components.CatalogTableViewClean in 'Source\MDM.Package.Components.CatalogTableViewClean.pas',
+  MDM.Package.Components.CatalogTableViewCleanController in 'Source\MDM.Package.Components.CatalogTableViewCleanController.pas',
+  MDM.Package.Components.CustomCatalogTableViewController in 'Source\MDM.Package.Components.CustomCatalogTableViewController.pas',
+  MDM.Package.Interfaces.ICustomCatalogController in 'Source\MDM.Package.Interfaces.ICustomCatalogController.pas',
+  MDM.Package.Interfaces.ICatalogCleanController in 'Source\MDM.Package.Interfaces.ICatalogCleanController.pas',
+  MDM.Package.Components.CustomCatalogTableView in 'Source\MDM.Package.Components.CustomCatalogTableView.pas',
+  MDM.Package.Components.CustomCatalogTableViewOptionsMDM in 'Source\MDM.Package.Components.CustomCatalogTableViewOptionsMDM.pas',
+  MDM.Package.Components.CatalogTableViewCleanOptionsMDM in 'Source\MDM.Package.Components.CatalogTableViewCleanOptionsMDM.pas',
+  MDM.Package.Components.CustomOptionsMDMAction in 'Source\MDM.Package.Components.CustomOptionsMDMAction.pas',
+  MDM.Package.Components.CleanOptionsMDMAction in 'Source\MDM.Package.Components.CleanOptionsMDMAction.pas',
+  MDM.Package.Components.CatalogAction in 'Source\MDM.Package.Components.CatalogAction.pas',
+  MDM.Package.Components.CustomCatalogColumn in 'Source\MDM.Package.Components.CustomCatalogColumn.pas',
+  MDM.Package.Components.CustomCatalogColumnMetaOptions in 'Source\MDM.Package.Components.CustomCatalogColumnMetaOptions.pas',
+  MDM.Package.Components.CatalogCleanColumn in 'Source\MDM.Package.Components.CatalogCleanColumn.pas',
+  MDM.Package.Components.CatalogCleanColumnMetaOptions in 'Source\MDM.Package.Components.CatalogCleanColumnMetaOptions.pas',
+  MDM.Package.Components.CatalogActionOptions in 'Source\MDM.Package.Components.CatalogActionOptions.pas',
+  MDM.Package.Components.Types in 'Source\MDM.Package.Components.Types.pas',
+  MDM.Package.Components.CatalogTableViewDraft in 'Source\MDM.Package.Components.CatalogTableViewDraft.pas',
+  MDM.Package.Components.CatalogTableViewDraftOptionsMDM in 'Source\MDM.Package.Components.CatalogTableViewDraftOptionsMDM.pas',
+  MDM.Package.Components.DraftOptionsMDMAction in 'Source\MDM.Package.Components.DraftOptionsMDMAction.pas',
+  MDM.Package.Components.CatalogDraftColumnMetaOptions in 'Source\MDM.Package.Components.CatalogDraftColumnMetaOptions.pas',
+  MDM.Package.Components.CatalogDraftColumn in 'Source\MDM.Package.Components.CatalogDraftColumn.pas',
+  MDM.Package.Components.CatalogTableViewDraftController in 'Source\MDM.Package.Components.CatalogTableViewDraftController.pas',
+  MDM.Package.Interfaces.ICatalogDraftController in 'Source\MDM.Package.Interfaces.ICatalogDraftController.pas';
+
+end.

@@ -1,0 +1,26 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <DCC_BplOutput>\ERP\$(Platform)\$(Config)\Modules\</DCC_BplOutput>
+        <DCC_DcuOutput>\ERP\$(Platform)\$(Config)\DCU\</DCC_DcuOutput>
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_ExeOutput>\ERP\$(Platform)\$(Config)\</DCC_ExeOutput>
+        <DCC_UnitSearchPath>\ERP\$(Platform)\$(Config)\DCP\;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_MapFile>3</DCC_MapFile>
+        <DCC_DcpOutput>\ERP\$(Platform)\$(Config)\DCP\</DCC_DcpOutput>
+        <DCC_RemoteDebug>true</DCC_RemoteDebug>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+        <DCC_RangeChecking>true</DCC_RangeChecking>
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+        <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
+        <DCC_DebugInfoInTds>true</DCC_DebugInfoInTds>
+    </PropertyGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>OptionSet</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality/>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+</Project>

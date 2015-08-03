@@ -1,0 +1,96 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{386F6D7C-5A3A-4059-A82F-47523660F9EA}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="ClassesServer\ERP.Package.ServerClasses.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="AuthMainForm\ERP.Package.AuthMainForm.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ERPAuthClasses\ERP.Package.ERPAuthClasses.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ERPAuth\ERPAuth.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ERPService\ERPService.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ServiceManager\ServiceManager.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ERP_Package_ServerClasses">
+        <MSBuild Projects="ClassesServer\ERP.Package.ServerClasses.dproj"/>
+    </Target>
+    <Target Name="ERP_Package_ServerClasses:Clean">
+        <MSBuild Projects="ClassesServer\ERP.Package.ServerClasses.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ERP_Package_ServerClasses:Make">
+        <MSBuild Projects="ClassesServer\ERP.Package.ServerClasses.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ERP_Package_AuthMainForm">
+        <MSBuild Projects="AuthMainForm\ERP.Package.AuthMainForm.dproj"/>
+    </Target>
+    <Target Name="ERP_Package_AuthMainForm:Clean">
+        <MSBuild Projects="AuthMainForm\ERP.Package.AuthMainForm.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ERP_Package_AuthMainForm:Make">
+        <MSBuild Projects="AuthMainForm\ERP.Package.AuthMainForm.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ERP_Package_ERPAuthClasses">
+        <MSBuild Projects="ERPAuthClasses\ERP.Package.ERPAuthClasses.dproj"/>
+    </Target>
+    <Target Name="ERP_Package_ERPAuthClasses:Clean">
+        <MSBuild Projects="ERPAuthClasses\ERP.Package.ERPAuthClasses.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ERP_Package_ERPAuthClasses:Make">
+        <MSBuild Projects="ERPAuthClasses\ERP.Package.ERPAuthClasses.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ERPAuth">
+        <MSBuild Projects="ERPAuth\ERPAuth.dproj"/>
+    </Target>
+    <Target Name="ERPAuth:Clean">
+        <MSBuild Projects="ERPAuth\ERPAuth.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ERPAuth:Make">
+        <MSBuild Projects="ERPAuth\ERPAuth.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ERPService">
+        <MSBuild Projects="ERPService\ERPService.dproj"/>
+    </Target>
+    <Target Name="ERPService:Clean">
+        <MSBuild Projects="ERPService\ERPService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ERPService:Make">
+        <MSBuild Projects="ERPService\ERPService.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ServiceManager">
+        <MSBuild Projects="ServiceManager\ServiceManager.dproj"/>
+    </Target>
+    <Target Name="ServiceManager:Clean">
+        <MSBuild Projects="ServiceManager\ServiceManager.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ServiceManager:Make">
+        <MSBuild Projects="ServiceManager\ServiceManager.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ERP_Package_ServerClasses;ERP_Package_AuthMainForm;ERP_Package_ERPAuthClasses;ERPAuth;ERPService;ServiceManager"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ERP_Package_ServerClasses:Clean;ERP_Package_AuthMainForm:Clean;ERP_Package_ERPAuthClasses:Clean;ERPAuth:Clean;ERPService:Clean;ServiceManager:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ERP_Package_ServerClasses:Make;ERP_Package_AuthMainForm:Make;ERP_Package_ERPAuthClasses:Make;ERPAuth:Make;ERPService:Make;ServiceManager:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

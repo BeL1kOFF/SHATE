@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{9EEBE4D2-DDFB-412D-9774-349FE7F2A7B4}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Package\Interface\FileTransfer_CustomInterface_D16.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Source\FileTransfer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Plugins\ADOCSVAdapter\ADOCSVAdapter.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Plugins\SMSAdapter\SMSAdapter.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="FileTransfer_CustomInterface_D16">
+        <MSBuild Projects="Package\Interface\FileTransfer_CustomInterface_D16.dproj"/>
+    </Target>
+    <Target Name="FileTransfer_CustomInterface_D16:Clean">
+        <MSBuild Projects="Package\Interface\FileTransfer_CustomInterface_D16.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FileTransfer_CustomInterface_D16:Make">
+        <MSBuild Projects="Package\Interface\FileTransfer_CustomInterface_D16.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FileTransfer">
+        <MSBuild Projects="Source\FileTransfer.dproj"/>
+    </Target>
+    <Target Name="FileTransfer:Clean">
+        <MSBuild Projects="Source\FileTransfer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FileTransfer:Make">
+        <MSBuild Projects="Source\FileTransfer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ADOCSVAdapter">
+        <MSBuild Projects="Plugins\ADOCSVAdapter\ADOCSVAdapter.dproj"/>
+    </Target>
+    <Target Name="ADOCSVAdapter:Clean">
+        <MSBuild Projects="Plugins\ADOCSVAdapter\ADOCSVAdapter.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ADOCSVAdapter:Make">
+        <MSBuild Projects="Plugins\ADOCSVAdapter\ADOCSVAdapter.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SMSAdapter">
+        <MSBuild Projects="Plugins\SMSAdapter\SMSAdapter.dproj"/>
+    </Target>
+    <Target Name="SMSAdapter:Clean">
+        <MSBuild Projects="Plugins\SMSAdapter\SMSAdapter.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SMSAdapter:Make">
+        <MSBuild Projects="Plugins\SMSAdapter\SMSAdapter.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="FileTransfer_CustomInterface_D16;FileTransfer;ADOCSVAdapter;SMSAdapter"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="FileTransfer_CustomInterface_D16:Clean;FileTransfer:Clean;ADOCSVAdapter:Clean;SMSAdapter:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="FileTransfer_CustomInterface_D16:Make;FileTransfer:Make;ADOCSVAdapter:Make;SMSAdapter:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

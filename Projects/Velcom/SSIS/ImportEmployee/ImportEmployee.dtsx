@@ -1,0 +1,700 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable
+  DTS:refId="Package" xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:CreatorName="SHATE\Matusevich"
+  DTS:CreatorComputerName="SPBYPRIW0057"
+  DTS:CreationDate="8/1/2014 9:54:38 AM"
+  DTS:PackageType="5"
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{52CB7F2E-36F0-4449-9A68-0EF24B56EF6F}"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:LocaleID="1049"
+  DTS:ObjectName="ImportEmployee"
+  DTS:DTSID="{0ED9F557-00DD-48DE-A2F6-F24CA8234971}"
+  DTS:CreationName="SSIS.Package.3">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[svbyminssq1.VELCOM]"
+      DTS:ObjectName="svbyminssq1.VELCOM"
+      DTS:DTSID="{E8BDC7B7-7A48-4873-A6BE-42CA990502DE}"
+      DTS:CreationName="OLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=svbyprissq8;Initial Catalog=VELCOM;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Диспетчер соединений с неструктурированными файлами]"
+      DTS:ObjectName="Диспетчер соединений с неструктурированными файлами"
+      DTS:DTSID="{5D17982F-21EF-4385-90E7-8024B238E5D7}"
+      DTS:CreationName="FLATFILE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1049"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="\\svbyprisa0114\FileExchange\1C_export\Employee.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Id_Employee"
+              DTS:DTSID="{93FC7E38-6E03-406C-A554-E2D67A51D869}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIO"
+              DTS:DTSID="{31108435-AED3-4A8A-AEDD-2546F64486B5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Id_Department"
+              DTS:DTSID="{E3236EE5-55BC-4D6D-AB53-07114240E04D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NameDepartment"
+              DTS:DTSID="{48692941-A322-4019-87D9-5C6BB73E4DA7}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Задача &quot;Файловая система&quot;"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.FileSystemTask.FileSystemTask, Microsoft.SqlServer.FileSystemTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:ThreadHint="0"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Задача &quot;Файловая система&quot;"
+      DTS:DTSID="{6977B858-3059-48FD-8334-FAE014BD0136}"
+      DTS:Description="Задача &quot;Файловая система&quot;"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.FileSystemTask.FileSystemTask, Microsoft.SqlServer.FileSystemTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="DeleteFile"
+          TaskSourcePath="{5D17982F-21EF-4385-90E7-8024B238E5D7}" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Задача потока данных"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Задача потока данных"
+      DTS:DTSID="{69428326-3B69-4083-87E4-F1A2D2461732}"
+      DTS:Description="Задача потока данных"
+      DTS:CreationName="SSIS.Pipeline.3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;"
+              name="Источник &quot;Неструктурированный файл&quot;"
+              componentClassID="{D23FD76B-F51D-420F-BBCB-19CBF6AC1AB4}"
+              description="Источник &quot;Неструктурированный файл&quot;"
+              localeId="1049"
+              usesDispositions="true"
+              version="1"
+              contactInfo="Источник &quot;Неструктурированный файл&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;1">
+              <properties>
+                <property
+                  name="RetainNulls"
+                  dataType="System.Boolean"
+                  description="Указывает, считается ли, что столбцы нулевой длины имеют значение NULL.">false</property>
+                <property
+                  name="FileNameColumnName"
+                  dataType="System.String"
+                  description="Указывает имя файла выходного столбца, содержащего имя файла. Если не указано имя, выходной столбец, содержащий имя файла, не будет сформирован."></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;.Connections[FlatFileConnection]"
+                  name="FlatFileConnection"
+                  connectionManagerID="Package.ConnectionManagers[Диспетчер соединений с неструктурированными файлами]"
+                  connectionManagerRefId="Package.ConnectionManagers[Диспетчер соединений с неструктурированными файлами]" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;.Outputs[Выход источника &quot;Неструктурированный файл&quot;]"
+                  name="Выход источника &quot;Неструктурированный файл&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[Id_Employee]"
+                      name="Id_Employee"
+                      lineageId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[Id_Employee]"
+                      length="255"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[Id_Employee]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Указывает, используются ли в столбце более производительные, не зависящие от локалей процедуры синтаксического анализа.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Указывает, являются ли данные двоичными.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[FIO]"
+                      name="FIO"
+                      lineageId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[FIO]"
+                      length="255"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[FIO]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Указывает, используются ли в столбце более производительные, не зависящие от локалей процедуры синтаксического анализа.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Указывает, являются ли данные двоичными.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[Id_Department]"
+                      name="Id_Department"
+                      lineageId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[Id_Department]"
+                      length="255"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[Id_Department]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Указывает, используются ли в столбце более производительные, не зависящие от локалей процедуры синтаксического анализа.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Указывает, являются ли данные двоичными.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[NameDepartment]"
+                      name="NameDepartment"
+                      lineageId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[NameDepartment]"
+                      length="255"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[NameDepartment]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Указывает, используются ли в столбце более производительные, не зависящие от локалей процедуры синтаксического анализа.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Указывает, являются ли данные двоичными.">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[Id_Employee]"
+                      name="Id_Employee"
+                      dataType="wstr"
+                      length="255" />
+                    <externalMetadataColumn
+                      refId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[FIO]"
+                      name="FIO"
+                      dataType="wstr"
+                      length="255" />
+                    <externalMetadataColumn
+                      refId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[Id_Department]"
+                      name="Id_Department"
+                      dataType="wstr"
+                      length="255" />
+                    <externalMetadataColumn
+                      refId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[NameDepartment]"
+                      name="NameDepartment"
+                      dataType="wstr"
+                      length="255" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;]"
+                  name="Вывод ошибок источника &quot;Неструктурированный файл&quot;"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[Столбец вывода ошибок источника &quot;Неструктурированный файл&quot;]"
+                      name="Столбец вывода ошибок источника &quot;Неструктурированный файл&quot;"
+                      description="Столбец вывода ошибок источника &quot;Неструктурированный файл&quot;"
+                      lineageId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[Столбец вывода ошибок источника &quot;Неструктурированный файл&quot;]"
+                      dataType="text"
+                      codePage="65001" />
+                    <outputColumn
+                      refId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Задача потока данных\Назначение &quot;SQL Server&quot;"
+              name="Назначение &quot;SQL Server&quot;"
+              componentClassID="{F452EAF3-5EF0-43F1-8067-09DDF0BC6316}"
+              description="Назначение &quot;SQL Server&quot;"
+              version="5"
+              contactInfo="Назначение &quot;SQL Server&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;5">
+              <properties>
+                <property
+                  name="DefaultCodePage"
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных.">1251</property>
+                <property
+                  name="AlwaysUseDefaultCodePage"
+                  dataType="System.Boolean"
+                  description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных.">false</property>
+                <property
+                  name="BulkInsertTableName"
+                  dataType="System.String"
+                  description="Имя объекта базы данных для копирования данных."
+                  expressionType="Notify">[dbo].[ImportEmployee]</property>
+                <property
+                  name="BulkInsertCheckConstraints"
+                  dataType="System.Boolean"
+                  description="Указывает, что в ходе операции копирования данных в целевом объекте проверяются все ограничения. Соответствует параметру CHECK_CONSTRAINTS массовой вставки.">true</property>
+                <property
+                  name="BulkInsertFirstRow"
+                  dataType="System.Int32"
+                  description="Указывает номер первой строки для копирования. Соответствует параметру FIRSTROW массовой вставки."
+                  expressionType="Notify">-1</property>
+                <property
+                  name="BulkInsertFireTriggers"
+                  dataType="System.Boolean"
+                  description="Указывает, что любые триггеры вставки, определенные на целевом объекте, будут выполняться в ходе копирования данных. Соответствует параметру FIRE_TRIGGERS массовой вставки.">true</property>
+                <property
+                  name="BulkInsertKeepIdentity"
+                  dataType="System.Boolean"
+                  description="Указывает, должны ли значения в столбцах идентификаторов копироваться в назначение. Значение false указывает, что значения в столбцах идентификаторов будут созданы автоматически в месте назначения. Соответствует параметру KEEPIDENTITY массовой вставки.">false</property>
+                <property
+                  name="BulkInsertKeepNulls"
+                  dataType="System.Boolean"
+                  description="Указывает, будут ли в назначение копироваться значения NULL для столбцов, содержащих их. Значение false показывает, что если столбец имеет значение NULL, то в назначение будет вставлено его значение по умолчанию. Применяется только в случае, если включена быстрая загрузка.">false</property>
+                <property
+                  name="BulkInsertLastRow"
+                  dataType="System.Int32"
+                  description="Указывает номер последней строки для копирования. Соответствует параметру LASTROW массовой вставки."
+                  expressionType="Notify">-1</property>
+                <property
+                  name="BulkInsertMaxErrors"
+                  dataType="System.Int32"
+                  description="Указывает максимальное число синтаксических ошибок и ошибок компиляции, которые могут произойти до отмены операции копирования данных. Каждая строка, которую не удается скопировать, пропускается и считается за одну ошибку. Соответствует параметру MAXERRORS массовой вставки.">-1</property>
+                <property
+                  name="BulkInsertOrder"
+                  dataType="System.String"
+                  description="Указывает порядок сортировки данных для копирования. Соответствует параметру ORDER массовой вставки."
+                  expressionType="Notify"></property>
+                <property
+                  name="BulkInsertTablock"
+                  dataType="System.Boolean"
+                  description="Указывает, что в течение операции копирования данных применяется блокировка на уровне таблиц. Соответствует параметру TABLOCK массовой вставки.">true</property>
+                <property
+                  name="Timeout"
+                  dataType="System.Int32"
+                  description="Задает интервал времени (в секундах), в течение которого адаптер загрузки данных SQL будет находиться с режиме ожидания перед завершением работы в случае, когда данные для вставки недоступны. Значение времени ожидания 0 означает, что адаптер загрузки данных SQL не будет завершать работу из-за истечения времени ожидания."
+                  expressionType="Notify">30</property>
+                <property
+                  name="MaxInsertCommitSize"
+                  dataType="System.Int32"
+                  description="Указывает на выполнение фиксации в процеcсе вставки данных. Значение 0 указывает, что по окончание вставки данных будет выполнена одна фиксация.">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Задача потока данных\Назначение &quot;SQL Server&quot;.Connections[OleDbConnection]"
+                  name="OleDbConnection"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  connectionManagerID="Package.ConnectionManagers[svbyminssq1.VELCOM]"
+                  connectionManagerRefId="Package.ConnectionManagers[svbyminssq1.VELCOM]" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;]"
+                  name="Вход назначения &quot;SQL Server&quot;"
+                  hasSideEffects="true">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].Columns[Id_Employee]"
+                      lineageId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[Id_Employee]"
+                      externalMetadataColumnId="Package\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].ExternalColumns[EmployeeExternalCode]"
+                      cachedName="Id_Employee"
+                      cachedDataType="wstr"
+                      cachedLength="255" />
+                    <inputColumn
+                      refId="Package\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].Columns[FIO]"
+                      lineageId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[FIO]"
+                      externalMetadataColumnId="Package\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].ExternalColumns[FIO]"
+                      cachedName="FIO"
+                      cachedDataType="wstr"
+                      cachedLength="255" />
+                    <inputColumn
+                      refId="Package\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].Columns[Id_Department]"
+                      lineageId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[Id_Department]"
+                      externalMetadataColumnId="Package\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].ExternalColumns[DepartmentExternalCode]"
+                      cachedName="Id_Department"
+                      cachedDataType="wstr"
+                      cachedLength="255" />
+                    <inputColumn
+                      refId="Package\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].Columns[NameDepartment]"
+                      lineageId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[NameDepartment]"
+                      externalMetadataColumnId="Package\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].ExternalColumns[NameDepartment]"
+                      cachedName="NameDepartment"
+                      cachedDataType="wstr"
+                      cachedLength="255" />
+                    <inputColumn
+                      refId="Package\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].Columns[IsImport]"
+                      lineageId="Package\Задача потока данных\Производный столбец.Outputs[Выход производного столбца].Columns[IsImport]"
+                      externalMetadataColumnId="Package\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].ExternalColumns[IsImport]"
+                      cachedName="IsImport"
+                      cachedDataType="bool" />
+                    <inputColumn
+                      refId="Package\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].Columns[Id_ExternalSystem]"
+                      lineageId="Package\Задача потока данных\Производный столбец.Outputs[Выход производного столбца].Columns[Id_ExternalSystem]"
+                      externalMetadataColumnId="Package\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].ExternalColumns[Id_ExternalSystem]"
+                      cachedName="Id_ExternalSystem"
+                      cachedDataType="i4" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].ExternalColumns[Id_ImportEmployee]"
+                      name="Id_ImportEmployee"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].ExternalColumns[EmployeeExternalCode]"
+                      name="EmployeeExternalCode"
+                      dataType="wstr"
+                      length="255" />
+                    <externalMetadataColumn
+                      refId="Package\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].ExternalColumns[FIO]"
+                      name="FIO"
+                      dataType="wstr"
+                      length="255" />
+                    <externalMetadataColumn
+                      refId="Package\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].ExternalColumns[DepartmentExternalCode]"
+                      name="DepartmentExternalCode"
+                      dataType="wstr"
+                      length="255" />
+                    <externalMetadataColumn
+                      refId="Package\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].ExternalColumns[NameDepartment]"
+                      name="NameDepartment"
+                      dataType="wstr"
+                      length="255" />
+                    <externalMetadataColumn
+                      refId="Package\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].ExternalColumns[IsImport]"
+                      name="IsImport"
+                      dataType="bool" />
+                    <externalMetadataColumn
+                      refId="Package\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].ExternalColumns[DateImport]"
+                      name="DateImport"
+                      dataType="dbTimeStampOffset"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].ExternalColumns[Status]"
+                      name="Status"
+                      dataType="nText" />
+                    <externalMetadataColumn
+                      refId="Package\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;].ExternalColumns[Id_ExternalSystem]"
+                      name="Id_ExternalSystem"
+                      dataType="i4" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Задача потока данных\Производный столбец"
+              name="Производный столбец"
+              componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+              description="Создает новые значения столбцов путем применения выражений к входным столбцам преобразования. Создает новые столбцы или перезаписывает существующие. Пример: объединение значений столбцов &quot;first name&quot; и &quot;last name&quot; и создание столбца &quot;full name&quot;."
+              usesDispositions="true"
+              contactInfo="Производный столбец;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;0">
+              <inputs>
+                <input
+                  refId="Package\Задача потока данных\Производный столбец.Inputs[Вход производного столбца]"
+                  name="Вход производного столбца"
+                  description="Вход преобразования &quot;Производный столбец&quot;">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Задача потока данных\Производный столбец.Outputs[Выход производного столбца]"
+                  name="Выход производного столбца"
+                  description="Выход по умолчанию преобразования &quot;Производный столбец&quot;"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\Задача потока данных\Производный столбец.Inputs[Вход производного столбца]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Задача потока данных\Производный столбец.Outputs[Выход производного столбца].Columns[IsImport]"
+                      name="IsImport"
+                      lineageId="Package\Задача потока данных\Производный столбец.Outputs[Выход производного столбца].Columns[IsImport]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Вычисление"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          name="Expression"
+                          dataType="System.String"
+                          description="Выражение производного столбца"
+                          containsID="true"> FALSE </property>
+                        <property
+                          name="FriendlyExpression"
+                          dataType="System.String"
+                          description="Понятное выражение производного столбца"
+                          containsID="true"
+                          expressionType="Notify"> FALSE </property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Задача потока данных\Производный столбец.Outputs[Выход производного столбца].Columns[Id_ExternalSystem]"
+                      name="Id_ExternalSystem"
+                      lineageId="Package\Задача потока данных\Производный столбец.Outputs[Выход производного столбца].Columns[Id_ExternalSystem]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Вычисление"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          name="Expression"
+                          dataType="System.String"
+                          description="Выражение производного столбца"
+                          containsID="true">1</property>
+                        <property
+                          name="FriendlyExpression"
+                          dataType="System.String"
+                          description="Понятное выражение производного столбца"
+                          containsID="true"
+                          expressionType="Notify">1</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Задача потока данных\Производный столбец.Outputs[Вывод ошибок производного столбца]"
+                  name="Вывод ошибок производного столбца"
+                  description="Вывод ошибок преобразования &quot;Производный столбец&quot;"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\Задача потока данных\Производный столбец.Inputs[Вход производного столбца]"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Задача потока данных\Производный столбец.Outputs[Вывод ошибок производного столбца].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Задача потока данных\Производный столбец.Outputs[Вывод ошибок производного столбца].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Задача потока данных\Производный столбец.Outputs[Вывод ошибок производного столбца].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Задача потока данных\Производный столбец.Outputs[Вывод ошибок производного столбца].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Задача потока данных.Paths[Выход источника &quot;Неструктурированный файл&quot;]"
+              name="Выход источника &quot;Неструктурированный файл&quot;"
+              startId="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;.Outputs[Выход источника &quot;Неструктурированный файл&quot;]"
+              endId="Package\Задача потока данных\Производный столбец.Inputs[Вход производного столбца]" />
+            <path
+              refId="Package\Задача потока данных.Paths[Выход производного столбца]"
+              name="Выход производного столбца"
+              startId="Package\Задача потока данных\Производный столбец.Outputs[Выход производного столбца]"
+              endId="Package\Задача потока данных\Назначение &quot;SQL Server&quot;.Inputs[Вход назначения &quot;SQL Server&quot;]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Ограничение]"
+      DTS:From="Package\Задача потока данных"
+      DTS:To="Package\Задача &quot;Файловая система&quot;"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Ограничение"
+      DTS:DTSID="{38A8B7E5-A319-4014-8B55-8224B7A3246A}"
+      DTS:CreationName="" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--В данном разделе CDATA содержатся сведения о макете пакета. В данном разделе содержатся сведения о координатах (x,y), ширине и высоте.-->
+<!--В случае возникновения ошибки при редактировании этого раздела вручную его можно удалить. -->
+<!--Пакет можно загрузить обычным образом, но прежние сведения о макете будут утеряны, и конструктор автоматически перераспределит элементы в области конструктора.-->
+<Objects
+  Version="sql11">
+  <!--Все приведенные ниже узлы будут содержать свойства, не влияющие на поведение среды выполнения.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="216,42"
+          Id="Package\Задача &quot;Файловая система&quot;"
+          TopLeft="486,208" />
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Задача потока данных"
+          TopLeft="493.5,97.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Ограничение]"
+          TopLeft="591.5,139.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,68.5"
+              Start="0,0"
+              End="0,61">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Задача потока данных">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="203,42"
+          Id="Package\Задача потока данных\Назначение &quot;SQL Server&quot;"
+          TopLeft="468.5,237.5" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Задача потока данных\Производный столбец"
+          TopLeft="480,112" />
+        <NodeLayout
+          Size="277,42"
+          Id="Package\Задача потока данных\Источник &quot;Неструктурированный файл&quot;"
+          TopLeft="432.5,15.5" />
+        <EdgeLayout
+          Id="Package\Задача потока данных.Paths[Выход производного столбца]"
+          TopLeft="572.25,154">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,83.5"
+              Start="0,0"
+              End="0,76">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,76" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Задача потока данных.Paths[Выход источника &quot;Неструктурированный файл&quot;]"
+          TopLeft="572.75,57.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54.5"
+              Start="0,0"
+              End="0,47">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Задача потока данных\Назначение &quot;SQL Server&quot;">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

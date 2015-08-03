@@ -1,0 +1,132 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{FEB4B559-E199-4211-998D-2AB1AF71C641}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="ClientInterface\ERP.Package.ClientInterface.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ClientClasses\ERP.Package.ClientClasses.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="LoginForm\ERP.Package.LoginForm.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="GlobalData\ERP.Package.GlobalData.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="MainForm\ERP.Package.MainForm.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CustomForm\ERP.Package.CustomForm.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CustomGlobalFunctions\ERP.Package.CustomGlobalFunctions.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Components\ERP.Package.Components.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Components\ERP.Package.ComponentsDesign.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ERP_Package_ClientInterface">
+        <MSBuild Projects="ClientInterface\ERP.Package.ClientInterface.dproj"/>
+    </Target>
+    <Target Name="ERP_Package_ClientInterface:Clean">
+        <MSBuild Projects="ClientInterface\ERP.Package.ClientInterface.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ERP_Package_ClientInterface:Make">
+        <MSBuild Projects="ClientInterface\ERP.Package.ClientInterface.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ERP_Package_ClientClasses">
+        <MSBuild Projects="ClientClasses\ERP.Package.ClientClasses.dproj"/>
+    </Target>
+    <Target Name="ERP_Package_ClientClasses:Clean">
+        <MSBuild Projects="ClientClasses\ERP.Package.ClientClasses.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ERP_Package_ClientClasses:Make">
+        <MSBuild Projects="ClientClasses\ERP.Package.ClientClasses.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ERP_Package_LoginForm">
+        <MSBuild Projects="LoginForm\ERP.Package.LoginForm.dproj"/>
+    </Target>
+    <Target Name="ERP_Package_LoginForm:Clean">
+        <MSBuild Projects="LoginForm\ERP.Package.LoginForm.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ERP_Package_LoginForm:Make">
+        <MSBuild Projects="LoginForm\ERP.Package.LoginForm.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ERP_Package_GlobalData">
+        <MSBuild Projects="GlobalData\ERP.Package.GlobalData.dproj"/>
+    </Target>
+    <Target Name="ERP_Package_GlobalData:Clean">
+        <MSBuild Projects="GlobalData\ERP.Package.GlobalData.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ERP_Package_GlobalData:Make">
+        <MSBuild Projects="GlobalData\ERP.Package.GlobalData.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ERP_Package_MainForm">
+        <MSBuild Projects="MainForm\ERP.Package.MainForm.dproj"/>
+    </Target>
+    <Target Name="ERP_Package_MainForm:Clean">
+        <MSBuild Projects="MainForm\ERP.Package.MainForm.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ERP_Package_MainForm:Make">
+        <MSBuild Projects="MainForm\ERP.Package.MainForm.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ERP_Package_CustomForm">
+        <MSBuild Projects="CustomForm\ERP.Package.CustomForm.dproj"/>
+    </Target>
+    <Target Name="ERP_Package_CustomForm:Clean">
+        <MSBuild Projects="CustomForm\ERP.Package.CustomForm.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ERP_Package_CustomForm:Make">
+        <MSBuild Projects="CustomForm\ERP.Package.CustomForm.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ERP_Package_CustomGlobalFunctions">
+        <MSBuild Projects="CustomGlobalFunctions\ERP.Package.CustomGlobalFunctions.dproj"/>
+    </Target>
+    <Target Name="ERP_Package_CustomGlobalFunctions:Clean">
+        <MSBuild Projects="CustomGlobalFunctions\ERP.Package.CustomGlobalFunctions.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ERP_Package_CustomGlobalFunctions:Make">
+        <MSBuild Projects="CustomGlobalFunctions\ERP.Package.CustomGlobalFunctions.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ERP_Package_Components">
+        <MSBuild Projects="Components\ERP.Package.Components.dproj"/>
+    </Target>
+    <Target Name="ERP_Package_Components:Clean">
+        <MSBuild Projects="Components\ERP.Package.Components.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ERP_Package_Components:Make">
+        <MSBuild Projects="Components\ERP.Package.Components.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ERP_Package_ComponentsDesign">
+        <MSBuild Projects="Components\ERP.Package.ComponentsDesign.dproj"/>
+    </Target>
+    <Target Name="ERP_Package_ComponentsDesign:Clean">
+        <MSBuild Projects="Components\ERP.Package.ComponentsDesign.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ERP_Package_ComponentsDesign:Make">
+        <MSBuild Projects="Components\ERP.Package.ComponentsDesign.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ERP_Package_ClientInterface;ERP_Package_ClientClasses;ERP_Package_LoginForm;ERP_Package_GlobalData;ERP_Package_MainForm;ERP_Package_CustomForm;ERP_Package_CustomGlobalFunctions;ERP_Package_Components;ERP_Package_ComponentsDesign"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ERP_Package_ClientInterface:Clean;ERP_Package_ClientClasses:Clean;ERP_Package_LoginForm:Clean;ERP_Package_GlobalData:Clean;ERP_Package_MainForm:Clean;ERP_Package_CustomForm:Clean;ERP_Package_CustomGlobalFunctions:Clean;ERP_Package_Components:Clean;ERP_Package_ComponentsDesign:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ERP_Package_ClientInterface:Make;ERP_Package_ClientClasses:Make;ERP_Package_LoginForm:Make;ERP_Package_GlobalData:Make;ERP_Package_MainForm:Make;ERP_Package_CustomForm:Make;ERP_Package_CustomGlobalFunctions:Make;ERP_Package_Components:Make;ERP_Package_ComponentsDesign:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

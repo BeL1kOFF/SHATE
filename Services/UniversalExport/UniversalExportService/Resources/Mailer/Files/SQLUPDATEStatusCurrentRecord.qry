@@ -1,0 +1,24 @@
+DECLARE @state as BIT
+	SET @state = ##STATE##
+	
+DECLARE @ID as BIGINT
+	SET @ID = ##ID##
+
+DECLARE @ExpID as BIGINT
+	SET @ExpID = ##ExpID##	
+	
+DECLARE @Email as char(255)
+SET @Email='##e-mail##'	
+
+DECLARE @MAXID AS BIGINT
+SET @MAXID = (1-SIGN(@ID))*(SELECT MAX(ID) FROM MAILS WHERE ExpID = @ExpID AND email = @Email)
+	
+UPDATE 	MAILS
+ SET 
+ [status] = @state
+ ,[ProcessingTimeStamp] = 	CASE @state 
+							WHEN 1 THEN COALESCE([ProcessingTimeStamp],GetDate())
+							ELSE [ProcessingTimeStamp]
+							END
+ WHERE ([ProcessingTimeStamp] IS NULL) AND (ID = @ID OR ID = @MAXID)  
+ 

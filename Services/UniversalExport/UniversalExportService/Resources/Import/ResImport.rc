@@ -1,0 +1,19 @@
+SQLSelectDataVersionThreshold TEXT Files\SQLSelectDataVersionThreshold.qry
+SQLUpdateDataVersionThreshold TEXT Files\SQLUpdateDataVersionThreshold.qry
+SQLSelectTimestamp TEXT Files\SQLSelectTimestamp.qry
+SQLSelectSalesPriceTimestamp TEXT Files\SQLSelectSalesPriceTimestamp.qry
+SQLLoadIerarchy TEXT Files\SQLLoadIerarchy.qry
+SQLUpdateIerarchy TEXT Files\SQLUpdateIerarchy.qry
+SQLLoadItems TEXT Files\SQLLoadItems.qry
+SQLDeleteItems TEXT Files\SQLDeleteItems.qry
+SQLLoadCurrencies TEXT Files\SQLLoadCurrencies.qry
+SQLLoadStocks TEXT Files\SQLLoadStocks.qry
+SQLLoadPrices TEXT Files\SQLLoadPrices.qry
+SQLDeletePrices TEXT Files\SQLDeletePrices.qry
+SQLLoadCosts TEXT Files\SQLLoadCosts.qry
+SQLImportMarkZero TEXT Files\SQLImportMarkZero.qry
+SQLImportMarkTime TEXT Files\SQLImportMarkTime.qry
+SQLImportsSelectByZero TEXT Files\SQLImportsSelectByZero.qry
+
+
+ 

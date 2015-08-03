@@ -1,0 +1,17 @@
+SELECT Exp.[ID]
+      ,Exp.[ID_Client]
+      ,Exp.[ID_WH]
+      ,Exp.[PRICE]
+      ,Exp.[NAV_Client]
+      ,Exp.[INTERVAL]
+      ,Exp.[LAST_EXPORT]
+      ,Exp.[FILE_NAME]
+      ,Exp.[ID_TEMPL]
+      ,Exp.[EMAILFLAG]
+      ,Exp.[EMAIL]
+      ,Exp.[EMAILSUBJ]
+	,Cl.[ID_WH]
+
+/*,DATEDIFF(mi,[LAST_EXPORT],GETDATE()) as midiff*/
+  FROM [Clients] Cl LEFT JOIN [Exports] Exp   ON Exp.[ID_Client]=Cl.[ID] 
+WHERE DATEDIFF(mi,[LAST_EXPORT],GETDATE())>[INTERVAL] AND ISNULL([blocked],0)<>1

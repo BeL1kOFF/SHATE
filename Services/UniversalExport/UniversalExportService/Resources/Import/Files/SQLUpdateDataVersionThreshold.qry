@@ -1,0 +1,6 @@
+UPDATE DataVersions
+	SET Threshold = ##THRSHLDValue##
+WHERE Tag = '##Tag##'
+	/*##InfoCondition##*/
+	AND DomainNo = ##DomainID##
+		

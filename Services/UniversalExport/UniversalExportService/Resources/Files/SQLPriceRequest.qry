@@ -1,0 +1,116 @@
+DECLARE @EXPID AS INT
+SET @EXPID = ##EXP_ID##
+
+DECLARE @CLID as INT
+SET @CLID = ##CLIENT_ID##
+DECLARE @CLPRGR AS INT
+SET @CLPRGR = ##CLPRGR##
+ 
+DECLARE @DiscPrGrCode AS CHAR(10)
+SET @DiscPrGrCode = ISNULL((select SalesCode from PriceGroups where ID = SIGN(ABS((select Clients.Dom from Clients where ID=ABS(@CLID))-@CLPRGR))*@CLPRGR),'')
+
+
+DECLARE @WHID AS INT
+SET @WHID = ##IDWH##
+DECLARE @WHDOMAIN AS INT
+SET @WHDOMAIN = (select [Domain] from Warehouses where ID = @WHID)
+DECLARE @WHLOC AS CHAR(20)
+SET @WHLOC = COALESCE((SELECT wh.Code 
+					  FROM Warehouses wh 
+					  WHERE wh.ID IN (@WHID,(SELECT pl.WarehouseNo  
+					                         FROM PriceLists pl 
+					                         WHERE pl.ID=-@WHID)
+											 )
+					  ), ''																   
+					 )
+
+DECLARE @CY as CHAR(3)
+SET @CY = '##CYCODE##'
+					 
+DECLARE @FILTER AS CHAR(20)
+DECLARE @LINEFILTER AS CHAR(20)
+DECLARE @TMFILTER AS SMALLINT
+DECLARE @TLFILTER AS SMALLINT
+SET @FILTER = '##ABROADFILTER##'
+SET @LINEFILTER = '##ABROADLINEFILTER##'
+SET @TMFILTER = (SELECT ISNULL(TMFilter,0) FROM EXPORTS WHERE ID = @EXPID)
+SET @TLFILTER = (SELECT ISNULL(TLFilter,0) FROM EXPORTS WHERE ID = @EXPID)
+
+;WITH 
+  FIE AS (
+			SELECT TGF.ExpID, TGF.ID_TYPE
+				,CASE HH.TradeGroup 
+					WHEN '' THEN TGF.ItemsGroupCode
+					ELSE HH.TradeGroup
+				END AS TrGr
+			FROM [TradeGroupsFilters] TGF LEFT JOIN IERARCHY HH ON  TGF.ItemsGroupCode=HH.Tag AND TGF.ID_TYPE=HH.ID_GroupType
+			WHERE TGF.ExpID =@EXPID   	
+  	),
+  
+  BLL AS (SELECT Name FROM BlackList WHERE Tag = @Filter AND (ISNULL([Domain],0) = SIGN(ISNULL([Domain],0)) * @WHDOMAIN) AND @CLPRGR<>@WHDOMAIN),  
+  BLLL AS (SELECT Name FROM BlackList WHERE Tag = @LineFilter AND (ISNULL([Domain],0) = SIGN(ISNULL([Domain],0)) * @WHDOMAIN) AND @CLPRGR<>@WHDOMAIN),
+
+  QF AS (
+  	SELECT Qq.*	
+  	FROM Quants Qq 
+  	WHERE  	 
+		(Qq.Item_Brand NOT IN ( SELECT NAME FROM BLL ) AND Qq.Line NOT IN ( SELECT NAME FROM BLLL )	) AND
+		(
+		CASE ABS(@TLFILTER) 
+			WHEN 1 
+				THEN 1-ISNULL((SELECT TOP 1  (CASE FIE.TrGr WHEN Qq.Line THEN SIGN(1-@TLFILTER) ELSE SIGN(1+@TLFILTER) END)
+							FROM FIE		
+							WHERE FIE.ID_TYPE = 1 
+							ORDER BY (CASE FIE.TrGr WHEN Qq.Line THEN 0 ELSE 1 END) ASC),0)						
+			ELSE 1	 
+		END		 
+		*
+		CASE ABS(@TMFILTER)
+			WHEN 1 
+				THEN 1-ISNULL((SELECT TOP 1  (CASE FIE.TrGr WHEN Qq.Brand THEN SIGN(1-@TMFILTER) ELSE SIGN(1+@TMFILTER) END)
+							FROM FIE		
+							WHERE FIE.ID_TYPE = 2 
+							ORDER BY (CASE FIE.TrGr WHEN Qq.Brand THEN 0 ELSE 1 END) ASC),0)							
+			ELSE 1	 
+		END	
+		<> 0  
+		) AND 
+  	 (Qq.[CY] = @CY AND PriceGroupDomain = @CLPRGR  AND Qq.[ID_WH] = @WHID AND Adds=0 AND Qq.price>0.0) OR Adds =-@WHID 
+  	),
+  DIE AS ( 
+				SELECT DD.ID_CLIENT
+						,CASE ISNULL(HH.TradeGroup,'') WHEN '' THEN DD.ItemsGroupCode ELSE HH.TradeGroup END AS TrGr
+						,DD.[Location Code]
+						,DD.[Force]
+						,DD.VAL 
+				FROM [DISCOUNTS] DD 
+					LEFT JOIN IERARCHY HH 
+					ON  DD.ItemsGroupCode = HH.Tag
+				WHERE ID_CLIENT = @CLID	AND
+					DD.[Cust. Price Group Code] IN (@DiscPrGrCode,'') AND
+					DD.[Location Code] IN (@WHLOC, '')					
+),
+  Qdsc AS (
+  	SELECT ROW_NUMBER() OVER (PARTITION BY QF.ID_Item ORDER BY DIE.[Location Code] DESC, DIE.[Force] DESC, DIE.VAL DESC) AS OrderNo
+	--, DIE.Val AS Discount
+	,(1-ISNULL((1-QF.[sale]),0)*DIE.VAL*0.01) as DscCoeff
+	,ISNULL( QF.Cost / QF.Price , 0) as CostRatio
+	, QF.*  	
+  	FROM QF 
+  		JOIN DIE
+  			ON DIE.TrGr IN (QF.Brand, QF.Line, '')  		 	 
+  ),
+  Qq as (
+    SELECT  Qdsc.Price*DscCoeff as DiscountPrice  --*Qdsc.ExternalSaleCoeff    
+      ,CASE 
+        WHEN SIGN(ABS(@CLPRGR - @WHDOMAIN)) * Qdsc.CostRatio > Qdsc.DscCoeff THEN /*1.05 **/ Qdsc.CostRatio  
+        ELSE DscCoeff 
+      END  as PriceCoeff
+	  ,Qdsc.*
+    FROM Qdsc
+    WHERE Qdsc.OrderNo = 1     
+  )  
+  
+  SELECT *,  ROUND(Qq.Price*PriceCoeff,2) DscPrice 
+  FROM Qq
+  

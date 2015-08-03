@@ -1,0 +1,13 @@
+DECLARE @DomainNo as int
+		Set @DomainNo = ##DOMAIN##
+DECLARE @THRESHOLD as int
+		Set @THRESHOLD = ##THRSHLD##
+DELETE FROM [Items]
+      WHERE ID<@THRESHOLD AND DomainNo = @DomainNo AND ID_Item IN
+			(
+			SELECT ID_Item
+			FROM [Items]
+			WHERE DomainNo = @DomainNo
+			GROUP BY ID_Item, DomainNo
+			HAVING count(ID)>1
+			) 

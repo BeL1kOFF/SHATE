@@ -1,0 +1,6 @@
+SELECT * FROM Exports 
+WHERE [ID_Client] = ##ClientID##
+	AND Web = 1 
+     AND ([email] like '%##Email##%' OR '##Email##'='') 
+     AND INTERVAL>0 AND emailflag = 1 
+ORDER BY ID_WH ASC, ID DESC 

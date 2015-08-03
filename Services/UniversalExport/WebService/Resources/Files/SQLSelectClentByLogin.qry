@@ -1,0 +1,3 @@
+SELECT [Customer No_] 
+FROM [##Firm##$Web User] 
+WHERE [Login]=

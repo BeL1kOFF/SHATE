@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="Windows-1251" standalone="yes"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+ <xsl:output encoding="windows-1251" method="xml" version="1.0"/>
+<xsl:template match="/">
+<documentrequest type="staff"><staff>
+      <xsl:for-each select="documentrequest/staff/staffnode"> 
+        <staffnode>             
+			
+			<xsl:attribute name="last_name"> 
+				<xsl:value-of select="@last_name"/>
+			</xsl:attribute>	
+			
+			<xsl:attribute name="first_name"> 
+				<xsl:value-of select="@first_name"/>
+			</xsl:attribute>	
+			
+			<xsl:attribute name="middle_name"> 
+				<xsl:value-of select="@middle_name"/>
+			</xsl:attribute>	
+			
+			<xsl:attribute name="tabel_id">
+				<xsl:value-of select="@tabel_id"/>
+			</xsl:attribute>			
+			
+			<xsl:attribute name="id_external">
+				<xsl:value-of select="@id_external"/>
+			</xsl:attribute>
+
+			<xsl:attribute name="subdiv_id_external">
+				<xsl:value-of select="@id_subdiv_external"/>
+			</xsl:attribute>
+			<xsl:attribute name="appoint_id_external">
+				<xsl:value-of select="@id_appoint_external"/>
+			</xsl:attribute>
+			<xsl:attribute name="graph_id_external">
+				<xsl:value-of select="@id_graphwork_external"/>
+			</xsl:attribute>
+			
+			<xsl:attribute name="date_begin">
+				<xsl:value-of select="@date_begin"/>
+			</xsl:attribute>			
+        </staffnode>      
+      </xsl:for-each>
+</staff></documentrequest>
+</xsl:template>
+</xsl:stylesheet>

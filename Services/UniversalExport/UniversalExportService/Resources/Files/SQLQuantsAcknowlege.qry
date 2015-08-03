@@ -1,0 +1,10 @@
+UPDATE [Quants]
+   SET 
+	[ID_WH] = -[ID_WH]
+	,[Adds] = COALESCE([Adds],##UNLOADID##)  
+	,[PriceGroupDomain] = COALESCE([PriceGroupDomain],  ##PRCGRP##)	
+	,[Brand] = COALESCE( [Brand], (select top 1 Items.[Brand] from Items where Items.[ID_Item] = [Quants].ID_Item AND [Items].DomainNo = ##DOMAIN##) )
+	,[Line] =  COALESCE( [Line], (select top 1 Items.[Line] from Items where Items.[ID_Item] = [Quants].ID_Item AND [Items].DomainNo = ##DOMAIN##) )
+	,[NQNT] = Case when QNTY<10 then cast(QNTY as char) when QNTY<50 then '10>' when QNTY<100 then '50>' else '100>'  End
+	,[NQN0] = Case when QNTY0<10 then cast(QNTY0 as char) when QNTY0<50 then '10>' when QNTY0<100 then '50>' else '100>'  End 	
+ WHERE [ID_WH] = -##WH_ID## 

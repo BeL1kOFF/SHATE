@@ -1,0 +1,5 @@
+UPDATE [Exports] 
+   SET [email] =
+	(select [e_mail] from [Clients]
+where [Clients].[ID]=[Exports].[ID_Client] )
+WHERE [Exports].[emailflag]=1 AND LTrim([Exports].[email])='' 

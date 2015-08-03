@@ -1,0 +1,17 @@
+SELECT  LINKS.*,  1-"Allow Line Disc_" as Action /*,1-SQUARE(SIGN(SALESPRICE."Special Terms"-1))   SALESPRICE."Starting Date" as Termin*/ FROM
+(
+SELECT   TM."Item No_" as ItemID, TM."Item Group Code" as Brand, TL."Item Group Code" as Line  
+FROM "##DATABASE##"."dbo"."##FIRM##$Item Item Group" TM, "##DATABASE##"."dbo"."##FIRM##$Item Item Group" TL   
+WHERE  TM."Item No_"=TL."Item No_" and (TM."Item Group Type Code" = '“Ã' AND TL."Item Group Type Code" = '“Œ¬À»Õ»ﬂ' )
+) LINKS
+LEFT JOIN 
+( SELECT "Item No_", "Special Terms", "Allow Line Disc_", "Starting Date"
+     FROM "##DATABASE##"."dbo"."##FIRM##$Sales Price" 
+  WHERE "Sales Code" = 'Œœ“' /*AND [Currency Code] = ''*/  AND "Starting Date"<=GETDATE() and ("Ending Date">=GETDATE() or "Ending Date" <= "Starting Date")
+)SALESPRICE
+ON   SALESPRICE."Item No_"=LINKS.ItemID 
+WHERE SALESPRICE."Starting Date" = (
+  SELECT MAX("Starting Date") FROM "##DATABASE##"."dbo"."##FIRM##$Sales Price" WHERE "Item No_" = LINKS.ItemID AND "Sales Code" = 'Œœ“'  /*AND [Currency Code] = ''*/  
+  AND "Starting Date"<=GETDATE() and ("Ending Date">=GETDATE() or "Ending Date" <= "Starting Date" )
+) 
+ORDER BY LINKS.ItemID

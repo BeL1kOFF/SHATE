@@ -1,0 +1,6 @@
+UPDATE MAILS 
+SET [status] = 1
+WHERE COALESCE(Status, 0) <> 1 AND ID NOT IN (select max(ID) from MAILS 
+			where COALESCE(Status, 0) <> 1 AND ProcessingTimestamp IS NULL
+			group by ExpID	
+			)

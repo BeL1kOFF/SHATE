@@ -1,0 +1,3 @@
+SELECT DISTINCT [ID_Client]
+  FROM [Exports]
+WHERE [LAST_EXPORT]=0

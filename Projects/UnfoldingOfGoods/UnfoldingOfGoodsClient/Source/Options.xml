@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Options>
+  <Server>10.1.220.98</Server>
+  <Port>2085</Port>
+  <Timeout>60000</Timeout>
+  <Location>SHATE-S01</Location>
+</Options>

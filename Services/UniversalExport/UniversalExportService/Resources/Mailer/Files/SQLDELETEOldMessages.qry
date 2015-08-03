@@ -1,0 +1,2 @@
+DELETE FROM MAILS
+WHERE ID NOT IN ( select max(ID) from MAILS group by ExpID, email, ISNULL(Status, 0) )

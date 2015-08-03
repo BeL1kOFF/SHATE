@@ -1,0 +1,1 @@
+EXEC [sp_setapprole] '$ndo$shadow', 'FF5EC4E40F67BD4EDF3D04F8B84364DAD0', 'none', 0, 0
