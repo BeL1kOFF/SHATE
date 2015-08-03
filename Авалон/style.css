@@ -1,0 +1,113 @@
+	body{
+		margin:0;
+		padding:0;
+		background-color: f7f5f5;
+	}
+	
+	ul{
+		list-style-image: url(picture/parts/UL.jpg); /* Путь к изображению маркера */
+	}
+   
+	.divMain{
+		width:1000px;
+		height: 800px;
+		margin:0 auto;
+	}
+	.divHeader{
+		height: 50px;
+	}
+	.divCentral{
+		position:relative;
+		margin-top:0px;		
+		height: 340px;
+	}
+	.divFooter{
+		height: 250px;
+		text-align:center;
+	}
+	
+	.divMainMenu {
+		position: relative;
+		/* float: left; */
+		height: 50px;
+		text-align: bottom;
+		/* margin: 30px 10px; */
+		PADDING: 20PX 10PX 10PX 0;
+		DISPLAY: INLINE-BLOCK;
+	}
+	.divMainMenuAdd{
+		font-size: 14;		
+		float: right; 	
+		text-align: center;			
+	}
+	.divMainMenuAddAlign{
+		float:right;
+	}
+	
+	.d2{
+		position:relative;	
+		float:right;
+		margin-top:6px;
+	}
+	.divSlider{	
+		margin-top:0px;
+	}
+		
+	a{
+		color: #fcdb40; /* Цвет обычной ссылки */ 
+		text-decoration: underline; /* Убираем подчеркивание у ссылок */
+		font-size: 16;
+   }
+   
+    a:hover {
+		color: white; /* Цвет ссылки при наведении на нее курсора мыши */  
+		text-decoration: none; /* Добавляем подчеркивание */
+		margin-bottom:20px;
+   }
+   
+   .MainMenu{
+		color: #3399ff; /* Цвет обычной ссылки */ 
+		text-decoration: underline; /* Убираем подчеркивание у ссылок */
+   }
+   .MainMenu:hover {
+		color: #f53b3e; /* Цвет ссылки при наведении на нее курсора мыши */  
+		margin-bottom:20px;
+   }
+   .ColumnPadding {
+		padding: 10 10;
+	}
+   
+   .divColumn{
+		width:25%;
+		float:left;
+		height:300px;
+		margin: 5px 0;	
+	}
+	.divColumnImage{
+		background-image:url(picture/parts/arrow.jpg);
+		height: 20;
+		padding: 5 0 0 15;
+		font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+		font-size: 15px;
+		font-weight: 600;
+		
+	}
+	.divFirmsColumn{
+		position:relative;	
+		width:33%;
+		height:280;
+		float:left;
+		text-align: center;
+	}
+	.test{
+	margin: 0 0;
+	width:100%;
+	align: left;
+	}
+	
+	.sliderImage{
+		width:1000px;
+	}
+	.experienceText{
+		font-size: 18;
+	}
